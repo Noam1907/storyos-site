@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StoryOS · a complete sales-enablement system you install and own</title>
+<meta name="description" content="Seven expert agents in your own Claude. Your voice, your machine, yours forever. Installs in about 20 minutes. $79 founding.">
+<meta name="robots" content="noindex">
+<!-- noindex is temporary: remove on public launch -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#070B14; --panel:#0D1524; --panel2:#101B30; --line:rgba(148,163,184,.14);
+  --ink:#F1F5F9; --sub:#94A3B8; --dim:#64748B;
+  --blue:#3B82F6; --cyan:#38BDF8; --amber:#FBBF24; --amberdim:rgba(251,191,36,.12);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1140px;margin:0 auto;padding:0 32px}
+a{color:inherit}
+
+/* nav */
+nav{position:sticky;top:0;z-index:10;background:rgba(7,11,20,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.word{font-family:'Fraunces',serif;font-weight:600;font-size:20px;letter-spacing:.01em}
+.word span{color:var(--cyan)}
+.navmeta{display:flex;align-items:center;gap:20px;font-size:14px;color:var(--sub)}
+.navmeta a.nl{color:var(--sub);text-decoration:none;font-weight:500}
+.navmeta a.nl:hover{color:var(--ink)}
+.btn{display:inline-block;text-decoration:none;font-weight:600;border-radius:12px;transition:transform .15s ease, box-shadow .15s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn.primary{background:linear-gradient(180deg,#3B82F6,#2563EB);color:#fff;box-shadow:0 8px 24px rgba(59,130,246,.35)}
+.btn.small{font-size:14px;padding:9px 18px}
+.btn.big{font-size:16.5px;padding:15px 30px}
+.btn.ghost{border:1px solid var(--line);color:var(--ink);background:rgba(255,255,255,.03)}
+
+/* hero */
+.hero{position:relative;padding:96px 0 84px;overflow:hidden}
+.hero::before{content:"";position:absolute;top:-240px;left:50%;transform:translateX(-62%);width:900px;height:620px;background:radial-gradient(closest-side,rgba(59,130,246,.28),transparent 70%);pointer-events:none}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
+.kick{display:inline-block;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan);font-weight:600;margin-bottom:18px;border:1px solid rgba(56,189,248,.3);background:rgba(56,189,248,.08);padding:6px 12px;border-radius:999px}
+h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(38px,4.6vw,58px);line-height:1.06;letter-spacing:-.015em}
+.lede{color:var(--sub);font-size:18.5px;margin-top:20px;max-width:52ch}
+.ctas{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px;align-items:center}
+.meta{margin-top:18px;font-size:13.5px;color:var(--dim)}
+
+/* terminal card */
+.term{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:18px;box-shadow:0 30px 80px rgba(2,6,17,.6), 0 0 0 1px rgba(59,130,246,.08);overflow:hidden}
+.term .bar{display:flex;align-items:center;gap:8px;padding:13px 18px;border-bottom:1px solid var(--line);font-size:12.5px;color:var(--dim)}
+.dot{width:10px;height:10px;border-radius:50%;background:#1E293B}
+.dot:nth-child(1){background:#F87171}.dot:nth-child(2){background:#FBBF24}.dot:nth-child(3){background:#34D399}
+.term .bar b{margin-left:8px;color:var(--sub);font-weight:500}
+.term .body{padding:22px 24px}
+.tin{font-family:'JetBrains Mono',monospace;font-size:13.5px;color:var(--cyan);margin-bottom:16px}
+.tout{font-size:15px;color:var(--ink);margin-bottom:16px}
+.tout b{color:#fff}
+.tflag{background:var(--amberdim);border:1px solid rgba(251,191,36,.25);border-radius:12px;padding:13px 16px;font-size:13.5px;color:var(--amber)}
+.tflag b{color:var(--ink)}
+.term .foot{padding:14px 24px;border-top:1px solid var(--line)}
+.term .foot a{color:var(--cyan);font-weight:600;font-size:14.5px;text-decoration:none}
+
+/* sections */
+section{padding:76px 0}
+.sechead{max-width:720px;margin:0 auto;text-align:center}
+h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(28px,3.2vw,38px);line-height:1.15;letter-spacing:-.01em}
+.sub{color:var(--sub);font-size:16.5px;margin-top:12px}
+
+/* fracture */
+.frac{max-width:760px;margin:36px auto 0;background:var(--panel);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 20px 50px rgba(2,6,17,.45)}
+.frac .ln{display:flex;gap:18px;padding:18px 26px;border-bottom:1px solid var(--line);font-size:16px}
+.frac .who{flex:0 0 92px;font-weight:600;font-size:12px;color:var(--dim);text-transform:uppercase;letter-spacing:.08em;padding-top:3px}
+.frac .drop{padding:18px 26px;background:rgba(59,130,246,.06);font-size:15px;color:var(--sub)}
+.frac .drop b{color:var(--ink)}
+
+/* own grid */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:24px 24px;transition:border-color .2s ease, transform .2s ease}
+.card:hover{border-color:rgba(56,189,248,.35);transform:translateY(-2px)}
+.card .t{font-weight:600;font-size:16px;margin-bottom:8px}
+.card p{font-size:14.5px;color:var(--sub)}
+.card .n{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--cyan);margin-bottom:12px}
+
+/* trust */
+.trust{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:44px}
+.trust .card .t{color:var(--cyan)}
+
+/* buy */
+.buywrap{position:relative}
+.buywrap::before{content:"";position:absolute;inset:-120px 0 0;background:radial-gradient(closest-side,rgba(59,130,246,.16),transparent 70%);pointer-events:none}
+.buy{position:relative;max-width:620px;margin:0 auto;text-align:center;background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid rgba(59,130,246,.3);border-radius:24px;padding:56px 48px;box-shadow:0 40px 100px rgba(2,6,17,.6)}
+.buy .tag{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan);font-weight:600}
+.buy .price{font-family:'Fraunces',serif;font-size:76px;font-weight:600;line-height:1;margin-top:14px}
+.buy .was{color:var(--dim);font-size:16px;margin-top:8px}
+.buy .was s{color:var(--dim)}
+.buy ul{list-style:none;margin:26px auto 0;max-width:380px;text-align:left}
+.buy li{font-size:15px;color:var(--sub);padding:7px 0 7px 28px;position:relative}
+.buy li::before{content:"✓";position:absolute;left:0;color:var(--cyan);font-weight:700}
+.buy .btn{margin-top:30px}
+.buy .after{margin-top:16px;font-size:13px;color:var(--dim)}
+
+/* close */
+.dots{text-align:center;color:var(--sub);font-size:16px}
+.dots a{color:var(--cyan);font-weight:600;text-decoration:none}
+footer{border-top:1px solid var(--line);padding:26px 0;font-size:13.5px;color:var(--dim)}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+
+@media (max-width:900px){
+  .hero .wrap{grid-template-columns:1fr;gap:40px}
+  .hero{padding:64px 0 56px}
+  .grid,.trust{grid-template-columns:1fr}
+  section{padding:56px 0}
+  .navmeta .hide{display:none}
+  .buy{padding:44px 26px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="word">Story<span>OS</span></div>
+    <div class="navmeta">
+      <a class="nl hide" href="inside.html">Inside the kit</a>
+      <a class="nl hide" href="example-battlecard.html">A real output</a>
+      <a class="nl hide" href="about.html">About</a>
+      <a class="btn primary small" href="#buy">Own the kit · $79</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <span class="kick">For sales &amp; revenue enablement</span>
+      <h1>Your enablement team. Running by tomorrow morning.</h1>
+      <p class="lede">Seven expert agents in your own Claude. They speak in your company's voice, work on your machine, and show their evidence on every asset. Installs in about 20 minutes.</p>
+      <div class="ctas">
+        <a class="btn primary big" href="#buy">Own the kit · $79</a>
+        <a class="btn ghost big" href="example-battlecard.html">See a real output</a>
+      </div>
+      <div class="meta">Zero code · yours forever · $197 after the founding wave</div>
+    </div>
+    <div class="term">
+      <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><b>StoryOS · Play 02 · Competitor appears</b></div>
+      <div class="body">
+        <div class="tin">&gt; A competitor came up in my biggest deal. The GC is spooked. CFO review in two weeks.</div>
+        <div class="tout"><b>4 minutes later:</b> a full battlecard. Where they're honestly strong. Three win angles. Landmine questions for your champion. A 60-second talk track.</div>
+        <div class="tflag"><b>The part no other tool shows you:</b> 3 claims flagged [VERIFY], "check these before this leaves your hands." It refuses to invent.</div>
+      </div>
+      <div class="foot"><a href="example-battlecard.html">Read the full battlecard, unedited &#8594;</a></div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="sechead">
+      <h2>Built for the moment your story breaks.</h2>
+      <p class="sub">Every deal is won with a story. Then it's handed to someone who wasn't in the room.</p>
+    </div>
+    <div class="frac">
+      <div class="ln"><span class="who">Sales said</span><span>"They're buying a behavior change across the team."</span></div>
+      <div class="ln"><span class="who">CS heard</span><span>"Roll out the device, hit activation numbers."</span></div>
+      <div class="drop">The promise never crossed the wall. <b>One quarter later: renewal at risk, champion feels oversold.</b> StoryOS is the only enablement system built for that handoff.</div>
+    </div>
+    <figure style="margin:44px auto 4px;max-width:880px;transform:rotate(-1.2deg)">
+      <img style="width:100%;display:block;box-shadow:0 20px 64px rgba(0,0,0,.5)" src="assets/handover-doodle.svg" alt="The Handover, drawn as a museum exhibit: Exhibit A, the deal as sold, a wrapped gift. Exhibit B, the deal as delivered, an open undocumented box. One red thread runs through the seam between them."/>
+    </figure>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sechead"><h2>What you own.</h2></div>
+    <div class="grid">
+      <div class="card"><div class="n">7 · 10 · 12 · 1</div><div class="t">A full team, one brain</div><p>Seven specialist agents, ten plays, twelve skills, one company brain. Describe a real sales moment; the right specialist hands you the asset.</p></div>
+      <div class="card"><div class="n">PASTE</div><div class="t">Never a blank page</div><p>A ready-to-run prompt for every play. Fill the brackets, paste, done.</p></div>
+      <div class="card"><div class="n">PROOF</div><div class="t">Examples inside</div><p>Real outputs ship in the kit, so you always know what good looks like.</p></div>
+      <div class="card"><div class="n">SEAM</div><div class="t">The handoff, closed</div><p>The Sales&#8594;CS workflow carries the exact promise across the wall.</p></div>
+      <div class="card"><div class="n">DEMO</div><div class="t">Works in minute one</div><p>A demo company comes preloaded. Watch it run, then make it yours.</p></div>
+      <div class="card"><div class="n">YOURS</div><div class="t">No platform, no renewal</div><p>Runs in your own Claude (paid plan). The kit itself: files on your machine, forever.</p></div>
+    </div>
+    <div style="text-align:center;margin-top:30px"><a class="btn ghost" style="font-size:15px;padding:12px 26px" href="inside.html">Walk through everything inside &#8594;</a></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sechead"><h2>Why you can trust what it writes.</h2></div>
+    <div class="trust">
+      <div class="card"><div class="t">It refuses to invent</div><p>Every claim traces to your brain, or gets flagged for you to verify. Nothing ships with an open flag.</p></div>
+      <div class="card"><div class="t">It sounds like you</div><p>Your voice survives any transcript you paste on top of it.</p></div>
+      <div class="card"><div class="t">It learns</div><p>What works in the field gets folded back in. Every deal sharpens the next.</p></div>
+      <div class="card" style="border-color:rgba(56,189,248,.45);background:rgba(56,189,248,.06)"><div class="t">And it's agent-built, for real</div><p>One of the twelve skills was written, and is maintained, by <b style="color:var(--ink)">Cleo: an autonomous agent on Anat's own team</b>. This kit isn't a theory about agent teams. It's shipped by one.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="buy" class="buywrap">
+  <div class="wrap">
+    <div class="buy">
+      <div class="tag">Founding wave</div>
+      <div class="price">$79</div>
+      <div class="was">one time · yours forever · <s>$197</s> after the founding wave</div>
+      <ul>
+        <li>The complete kit: agents, plays, skills, brain</li>
+        <li>Ready prompts + real example outputs</li>
+        <li>Install yourself in about 20 minutes</li>
+        <li>Needs: your own Claude plan (Pro or up). The kit itself never renews.</li>
+        <li>Ask Alfred anything; a human answers email</li>
+      </ul>
+      <a class="btn primary big" href="https://dotconnector2.gumroad.com/l/storyos/FOUNDING79">Own the kit · $79 founding</a>
+      <div class="after">Instant checkout and delivery. Founding price; $197 after the first wave.</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap dots">
+    <a href="https://www.linkedin.com/in/anatdotconnector/"><img src="logo-ctd-web.png" alt="Connecting the Dots" style="width:min(300px,70vw);height:auto;margin-bottom:20px"></a>
+    <p>StoryOS is one of the dots. The same person connects the rest.<br><a href="https://www.linkedin.com/in/anatdotconnector/">Find me on LinkedIn &#8594;</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>StoryOS · by Anat · Connecting the Dots</div>
+    <div>Human, always.</div>
+  </div>
+</footer>
+
+</body>
+</html>

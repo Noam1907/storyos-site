@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About · StoryOS</title>
+<meta name="description" content="The person behind the kit, and the team of agents she actually runs her business with.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#070B14; --panel:#0D1524; --panel2:#101B30; --line:rgba(148,163,184,.14);
+  --ink:#F1F5F9; --sub:#94A3B8; --dim:#64748B;
+  --blue:#3B82F6; --cyan:#38BDF8; --amber:#FBBF24;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1140px;margin:0 auto;padding:0 32px}
+nav{position:sticky;top:0;z-index:10;background:rgba(7,11,20,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.word{font-family:'Fraunces',serif;font-weight:600;font-size:20px;text-decoration:none;color:var(--ink)}
+.word span{color:var(--cyan)}
+.navlinks{display:flex;align-items:center;gap:22px;font-size:14px}
+.navlinks a{color:var(--sub);text-decoration:none;font-weight:500}
+.navlinks a:hover{color:var(--ink)}
+.btn{display:inline-block;text-decoration:none;font-weight:600;border-radius:12px;transition:transform .15s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn.primary{background:linear-gradient(180deg,#3B82F6,#2563EB);color:#fff;box-shadow:0 8px 24px rgba(59,130,246,.35)}
+.btn.small{font-size:14px;padding:9px 18px}
+.btn.big{font-size:16.5px;padding:15px 30px}
+.btn.ghost{border:1px solid var(--line);color:var(--ink);background:rgba(255,255,255,.03)}
+.hero{position:relative;padding:84px 0 20px;overflow:hidden}
+.hero::before{content:"";position:absolute;top:-260px;left:30%;width:800px;height:560px;background:radial-gradient(closest-side,rgba(59,130,246,.2),transparent 70%);pointer-events:none}
+.kick{display:inline-block;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan);font-weight:600;margin-bottom:18px;border:1px solid rgba(56,189,248,.3);background:rgba(56,189,248,.08);padding:6px 12px;border-radius:999px}
+h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(34px,4.4vw,52px);line-height:1.08;letter-spacing:-.015em;max-width:20ch}
+.story{max-width:720px;padding:36px 0 10px}
+.story p{font-size:17px;color:var(--sub);margin-bottom:22px}
+.story p b{color:var(--ink)}
+.story .pull{font-family:'Fraunces',serif;font-size:24px;line-height:1.35;color:var(--ink);border-left:3px solid var(--cyan);padding-left:22px;margin:34px 0}
+h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(24px,2.8vw,32px);letter-spacing:-.01em;margin:44px 0 14px}
+.rooms{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:36px 0 10px}
+.room{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px 24px}
+.room b{display:block;font-size:15.5px;margin-bottom:6px}
+.room p{font-size:14px;color:var(--sub)}
+.ctas{display:flex;gap:14px;flex-wrap:wrap;margin:44px 0 80px}
+footer{border-top:1px solid var(--line);padding:26px 0;font-size:13.5px;color:var(--dim)}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@media (max-width:900px){.rooms{grid-template-columns:1fr}.navlinks .hide{display:none}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="word" href="index.html">Story<span>OS</span></a>
+    <div class="navlinks">
+      <a class="hide" href="inside.html">Inside the kit</a>
+      <a class="hide" href="example-battlecard.html">A real output</a>
+      <a class="hide" href="about.html">About</a>
+      <a class="btn primary small" href="index.html#buy">Own the kit · $79</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="kick">About</span>
+    <h1>The person behind the kit. And her team.</h1>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="story">
+    <p>I'm <b>Anat Weissman</b>. My whole career is one skill, applied everywhere: I walk into a room, listen for twenty minutes, and see where the dots don't connect. Product says one thing, sales promises another, marketing sells a third, and the customer hears the noise. I've done this across industries and cultures, from Nairobi to boardrooms in Tel Aviv and beyond, building the decks, running the teams, surviving contact with reality.</p>
+    <p>The pattern is always the same. <b>Companies don't lose deals because the product is weak. They lose them because the story fractures</b>, and nowhere does it fracture more quietly than at the Sales to CS handoff, where the promise that won the deal gets retold by someone who never heard it.</p>
+    <div class="pull">StoryOS is not a product I imagined. It's the system I actually work with, packaged.</div>
+    <p>I run my own business with a team of AI agents. Not a metaphor and not a demo: my operations, my content, my research run through named agents with defined jobs, a shared memory, and one hard law between them and the world: <b>they draft, I judge. Nothing ships that can't back its claims.</b> I built that law into my own team first, because my entire brand stands on saying only what I can prove. Then I built the same architecture for the one function that lives and dies on the story holding: enablement.</p>
+    <p>So when the kit flags a claim as [VERIFY] instead of inventing a number, that's not a feature I added for the sales page. It's the rule I work under every day, shipped to you.</p>
+
+    <h2>How I work with them, and how you will</h2>
+    <div class="rooms">
+      <div class="room"><b>They do the production</b><p>Battlecards, briefs, talk tracks, programs. The hours of assembling, in minutes.</p></div>
+      <div class="room"><b>You keep the judgment</b><p>Every asset arrives with its evidence shown, so signing your name to it is a decision, not a hope.</p></div>
+      <div class="room"><b>A human, always</b><p>Stuck, skeptical, curious? Email me. My agent reads the inbox with me, which is exactly the point. The answer is mine: anat@connecthedots.co.</p></div>
+    </div>
+
+    <a href="https://www.linkedin.com/in/anatdotconnector/"><img src="logo-ctd-web.png" alt="Connecting the Dots" style="width:min(280px,70vw);height:auto;margin:10px 0 18px"></a>
+    <p>StoryOS is one of the dots. The rest of what I do, the products, the coaching, the talks, connects into one line. For now, the best place to see it all is <a style="color:var(--cyan);font-weight:600;text-decoration:none" href="https://www.linkedin.com/in/anatdotconnector/">my LinkedIn</a>.</p>
+
+    <div class="ctas">
+      <a class="btn primary big" href="index.html#buy">Own the kit · $79</a>
+      <a class="btn ghost big" href="inside.html">See everything inside</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div>StoryOS · by Anat · Connecting the Dots</div>
+    <div>Human, always.</div>
+  </div>
+</footer>
+
+</body>
+</html>

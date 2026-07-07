@@ -1,0 +1,172 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" role="img" aria-label="The Handover, drawn as a museum exhibit: the deal as sold versus the deal as delivered, one red thread running through the seam">
+  <defs>
+    <filter id="hs" x="-30%" y="-30%" width="170%" height="170%">
+      <feDropShadow dx="9" dy="9" stdDeviation="0" flood-color="#1B2838" flood-opacity="0.13"/>
+    </filter>
+    <!-- hand-lettered marker glyphs, 40x60 box -->
+    <path id="gT" d="M2,3 Q20,-2 40,3 M21,3 Q19,30 20,60"/>
+    <path id="gH" d="M3,0 Q1,30 4,60 M37,0 Q39,30 36,60 M3,31 Q20,29 37,31"/>
+    <path id="gE" d="M40,3 Q20,0 5,3 Q2,30 4,57 Q22,60 40,57 M5,30 Q17,29 29,30"/>
+    <path id="gA" d="M2,60 Q11,30 20,3 Q29,30 38,60 M10,41 Q20,39 31,41"/>
+    <path id="gN" d="M3,60 Q1,30 3,3 L37,57 Q39,30 37,3"/>
+    <path id="gD" d="M5,3 Q3,30 5,57 M5,3 Q35,1 38,28 Q40,52 5,57"/>
+    <path id="gO" d="M20,3 Q3,5 4,30 Q5,57 21,57 Q37,55 36,30 Q35,5 20,3"/>
+    <path id="gV" d="M3,3 Q11,30 20,57 Q29,30 37,3"/>
+    <path id="gR" d="M5,60 Q3,30 4,3 Q30,0 32,14 Q34,27 7,29 M15,31 Q28,44 36,60"/>
+    <path id="gS" d="M35,7 Q17,-4 8,10 Q2,21 20,28 Q37,36 31,50 Q20,61 5,51"/>
+    <path id="gM" d="M3,60 Q4,30 5,3 L20,35 L35,4 Q36,30 37,60"/>
+  </defs>
+
+  <!-- whiteboard ground -->
+  <rect width="1280" height="720" fill="#FBF7EE"/>
+
+  <!-- coffee ring, flat-lay prop -->
+  <g filter="url(#hs)" fill="none" stroke="#2456A6" stroke-linecap="round">
+    <circle cx="1148" cy="96" r="41" stroke-width="7" opacity="0.16"/>
+    <circle cx="1144" cy="99" r="33" stroke-width="4" opacity="0.10"/>
+  </g>
+
+  <!-- title: THE HANDOVER, hand-lettered, yellow highlighter behind -->
+  <g filter="url(#hs)" transform="translate(84,64) rotate(-2)">
+    <path d="M-6,34 Q270,22 566,30" stroke="#F2C230" stroke-width="46" stroke-linecap="round" opacity="0.45" fill="none"/>
+    <g fill="none" stroke="#141414" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+      <use href="#gT"/>
+      <use href="#gH" x="48"/>
+      <use href="#gE" x="96"/>
+      <use href="#gH" x="168"/>
+      <use href="#gA" x="216"/>
+      <use href="#gN" x="264"/>
+      <use href="#gD" x="312"/>
+      <use href="#gO" x="360"/>
+      <use href="#gV" x="408"/>
+      <use href="#gE" x="456"/>
+      <use href="#gR" x="504"/>
+    </g>
+  </g>
+
+  <!-- tape strip on title corner -->
+  <rect x="52" y="48" width="62" height="18" fill="#F2C230" opacity="0.55" transform="rotate(-38 83 57)" filter="url(#hs)"/>
+
+  <!-- ============ EXHIBIT A : the deal, as sold ============ -->
+  <!-- character A, proud presenter -->
+  <g filter="url(#hs)" transform="translate(196,282)" fill="none" stroke="#141414" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="0" cy="0" r="20"/>
+    <path d="M-10,-19 q4,-7 9,-3 M1,-21 q5,-5 9,-1"/>
+    <circle cx="-6" cy="-3" r="1.8" fill="#141414"/>
+    <circle cx="7" cy="-3" r="1.8" fill="#141414"/>
+    <path d="M-8,7 Q0,15 9,6"/>
+    <path d="M0,20 Q-3,60 0,95"/>
+    <path d="M0,40 Q36,44 70,52"/>
+    <circle cx="75" cy="53" r="5"/>
+    <path d="M0,46 Q-26,60 -21,79"/>
+    <path d="M0,95 Q-9,120 -17,139 M-17,139 h-10"/>
+    <path d="M0,95 Q10,120 15,139 M15,139 h10"/>
+    <path d="M-38,30 q-8,3 -13,9 M-36,52 q-9,1 -14,6" opacity="0.6"/>
+  </g>
+
+  <!-- box A: wrapped like a gift -->
+  <g filter="url(#hs)" transform="translate(318,300) rotate(-2)">
+    <rect x="0" y="0" width="118" height="92" fill="#F2C230" opacity="0.82" stroke="#141414" stroke-width="3.5" stroke-linejoin="round"/>
+    <path d="M59,0 Q57,46 59,92 M0,47 Q59,44 118,47" stroke="#2456A6" stroke-width="8" fill="none" opacity="0.85"/>
+    <path d="M59,-2 q-24,-26 -2,-26 q14,0 4,24 M59,-2 q26,-26 4,-26 q-14,0 -6,24" fill="none" stroke="#2456A6" stroke-width="5"/>
+    <g stroke="#141414" stroke-width="2.5" stroke-linecap="round">
+      <path d="M136,10 l10,-10 M141,22 l13,-3 M130,-6 l4,-13"/>
+    </g>
+  </g>
+
+  <!-- museum label A -->
+  <g filter="url(#hs)">
+    <rect x="238" y="468" width="318" height="104" fill="#FFFFFF" stroke="#141414" stroke-width="1.6"/>
+    <rect x="248" y="459" width="54" height="16" fill="#F2C230" opacity="0.5" transform="rotate(-4 275 467)"/>
+    <text x="258" y="496" font-family="Georgia, 'Times New Roman', serif" font-size="13" letter-spacing="3" fill="#2456A6">EXHIBIT A</text>
+    <text x="258" y="519" font-family="Georgia, 'Times New Roman', serif" font-size="16" font-style="italic" fill="#141414">The Deal, As Sold. 2026.</text>
+    <text x="258" y="540" font-family="Georgia, 'Times New Roman', serif" font-size="12.5" fill="#141414">Mixed promises on slideware.</text>
+    <text x="258" y="559" font-family="Georgia, 'Times New Roman', serif" font-size="12.5" fill="#2456A6">From the collection of: Sales</text>
+  </g>
+
+  <!-- ============ THE SEAM ============ -->
+  <g filter="url(#hs)">
+    <path d="M652,206 q-9,42 3,84 q11,40 -4,82 q-12,42 5,86 q9,26 2,58" fill="none" stroke="#141414" stroke-width="2.6" stroke-linecap="round"/>
+    <path d="M676,210 q10,44 -2,86 q-10,40 5,80 q13,44 -3,88 q-7,24 0,52" fill="none" stroke="#141414" stroke-width="2.6" stroke-linecap="round"/>
+    <path d="M652,206 q-9,42 3,84 q11,40 -4,82 q-12,42 5,86 q9,26 2,58 L676,516 q16,-44 3,-88 q-15,-40 -5,-80 q12,-42 2,-86 Z" fill="#2456A6" opacity="0.07" stroke="none"/>
+  </g>
+  <!-- THE SEAM, small hand letters + arrow -->
+  <g filter="url(#hs)" transform="translate(586,632) scale(0.42)">
+    <g fill="none" stroke="#141414" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">
+      <use href="#gT"/>
+      <use href="#gH" x="48"/>
+      <use href="#gE" x="96"/>
+      <use href="#gS" x="170"/>
+      <use href="#gE" x="218"/>
+      <use href="#gA" x="266"/>
+      <use href="#gM" x="314"/>
+    </g>
+  </g>
+  <path d="M660,626 Q652,600 656,580 M656,580 l-7,10 M656,580 l8,9" fill="none" stroke="#141414" stroke-width="2.6" stroke-linecap="round" filter="url(#hs)"/>
+
+  <!-- ============ EXHIBIT B : the deal, as delivered ============ -->
+  <!-- box B: open, spring out, tagged -->
+  <g filter="url(#hs)" transform="translate(776,312) rotate(1.5)">
+    <rect x="0" y="6" width="118" height="78" fill="#F2C230" opacity="0.35" stroke="#141414" stroke-width="3.5" stroke-linejoin="round"/>
+    <path d="M0,6 L-34,-18 L28,-24 L59,6 Z" fill="#FBF7EE" stroke="#141414" stroke-width="3"/>
+    <path d="M118,6 L150,-14 L92,-26 L59,6 Z" fill="#FBF7EE" stroke="#141414" stroke-width="3"/>
+    <path d="M56,4 q16,-13 0,-20 q-16,-7 0,-15 q16,-8 0,-16 q-12,-7 2,-13" fill="none" stroke="#141414" stroke-width="3" stroke-linecap="round"/>
+    <path d="M60,-62 q14,-8 22,-2" fill="none" stroke="#141414" stroke-width="2"/>
+    <rect x="80" y="-84" width="64" height="24" fill="#FFFFFF" stroke="#2456A6" stroke-width="2"/>
+    <text x="112" y="-67" font-family="'Courier New', monospace" font-size="12" fill="#2456A6" text-anchor="middle">NO DOCS</text>
+  </g>
+  <!-- the red question mark, sparse emphasis -->
+  <g filter="url(#hs)" fill="none" stroke="#D0342C" stroke-width="6.5" stroke-linecap="round">
+    <path d="M918,204 Q916,176 943,177 Q970,180 964,206 Q959,226 942,232 L941,248"/>
+    <circle cx="941" cy="266" r="4.5" fill="#D0342C" stroke="none"/>
+  </g>
+
+  <!-- character B, surprised receiver -->
+  <g filter="url(#hs)" transform="translate(1066,286)" fill="none" stroke="#141414" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="0" cy="0" r="20"/>
+    <path d="M-12,-8 q5,-5 10,-2 M2,-10 q5,-3 10,1"/>
+    <circle cx="-7" cy="-2" r="1.8" fill="#141414"/>
+    <circle cx="6" cy="-1" r="1.8" fill="#141414"/>
+    <ellipse cx="-1" cy="9" rx="4.5" ry="6"/>
+    <path d="M26,-16 q6,8 -1,12 q-6,3 -7,-4 q0,-5 8,-8" fill="#2456A6" stroke="none" opacity="0.8"/>
+    <path d="M0,20 Q4,60 0,95"/>
+    <path d="M0,38 Q-40,18 -72,14"/>
+    <circle cx="-77" cy="13" r="5"/>
+    <path d="M0,46 Q-32,54 -58,62"/>
+    <circle cx="-63" cy="63" r="5"/>
+    <path d="M0,95 Q-6,120 -10,139 M-10,139 h-10"/>
+    <path d="M0,95 Q14,118 22,137 M22,137 h10"/>
+  </g>
+
+  <!-- museum label B -->
+  <g filter="url(#hs)">
+    <rect x="742" y="468" width="342" height="104" fill="#FFFFFF" stroke="#141414" stroke-width="1.6"/>
+    <rect x="1024" y="460" width="54" height="16" fill="#F2C230" opacity="0.5" transform="rotate(5 1051 468)"/>
+    <text x="762" y="496" font-family="Georgia, 'Times New Roman', serif" font-size="13" letter-spacing="3" fill="#2456A6">EXHIBIT B</text>
+    <text x="762" y="519" font-family="Georgia, 'Times New Roman', serif" font-size="16" font-style="italic" fill="#141414">The Deal, As Delivered. One quarter later.</text>
+    <text x="762" y="540" font-family="Georgia, 'Times New Roman', serif" font-size="12.5" fill="#141414">Found object. No documentation.</text>
+    <text x="762" y="559" font-family="Georgia, 'Times New Roman', serif" font-size="12.5" fill="#2456A6">Acquired by: Customer Success</text>
+  </g>
+
+  <!-- ============ the red thread: one line through everything ============ -->
+  <g filter="url(#hs)" fill="none" stroke="#D0342C" stroke-width="3.4" stroke-linecap="round">
+    <path d="M-12,304 Q120,290 196,322 q10,6 4,12 q-7,6 -12,-2 q-4,-8 8,-10 Q300,296 336,346 Q380,398 470,392 Q560,386 620,420 Q660,446 662,530 q2,16 12,4 Q690,510 720,470 Q760,414 800,330 Q836,258 900,262 Q960,266 989,299 Q1050,300 1150,286 Q1220,278 1292,284"/>
+    <circle cx="196" cy="322" r="4" fill="#D0342C" stroke="none"/>
+    <circle cx="470" cy="392" r="4" fill="#D0342C" stroke="none"/>
+    <circle cx="668" cy="524" r="4" fill="#D0342C" stroke="none"/>
+    <circle cx="900" cy="262" r="4" fill="#D0342C" stroke="none"/>
+    <circle cx="989" cy="299" r="4" fill="#D0342C" stroke="none"/>
+  </g>
+
+  <!-- marker pen prop, flat-lay -->
+  <g filter="url(#hs)" transform="translate(128,622) rotate(-11)">
+    <rect x="0" y="0" width="132" height="24" rx="10" fill="#FBF7EE" stroke="#141414" stroke-width="3"/>
+    <rect x="132" y="1.5" width="34" height="21" rx="8" fill="#2456A6" stroke="#141414" stroke-width="3"/>
+    <path d="M166,12 l16,4" stroke="#141414" stroke-width="3" stroke-linecap="round"/>
+    <path d="M198,26 q22,-10 40,2" fill="none" stroke="#F2C230" stroke-width="9" stroke-linecap="round" opacity="0.8"/>
+  </g>
+
+  <!-- gallery wall text -->
+  <text x="1188" y="694" text-anchor="end" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="14.5" fill="#141414" opacity="0.72" filter="url(#hs)">Permanent collection: every company, apparently.</text>
+  <text x="96" y="694" font-family="Georgia, 'Times New Roman', serif" font-size="13.5" fill="#2456A6" filter="url(#hs)">StoryOS. Built for the seam.</text>
+</svg>

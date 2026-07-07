@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A real output · StoryOS</title>
+<meta name="description" content="A real StoryOS battlecard, produced on the built-in demo company with zero edits. Including the part no other tool shows you.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#070B14; --panel:#0D1524; --line:rgba(148,163,184,.14);
+  --ink:#F1F5F9; --sub:#94A3B8; --dim:#64748B;
+  --blue:#3B82F6; --cyan:#38BDF8; --amber:#B45309; --amberbg:#FFF7E0;
+  --paper:#FFFFFF; --pink:#101828; --psub:#475467; --pline:#E4E7EC; --psoft:#F4F7FB;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1140px;margin:0 auto;padding:0 32px}
+nav{position:sticky;top:0;z-index:10;background:rgba(7,11,20,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.word{font-family:'Fraunces',serif;font-weight:600;font-size:20px;text-decoration:none;color:var(--ink)}
+.word span{color:var(--cyan)}
+.navlinks{display:flex;align-items:center;gap:22px;font-size:14px}
+.navlinks a{color:var(--sub);text-decoration:none;font-weight:500}
+.navlinks a:hover{color:var(--ink)}
+.btn{display:inline-block;text-decoration:none;font-weight:600;border-radius:12px;transition:transform .15s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn.primary{background:linear-gradient(180deg,#3B82F6,#2563EB);color:#fff;box-shadow:0 8px 24px rgba(59,130,246,.35)}
+.btn.small{font-size:14px;padding:9px 18px}
+.btn.big{font-size:16.5px;padding:15px 30px}
+.hero{position:relative;padding:72px 0 36px;text-align:center;overflow:hidden}
+.hero::before{content:"";position:absolute;top:-260px;left:50%;transform:translateX(-50%);width:900px;height:560px;background:radial-gradient(closest-side,rgba(59,130,246,.2),transparent 70%);pointer-events:none}
+.kick{display:inline-block;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan);font-weight:600;margin-bottom:16px;border:1px solid rgba(56,189,248,.3);background:rgba(56,189,248,.08);padding:6px 12px;border-radius:999px}
+h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(30px,4vw,44px);line-height:1.1;letter-spacing:-.015em}
+.lede{color:var(--sub);font-size:16.5px;margin:14px auto 0;max-width:62ch}
+.lede b{color:var(--ink)}
+/* the document sheet */
+.sheetwrap{padding:36px 0 40px}
+.sheet{max-width:820px;margin:0 auto;background:var(--paper);color:var(--pink);border-radius:14px;box-shadow:0 50px 120px rgba(2,6,17,.7), 0 0 0 1px rgba(255,255,255,.06);overflow:hidden}
+.sheethead{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;padding:18px 42px;background:var(--psoft);border-bottom:1px solid var(--pline);font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--psub)}
+.sheetbody{padding:42px 46px 46px}
+.sheet h2{font-family:'Fraunces',serif;font-size:26px;font-weight:600;line-height:1.2}
+.ctx{font-size:13.5px;color:var(--psub);font-style:italic;border-left:3px solid var(--pline);padding-left:14px;margin:16px 0 26px}
+.sheet h3{font-family:'Fraunces',serif;font-size:19px;font-weight:600;margin:28px 0 8px}
+.sheet p,.sheet li{font-size:15px;color:var(--pink)}
+.sheet p{margin-bottom:11px}
+.sheet ul,.sheet ol{padding-left:22px;margin-bottom:11px}
+.sheet li{margin-bottom:7px}
+.verify{font-family:'JetBrains Mono',monospace;font-size:12.5px;background:var(--amberbg);color:var(--amber);padding:2px 6px;border-radius:6px}
+.talk{background:var(--psoft);border:1px solid var(--pline);border-radius:12px;padding:16px 20px;margin:8px 0 4px}
+.talk p{color:var(--pink)}
+.audit{border:1.5px solid var(--amber);background:#FFFDF5;border-radius:12px;padding:18px 22px;margin-top:32px}
+.audit h3{margin-top:0}
+.audit .small{font-size:13px;color:var(--psub)}
+.sheetfoot{padding:14px 42px;border-top:1px solid var(--pline);background:var(--psoft);font-size:12.5px;color:var(--psub);display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px}
+/* close */
+.after{max-width:820px;margin:0 auto;padding:26px 0 90px;text-align:center}
+.after p{color:var(--sub);font-size:15.5px;margin-bottom:20px;max-width:56ch;margin-left:auto;margin-right:auto}
+footer{border-top:1px solid var(--line);padding:26px 0;font-size:13.5px;color:var(--dim)}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@media (max-width:900px){.sheetbody{padding:30px 24px}.sheethead,.sheetfoot{padding:14px 24px}.navlinks .hide{display:none}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="word" href="index.html">Story<span>OS</span></a>
+    <div class="navlinks">
+      <a class="hide" href="inside.html">Inside the kit</a>
+      <a class="hide" href="example-battlecard.html">A real output</a>
+      <a class="hide" href="about.html">About</a>
+      <a class="btn primary small" href="index.html#buy">Own the kit · $79</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="kick">Example output · unedited</span>
+    <h1>Read what it actually writes.</h1>
+    <p class="lede">Anyone can claim "AI writes your battlecards." The question is whether you'd forward the result with your name on it. This one was produced on the demo company that ships in the kit, zero edits. <b>Read to the end: the Verification Audit is the part no other tool will show you.</b></p>
+  </div>
+</header>
+
+<div class="sheetwrap">
+<div class="sheet">
+  <div class="sheethead"><span>4-output / battlecard-ironclad.md</span><span>Play 02 · Forrest · audited by Sherlock</span></div>
+  <div class="sheetbody">
+    <h2>Battlecard: Harborline vs. Ironclad</h2>
+    <p class="ctx">Deal context, as the rep gave it: Series C fintech, ~800 employees, legal team of 2. Stage: evaluation. The GC added Ironclad to the shortlist after an analyst call. In the room: Head of Legal Ops (champion), GC, CFO joins the final review.</p>
+
+    <h3>Snapshot</h3>
+    <p>Ironclad is the strongest brand in CLM, built on deep, configurable workflows that reward a real legal-ops team. It is portal CLM; Harborline is embedded CLM, and this deal turns on which of those a two-person legal team can actually live with.</p>
+
+    <h3>Where they're strong (honest)</h3>
+    <ul>
+      <li><b>Brand.</b> Ironclad carries real weight with GCs and analysts. If the buyer wants the safe-looking choice, they start ahead.</li>
+      <li><b>Configurability.</b> Their workflow engine is genuinely deep. A buyer with a staffed legal-ops function can shape it to almost any process, and we lose those deals on merit.</li>
+      <li><span class="verify">[VERIFY] Broad integration catalog and a mature partner and services ecosystem. [/VERIFY]</span></li>
+    </ul>
+    <p>If this account had a legal-ops team of five, Ironclad would be a defensible pick. It has a team of two.</p>
+
+    <h3>Where we win (3 angles)</h3>
+    <p><b>1. Setup burden vs. a team of two &#8594; 9-day implementation.</b><br>
+    Their depth is bought with configuration, and configuration needs an owner. Approved counter, verbatim: "Ironclad is powerful, and you'll spend a quarter configuring it and an admin maintaining it. If you have that team, great. If you're a team of two, you'll live in setup, not in contracts." Our median implementation is 9 days across the last 14 deployments, against a CLM industry standard of 3 to 6 months. <span class="verify">[VERIFY] Ironclad rollouts at this company size typically run a quarter or more and need a named admin. [/VERIFY]</span></p>
+    <p><b>2. Portal adoption vs. where redlines actually happen &#8594; embedded CLM.</b><br>
+    Ironclad is a destination; contract work happens in Slack, email, and the CRM. For a lean team, a portal nobody opens is the old shared-inbox problem with a login screen. Our number: 78% of redlines completed without opening Harborline (last 20 customers, average). Safe wording: "Most redlines never require logging in."</p>
+    <p><b>3. The GC's AI fear &#8594; redlines that cite THEIR playbook.</b><br>
+    The GC is the skeptic here, and generic AI on legal docs should scare them. Harborline flags off-playbook clauses with their specific fallback; 63% first-pass acceptance by counsel across 8 customers. Safe wording: "It redlines like your best associate, not a search engine." <span class="verify">[VERIFY] Ironclad's AI review works from generic clause standards rather than the customer's own negotiated fallbacks. [/VERIFY]</span></p>
+
+    <h3>Objection handles</h3>
+    <ul>
+      <li><b>"Ironclad can do all this too, and more."</b> Don't argue the feature list; argue the owner. "Probably true. The question is who configures and maintains it. What does month one look like with a team of two?"</li>
+      <li><b>"AI on legal docs scares me."</b> (GC) "It never sends anything. It drafts redlines citing your playbook; counsel approves every one. Editor-in-chief, not autopilot."</li>
+      <li><b>"Implementation will eat my team."</b> "Median 9 days. Give us your top 5 contract types and your playbook; we do the rest."</li>
+    </ul>
+
+    <h3>Landmine questions (give these to the champion, neutrally phrased)</h3>
+    <ol>
+      <li>"For any vendor: how long from signature to your first live redline, and who on our side staffs the rollout in the meantime?"</li>
+      <li>"What share of our redlines will actually happen inside the platform, versus in the email threads our counterparties live in?"</li>
+      <li>"When the AI suggests a redline, whose playbook is it citing: ours, or a generic standard?"</li>
+      <li>"What does administration look like at month twelve: how many hours a week, and whose job is it?"</li>
+    </ol>
+
+    <h3>60-second talk track</h3>
+    <div class="talk">
+      <p>"Ironclad is a good product with a strong brand. I won't pretend otherwise. But here's the question that matters for a legal team of two: who runs it? Ironclad's depth comes from configuration, and configuration needs an owner. If you have a legal-ops team, that's a fair trade. If you don't, you'll live in setup instead of contracts.</p>
+      <p>Harborline takes the opposite bet. Median implementation across our last 14 deployments: 9 days. Give us your top five contract types and your playbook, and we do the rest. And your team won't move into another portal. Across our last 20 customers, 78% of redlines were completed without opening Harborline at all. The work stays in Slack and email, where your counterparties already are.</p>
+      <p>Finch, a Series C fintech, went from a 21-day contract cycle to 6 days within seven weeks, and pulled $1.2M of deals into Q4.</p>
+      <p>So before you commit a quarter to configuration: what would a two-week go-live be worth to this quarter's pipeline?"</p>
+    </div>
+
+    <div class="audit">
+      <h3>Verification Audit</h3>
+      <p class="small">This block closes every StoryOS asset. Nothing ships with an open claim the brain can't back.</p>
+      <p><b>Check these before this leaves your hands:</b></p>
+      <ol>
+        <li><span class="verify">[VERIFY]</span> Broad integration catalog and a mature partner and services ecosystem. (Where they're strong)</li>
+        <li><span class="verify">[VERIFY]</span> Ironclad rollouts at this company size typically run a quarter or more and need a named admin. (Angle 1)</li>
+        <li><span class="verify">[VERIFY]</span> Ironclad's AI review works from generic clause standards rather than the customer's own negotiated fallbacks. (Angle 3)</li>
+      </ol>
+      <p class="small">Everything else traces to the company brain: differentiator table, proof inventory, the Finch mini-case, approved objection responses, and the approved Ironclad counter.</p>
+    </div>
+  </div>
+  <div class="sheetfoot"><span>Harborline is the fictional demo company that ships in the kit.</span><span>StoryOS · Human, always.</span></div>
+</div>
+</div>
+
+<div class="after">
+  <p>This is minute four with the demo brain. With YOUR brain loaded, it writes like this about your competitors, in your voice, with your proof.</p>
+  <a class="btn primary big" href="index.html#buy">Own the kit · $79</a>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div>StoryOS · by Anat · Connecting the Dots</div>
+    <div>Human, always.</div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StoryOS · מערכת שלמה לצוות המכירות שמתקינים ומחזיקים</title>
+<meta name="description" content="לא קורס, לא צ'אטבוט. שבעה סוכנים מומחים שרצים אצלכם בקלוד, מדברים בקול של החברה שלכם, ונשארים על המחשב שלכם. מתקינים בערך בעשרים דקות. מחזיקים לתמיד.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;700&family=Assistant:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FBF8F2; --ink:#15243E; --ink-soft:#586074;
+  --amber:#C98A2E; --amber-deep:#A66E1C; --clay:#BC5640; --sage:#5C8A6F;
+  --panel:#F2EBDD; --panel-2:#101D33; --line:#E7DECF;
+  --serif:'Frank Ruhl Libre',Georgia,serif; --body:'Assistant',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:var(--paper);color:var(--ink);line-height:1.7;font-size:18px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:760px;margin:0 auto;padding:0 26px}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.18}
+a{color:inherit}
+.kick{font-family:var(--body);font-weight:600;font-size:12.5px;letter-spacing:.08em;color:var(--amber-deep)}
+.btn{display:inline-block;background:var(--ink);color:var(--paper);font-family:var(--body);font-weight:700;font-size:15.5px;padding:13px 28px;border-radius:40px;text-decoration:none;transition:transform .14s ease,background .14s ease}
+.btn:hover{transform:translateY(-2px);background:#0C1729}
+.btn.amber{background:var(--amber);color:#1A1306}
+.btn.amber:hover{background:var(--amber-deep);color:#fff}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:var(--paper)}
+.btn:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+
+nav{position:sticky;top:0;z-index:40;background:rgba(251,248,242,.86);backdrop-filter:blur(9px);border-bottom:1px solid var(--line)}
+nav .row{max-width:1000px;margin:0 auto;padding:13px 26px;display:flex;justify-content:space-between;align-items:center}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand img{height:26px}
+.brand b{font-family:var(--serif);font-weight:700;font-size:20px}
+.brand b i{font-style:normal;color:var(--amber-deep)}
+.nav-r{display:flex;align-items:center;gap:20px;font-size:15px}
+.nav-r a{text-decoration:none;color:var(--ink-soft)}
+.nav-r a:hover{color:var(--ink)}
+.nav-r .lang{font-size:13px;color:var(--ink-soft)}
+.nav-r .btn{padding:9px 18px;font-size:14px}
+
+.hero{padding:88px 0 70px;text-align:center;position:relative;overflow:hidden}
+.hero .glow{position:absolute;top:-30%;left:50%;transform:translateX(-50%);width:680px;height:680px;background:radial-gradient(circle,rgba(201,138,46,.13),transparent 62%);pointer-events:none}
+.hero h1{font-size:clamp(34px,5.4vw,56px);max-width:16ch;margin:18px auto 22px;position:relative;line-height:1.15}
+.hero h1 em{font-style:normal;color:var(--amber-deep)}
+.hero .lede{font-size:20px;color:var(--ink-soft);max-width:54ch;margin:0 auto 30px;position:relative}
+.hero .ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;position:relative}
+.hero .meta{margin-top:22px;font-family:var(--body);font-weight:500;font-size:13px;color:var(--ink-soft)}
+
+.story{max-width:780px;margin:0 auto;padding:0 26px 30px}
+.beat{position:relative;padding:46px 62px 46px 0;border-right:2px solid var(--line);margin-right:8px}
+.beat::before{content:'';position:absolute;right:-9px;top:52px;width:16px;height:16px;border-radius:50%;background:var(--paper);border:2px solid var(--amber);box-shadow:0 0 0 5px var(--paper)}
+.beat.solid::before{background:var(--amber)}
+.beat .bn{font-family:var(--body);font-weight:600;font-size:12.5px;letter-spacing:.06em;color:var(--amber-deep);margin-bottom:14px}
+.beat h2{font-size:clamp(26px,3.4vw,35px);margin-bottom:16px;max-width:24ch}
+.beat p{color:var(--ink-soft);font-size:18px;margin-bottom:14px;max-width:62ch}
+.beat p b,.beat p strong{color:var(--ink);font-weight:700}
+.beat .big{font-family:var(--serif);font-size:clamp(22px,2.7vw,27px);font-weight:500;color:var(--ink);line-height:1.4;max-width:28ch;margin-bottom:18px}
+.beat .narr{font-size:18px}
+.beat .narr b{color:var(--ink);font-weight:700}
+
+.frac{background:var(--panel-2);color:#E9E2D3;border-radius:16px;padding:26px 28px;margin:20px 0 6px}
+.frac .ln{display:flex;gap:14px;align-items:baseline;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.08);font-size:16px}
+.frac .ln:last-child{border-bottom:none}
+.frac .who{font-family:var(--body);font-weight:600;font-size:12.5px;color:#8A93A6;width:120px;flex-shrink:0}
+.frac .said{color:#E9E2D3}
+.frac .drop{margin-top:14px;font-family:var(--serif);font-size:19px;color:#E8A48C;line-height:1.5}
+.frac .drop b{color:#F0C9A0;font-weight:500}
+
+.agents{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:22px 0 14px}
+.ag{background:var(--panel);border-radius:14px;padding:18px 20px}
+.ag.full{grid-column:1/-1;background:var(--panel-2);color:#E9E2D3}
+.ag.full .r{color:var(--amber)}
+.ag.full h3{color:#fff}
+.ag.full p{color:#C7CEDA}
+.ag .r{font-family:var(--body);font-weight:600;font-size:11.5px;letter-spacing:.04em;color:var(--amber-deep);margin-bottom:7px}
+.ag h3{font-family:var(--serif);font-size:21px;font-weight:700;margin-bottom:5px}
+.ag h3 span{font-family:var(--body);font-size:13px;font-weight:500;color:var(--ink-soft)}
+.ag.full h3 span{color:#8A93A6}
+.ag p{font-size:14.5px;color:var(--ink-soft);margin:0;line-height:1.55}
+.plays{margin:16px 0 8px;border-top:1px solid var(--line)}
+.play{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:12px 2px;border-bottom:1px solid var(--line);font-size:15.5px;align-items:baseline}
+.play .when{color:var(--ink-soft)}
+.play .make{font-weight:700;color:var(--ink)}
+.inv{margin-top:18px;font-family:var(--body);font-weight:500;font-size:14.5px;color:var(--ink-soft);line-height:1.8}
+.inv b{color:var(--ink);font-weight:700}
+
+.why{margin:14px 0 8px}
+.why .w{padding:16px 0;border-bottom:1px solid var(--line)}
+.why .w:last-child{border-bottom:none}
+.why .wt{font-family:var(--serif);font-size:21px;font-weight:700;color:var(--ink);margin-bottom:5px}
+.why .w p{margin:0;color:var(--ink-soft);font-size:16px;max-width:62ch}
+
+.steps{margin:18px 0 8px}
+.step{position:relative;padding:15px 46px 15px 0;border-bottom:1px solid var(--line);font-size:16.5px;color:var(--ink-soft)}
+.step:last-child{border-bottom:none}
+.step::before{content:'';position:absolute;right:0;top:15px;width:9px;height:9px;border-radius:50%;background:var(--amber)}
+.step b{color:var(--ink);font-weight:700}
+
+.kitcard{background:var(--ink);color:var(--paper);border-radius:18px;padding:32px 30px;margin:18px 0 6px}
+.kitcard .price{font-family:var(--serif);font-size:48px;font-weight:700;line-height:1}
+.kitcard .sub{font-family:var(--body);font-weight:500;font-size:13px;color:#9AA3B5;margin:6px 0 18px}
+.kitcard ul{list-style:none;margin:0 0 22px}
+.kitcard li{padding:7px 22px 7px 0;position:relative;font-size:15.5px;color:#D7DCE5}
+.kitcard li::before{content:'';position:absolute;right:2px;top:15px;width:7px;height:7px;border-radius:50%;background:var(--amber)}
+.kitcard li.bonus::before{background:var(--sage)}
+.kitcard .reply{font-family:var(--body);font-weight:500;font-size:12.5px;color:#8A93A6;margin-top:14px}
+
+.beat.close{border-right-color:var(--amber)}
+.beat.close::before{background:var(--amber)}
+.close .big{font-family:var(--serif);font-size:clamp(25px,3.2vw,33px)}
+.ladder{margin:16px 0 20px;border-top:1px solid var(--line)}
+.ladder .lad{padding:13px 0;border-bottom:1px solid var(--line);font-size:16px;color:var(--ink-soft)}
+.ladder .lad b{color:var(--ink);font-weight:700}
+.close .threadrow{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 20px}
+.close .chip{font-family:var(--body);font-weight:600;font-size:13.5px;color:var(--ink-soft);background:var(--panel);border-radius:30px;padding:7px 16px}
+.close .chip.on{color:#1A1306;background:var(--amber)}
+
+footer{border-top:1px solid var(--line);margin-top:20px}
+footer .row{max-width:1000px;margin:0 auto;padding:26px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:13.5px;color:var(--ink-soft)}
+footer a{color:var(--ink-soft)}
+
+@media(max-width:680px){
+  .agents,.play,.ag.full{grid-template-columns:1fr}
+  .beat{padding-right:42px}
+  .nav-r a:not(.btn):not(.lang){display:none}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="row">
+    <a class="brand" href="#"><img src="logo_brand.png" alt="Connecting the Dots"><b>Story<i>OS</i></b></a>
+    <div class="nav-r">
+      <a href="#inside">מה יש בפנים</a>
+      <a href="#why">למה זה שונה</a>
+      <a href="index.html" class="lang">EN</a>
+      <a href="#kit" class="btn">קחו את הערכה</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="glow"></div>
+  <div class="wrap">
+    <span class="kick">StoryOS</span>
+    <h1>מערכת שלמה לצוות המכירות. מוכנה להתקנה. <em>שלכם לתמיד.</em></h1>
+    <p class="lede">לא קורס. לא צ'אטבוט. צוות של סוכנים מומחים שרץ אצלכם בקלוד, מדבר בקול של החברה שלכם, ונשאר על המחשב שלכם. מתקינים בערך בעשרים דקות. מחזיקים לתמיד.</p>
+    <div class="ctas">
+      <a class="btn amber" href="#kit">קחו את הערכה</a>
+      <a class="btn ghost" href="#inside">מה יש בפנים</a>
+    </div>
+    <div class="meta">רץ אצלכם בקלוד · בלי קוד · שלכם לתמיד</div>
+  </div>
+</header>
+
+<div class="story">
+
+  <section class="beat">
+    <div class="bn">הבעיה שבשבילה היא נבנתה</div>
+    <p class="big">כל עסקה נסגרת עם סיפור. ואז היא עוברת למישהו שלא היה בחדר.</p>
+    <p>לכל ניצחון יש שדרה: הכאב שאיתו הלקוח הגיע, הפער שהפך את השינוי לדחוף, והעתיד שהובטח לו. העסקה נסגרת, והשדרה הזאת מסופרת מחדש בידי מישהו שלא שמע את המקור. הנה מסירה אמיתית אחת:</p>
+    <div class="frac">
+      <div class="ln"><span class="who">המכירות אמרו</span><span class="said">"הם קונים שינוי בהתנהגות של כל הצוות."</span></div>
+      <div class="ln"><span class="who">ההצלחה שמעה</span><span class="said">"להתקין את המכשיר, להגיע למספרי שימוש."</span></div>
+      <div class="drop">הבטחת שינוי-ההתנהגות מעולם לא חצתה את הקיר. <b>רבעון אחר כך: החידוש בסיכון, והשגריר מרגיש שמכרו לו יותר מדי.</b></div>
+    </div>
+    <p>פקודות גנריות וכלים נקודתיים לא רואים את זה. הם חיים בצד אחד של הקיר. StoryOS בנויה לשמור על הסיפור שלם, מהשיחה הראשונה ועד החידוש.</p>
+    <figure style="margin:40px auto 4px;max-width:860px;transform:rotate(-1.2deg)">
+      <img style="width:100%;display:block;box-shadow:0 20px 64px rgba(0,0,0,.5)" src="assets/handover-doodle.svg" alt="המסירה, מצוירת כתערוכה במוזיאון: מוצג א, העסקה כפי שנמכרה. מוצג ב, העסקה כפי שנמסרה. חוט אדום אחד עובר דרך התפר."/>
+    </figure>
+  </section>
+
+  <section class="beat solid" id="inside">
+    <div class="bn">מה יש בפנים</div>
+    <h2>הכירו את הצוות שעושה את העבודה.</h2>
+    <p>שבעה מומחים חולקים מוח-חברה אחד, כך שכל מה שהם מייצרים נשמע כמוכם ויושב על אותה שדרה. אתם מתארים רגע מכירה אמיתי במילים פשוטות, והמומחה הנכון לוקח משם. הנה שבוע אחד:</p>
+    <p class="narr">יום שני, מתחרה נוחת בתוך עסקה חיה. אתם אומרים את זה במשפט. <b>פוֹרֶסט</b> בונה כרטיס מענה ותסריט שיחה של שישים שניות, בקול שלכם, על השדרה. לפני שזה מגיע לנציג, <b>שֶׁרְלוֹק</b> בודק מול שבעה כללי ברזל: בלי טענות בלי מקור, בלי "אנחנו יותר אינטואיטיביים" גנרי, עם המשבצת "איפה המתחרה חזק" מלאה ביושר. העסקה נסגרת, ומסירת מכירות-להצלחה מעבירה את ההבטחה המדויקת אל <b>סקוֹטי</b>, כך שהלקוח אף פעם לא חוזר על עצמו. שבוע אחרי, <b>מיאגי</b> קורא את תמלול השיחה ואומר לכם מה כמעט עלה לכם בעסקה. שום דבר לא מתאפס: מה שעבד נשמר בחזרה אל המוח, וברבעון הבא זה מתחיל חד יותר.</p>
+    <div class="agents">
+      <div class="ag full"><div class="r">היסוד</div><h3>מוח החברה</h3><p>הקול שלכם, הבידול האמיתי, ההוכחות וההתנגדויות. נטען פעם אחת. כל סוכן קורא אותו קודם, כך ששום דבר שהם מייצרים לא נשמע גנרי.</p></div>
+      <div class="ag"><div class="r">המנוע</div><h3>פוֹרֶסט <span>המספר</span></h3><p>עסקה נכנסת, ויוצאים כרטיס מענה, תסריט שיחה, דף אחד או נרטיב להנהלה. על השדרה, ובמילים שלכם.</p></div>
+      <div class="ag"><div class="r">אבחון</div><h3>מיאגי <span>המאמן</span></h3><p>קורא תמלול שיחה, משחק את הקונה הכי קשה שלכם, ואומר ביושר למה עסקה נתקעה.</p></div>
+      <div class="ag"><div class="r">קליטה</div><h3>דמבלדור <span>המדריך</span></h3><p>הופך עסקאות אמיתיות למסלולי קליטה והסמכות, כדי שנציג חדש מתחיל שוטף.</p></div>
+      <div class="ag"><div class="r">הספקן</div><h3>שֶׁרְלוֹק <span>המבקר</span></h3><p>בודק כל תוצר מול שבעה כללי ברזל לפני שהוא יוצא. תופס מספרים מומצאים וטענות גנריות.</p></div>
+      <div class="ag"><div class="r">החוצה</div><h3>דרייפר <span>השיווק</span></h3><p>הופך את אותו סיפור לקמפיינים ולהשקות, כדי שהשיווק והשטח סוף סוף יגידו דבר אחד.</p></div>
+      <div class="ag"><div class="r">אחרי הניצחון · הצלחת לקוחות</div><h3>סקוֹטי <span>המטמיע</span></h3><p>הופך עסקה שנסגרה לתוכניות הטמעה, נרטיבים לסקירה רבעונית, וקריאה כנה של סיכון בחידוש.</p></div>
+      <div class="ag"><div class="r">המלווה שלכם</div><h3>אלפרד <span>המלווה</span></h3><p>זה שאיתו אתם מדברים ישירות. "באיזה מהלך להשתמש?" "איך ממלאים את המוח?" תמיד מפנה אתכם למקום הנכון.</p></div>
+    </div>
+    <p style="margin-top:8px">ואלה המהלכים, המהלכים היומיומיים שהצוות מריץ:</p>
+    <div class="plays">
+      <div class="play"><span class="when">מתחרה צץ</span><span class="make">כרטיס מענה ותסריט של שישים שניות</span></div>
+      <div class="play"><span class="when">שיחה מחר</span><span class="make">הכנה לשיחה: כאב, ווים ושאלות</span></div>
+      <div class="play"><span class="when">השיחה קרתה</span><span class="make">המילים המדויקות של הקונה, והפערים</span></div>
+      <div class="play"><span class="when">עסקה נתקעה</span><span class="make">אבחון כן, ודרך לחזור פנימה</span></div>
+      <div class="play"><span class="when">מנהל שואל</span><span class="make">שדרת סיפור להנהלה ושלד מצגת</span></div>
+      <div class="play"><span class="when">העסקה נסגרת, ההצלחה נכנסת</span><span class="make">תקציר מסירה, השדרה חוצה שלמה</span></div>
+    </div>
+    <p class="inv"><b>שבעה מומחים · תשעה מהלכים · אחת-עשרה מיומנויות · מוח-חברה אחד.</b><br>בנוסף קצב יומי: תדריך יומי, סקירה שבועית, וביקורת. כל קובץ על המחשב שלכם.</p>
+  </section>
+
+  <section class="beat" id="why">
+    <div class="bn">למה זה שונה</div>
+    <h2>למה זאת לא עוד פקודה.</h2>
+    <p>תיקייה של פקודות חכמות שוכחת אתכם ברגע שסוגרים אותה. StoryOS בנויה כך שהאיכות מחזיקה, עסקה אחרי עסקה:</p>
+    <div class="why">
+      <div class="w"><div class="wt">היא שומרת על הקול שלכם</div><p>המוח שלכם נדחס לתקציר עבודה שכל סוכן קורא קודם, כך שהקול שלכם שורד אפילו תמלול של חמישה-עשר אלף מילים שמודבק מעליו.</p></div>
+      <div class="w"><div class="wt">היא מסרבת להמציא</div><p>כל טענה שאי אפשר להוכיח מסומנת לכם לאימות, ושום תוצר לא נסגר עם אחת פתוחה. אתם נשארים העורכים הראשיים; היא לעולם לא ממציאה שם לקוח, מספר או מחיר.</p></div>
+      <div class="w"><div class="wt">יש לה שומר סף</div><p>שֶׁרְלוֹק מבקר כל תוצר מול שבעה כללי ברזל לפני שהוא מגיע ללקוח. שפה גנרית, מספרים מומצאים, "איפה המתחרה חזק" שחסר, הכל נתפס לפני שאתם שולחים.</p></div>
+      <div class="w"><div class="wt">היא לומדת</div><p>מה שעובד בשטח מקודם אל תוך המוח עם הזמן, כך שהמערכת מתחדדת בכל עסקה במקום להתאפס לאפס.</p></div>
+      <div class="w"><div class="wt">היא מכירה את התפר</div><p>מסירת מכירות-להצלחה הופכת את הסיפור כך שהלקוח אף פעם לא חוזר על עצמו. שום כלי נקודתי לא רואה מעבר לקיר הזה.</p></div>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="bn">התקנה</div>
+    <h2>מתקינים לבד. בערך עשרים דקות.</h2>
+    <p>בלי מהנדס, בלי שיחת קליטה, בלי פלטפורמה להתחבר אליה. אם אתם יודעים להדביק, אתם יודעים להריץ.</p>
+    <div class="steps">
+      <div class="step"><b>מורידים את הערכה.</b> תיקייה אחת של קבצים, שלכם להחזיק.</div>
+      <div class="step"><b>פותחים אותה בקלוד.</b> האפליקציה החינמית למחשב. בלי קוד, בלי הגדרות.</div>
+      <div class="step"><b>ממלאים את מוח החברה</b>, או מתחילים ממוח ההדגמה שמגיע מוכן, כדי לראות את זה עובד בדקה הראשונה.</div>
+      <div class="step"><b>מתארים רגע מכירה אמיתי</b> במילים פשוטות. StoryOS מנתבת אותו למומחה הנכון ומחזירה לכם את התוצר.</div>
+    </div>
+    <p style="margin-top:6px">הקבצים יושבים על המחשב שלכם ועונים לכם. אין מה לחדש, אין מה שאפשר לכבות.</p>
+  </section>
+
+  <section class="beat solid" id="kit">
+    <div class="bn">שלכם</div>
+    <h2>מתקינים פעם אחת. מחזיקים את המנוע לתמיד.</h2>
+    <p>לא סדנה שמגיעים אליה ושוכחים. לא מושב שמשכירים. מערכת שמתקינים פעם אחת ושומרים, עובדת לכל עסקה, בקול שלכם.</p>
+    <div class="kitcard">
+      <div class="price">$79</div>
+      <div class="sub">מחיר מייסדים · עולה אחרי הגל הראשון</div>
+      <ul>
+        <li>שבעה סוכנים מומחים, תשעה מהלכים ואחת-עשרה מיומנויות</li>
+        <li>מוח החברה, בקול שלכם</li>
+        <li>תהליך המסירה ממכירות להצלחת לקוחות, התפר סגור</li>
+        <li class="bonus">בונוס: מוח הדגמה כדי שזה עובד בשנייה שמתקינים</li>
+        <li class="bonus">בונוס: מפת התפר, הריצו על כל עסקה לראות איפה הסיפור נשבר</li>
+        <li>רץ אצלכם בקלוד. בלי פלטפורמה, בלי מושב, בלי חידוש.</li>
+        <li>אתם מחזיקים את הקבצים. לא סדנה. לא מנוי.</li>
+      </ul>
+      <a class="btn amber" href="https://dotconnector2.gumroad.com/l/storyos/FOUNDING79">קחו את הערכה</a>
+      <div class="reply">תשלום ומסירה מיידיים. מחיר מייסדים 79 דולר; אחרי הגל הראשון 197 דולר.</div>
+    </div>
+  </section>
+
+  <section class="beat close">
+    <div class="bn">התמונה הגדולה</div>
+    <p class="big">StoryOS היא אחת הנקודות.</p>
+    <p>ככה הסיפור מחזיק כשעסקה חוצה מהמכירות להצלחת הלקוחות. שלוש דרכים להיכנס, מתי שתהיו מוכנים:</p>
+    <div class="ladder">
+      <div class="lad"><b>קחו אותה</b> — התקינו את הערכה בעצמכם, היום.</div>
+      <div class="lad"><b>נעשה יחד</b> — שעת עבודה אחת, ונתקין על העסקה האמיתית הראשונה שלכם.</div>
+      <div class="lad"><b>שתרוץ בקנה מידה</b> — רוצים שזה יעבוד על כל עסקה, אוטומטית? זה CX Mate.</div>
+    </div>
+    <p>אדם אחד מאחורי הכל, מחבר את השאר לקו אחד:</p>
+    <div class="threadrow">
+      <span class="chip on">StoryOS</span>
+      <span class="chip">CX Mate</span>
+      <span class="chip">אימון</span>
+      <span class="chip">ההרצאות</span>
+    </div>
+    <div class="ctas"><a class="btn" href="https://connecthedots.co">Connecting the Dots &#8592;</a></div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="row">
+    <div>StoryOS · מאת ענת · Connecting the Dots</div>
+    <div><a href="index.html">English</a> · Human, always.</div>
+  </div>
+</footer>
+
+</body>
+</html>

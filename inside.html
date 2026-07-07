@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inside the kit · StoryOS</title>
+<meta name="description" content="The showroom: seven specialist agents, ten plays, twelve skills, one company brain. Everything you own, piece by piece.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#070B14; --panel:#0D1524; --panel2:#101B30; --line:rgba(148,163,184,.14);
+  --ink:#F1F5F9; --sub:#94A3B8; --dim:#64748B;
+  --blue:#3B82F6; --cyan:#38BDF8; --amber:#FBBF24;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1140px;margin:0 auto;padding:0 32px}
+nav{position:sticky;top:0;z-index:10;background:rgba(7,11,20,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.word{font-family:'Fraunces',serif;font-weight:600;font-size:20px;text-decoration:none;color:var(--ink)}
+.word span{color:var(--cyan)}
+.navlinks{display:flex;align-items:center;gap:22px;font-size:14px}
+.navlinks a{color:var(--sub);text-decoration:none;font-weight:500}
+.navlinks a:hover{color:var(--ink)}
+.btn{display:inline-block;text-decoration:none;font-weight:600;border-radius:12px;transition:transform .15s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn.primary{background:linear-gradient(180deg,#3B82F6,#2563EB);color:#fff;box-shadow:0 8px 24px rgba(59,130,246,.35)}
+.btn.small{font-size:14px;padding:9px 18px}
+.btn.big{font-size:16.5px;padding:15px 30px}
+.hero{position:relative;padding:80px 0 30px;overflow:hidden;text-align:center}
+.hero::before{content:"";position:absolute;top:-260px;left:50%;transform:translateX(-50%);width:900px;height:600px;background:radial-gradient(closest-side,rgba(59,130,246,.22),transparent 70%);pointer-events:none}
+.kick{display:inline-block;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan);font-weight:600;margin-bottom:18px;border:1px solid rgba(56,189,248,.3);background:rgba(56,189,248,.08);padding:6px 12px;border-radius:999px}
+h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(34px,4.4vw,52px);line-height:1.08;letter-spacing:-.015em}
+.lede{color:var(--sub);font-size:18px;margin:18px auto 0;max-width:60ch}
+section{padding:56px 0}
+h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(26px,3vw,34px);letter-spacing:-.01em;text-align:center}
+.sub{color:var(--sub);font-size:16px;margin-top:10px;text-align:center;max-width:64ch;margin-left:auto;margin-right:auto}
+.brain{max-width:760px;margin:40px auto 0;background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid rgba(56,189,248,.3);border-radius:20px;padding:34px 38px;box-shadow:0 30px 70px rgba(2,6,17,.5)}
+.brain .t{font-family:'Fraunces',serif;font-size:24px;font-weight:600}
+.brain .t span{color:var(--cyan)}
+.brain p{color:var(--sub);font-size:15.5px;margin-top:10px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:24px;transition:border-color .2s ease, transform .2s ease}
+.card:hover{border-color:rgba(56,189,248,.35);transform:translateY(-2px)}
+.card .r{font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--cyan);margin-bottom:10px}
+.card h3{font-family:'Fraunces',serif;font-size:21px;font-weight:600}
+.card h3 span{font-family:'Inter',sans-serif;font-size:13px;color:var(--dim);font-weight:500;margin-left:8px}
+.card p{font-size:14.5px;color:var(--sub);margin-top:8px}
+.plays{max-width:860px;margin:40px auto 0;border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.play{display:flex;gap:20px;padding:16px 26px;border-bottom:1px solid var(--line);background:var(--panel);font-size:15px}
+.play:last-child{border-bottom:none}
+.play .when{flex:0 0 46%;color:var(--ink);font-weight:600}
+.play .make{color:var(--sub)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:36px;max-width:860px;margin-left:auto;margin-right:auto}
+.chip{border:1px solid var(--line);background:var(--panel);border-radius:999px;padding:9px 16px;font-size:13.5px;color:var(--sub)}
+.chip b{color:var(--ink);font-weight:600}
+.gov{max-width:760px;margin:44px auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.gov .g{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 20px;font-size:13.5px;color:var(--sub);text-align:center}
+.gov .g b{display:block;color:var(--ink);font-size:14.5px;margin-bottom:4px}
+.cta{text-align:center;padding:70px 0 90px}
+.cta .after{margin-top:14px;font-size:13.5px;color:var(--dim)}
+footer{border-top:1px solid var(--line);padding:26px 0;font-size:13.5px;color:var(--dim)}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@media (max-width:900px){.grid{grid-template-columns:1fr}.gov{grid-template-columns:1fr}.play{flex-direction:column;gap:4px}.play .when{flex:auto}.navlinks .hide{display:none}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="word" href="index.html">Story<span>OS</span></a>
+    <div class="navlinks">
+      <a class="hide" href="inside.html">Inside the kit</a>
+      <a class="hide" href="example-battlecard.html">A real output</a>
+      <a class="hide" href="about.html">About</a>
+      <a class="btn primary small" href="index.html#buy">Own the kit · $79</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="kick">The showroom</span>
+    <h1>Everything inside the kit.</h1>
+    <p class="lede">Seven specialists, ten plays, twelve skills, one company brain. You never manage them one by one: describe a real sales moment in plain words, and the right specialist takes it from there.</p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="brain">
+      <div class="t">The Company <span>Brain</span></div>
+      <p>The foundation everything reads first. Your voice, your real differentiators, your proof, your approved objection answers. Loaded once, sharpened with every deal you run. This is why nothing the team makes sounds generic: it all starts from your truth, not from the internet's average.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>The team.</h2>
+    <div class="grid">
+      <div class="card"><div class="r">Core engine</div><h3>Forrest <span>storyteller</span></h3><p>A deal goes in; a battlecard, talk track, one-pager, or exec narrative comes out. On the spine, in your words.</p></div>
+      <div class="card"><div class="r">Diagnosis</div><h3>Miyagi <span>coach</span></h3><p>Reads a call transcript, roleplays your hardest buyer, and tells you honestly why a deal stalled.</p></div>
+      <div class="card"><div class="r">Ramp</div><h3>Dumbledore <span>trainer</span></h3><p>Turns your real deals into onboarding paths and certifications, so new reps start fluent.</p></div>
+      <div class="card"><div class="r">The skeptic</div><h3>Sherlock <span>auditor</span></h3><p>Checks every asset against seven non-negotiables before it ships. Catches invented numbers and generic claims.</p></div>
+      <div class="card"><div class="r">Outward</div><h3>Draper <span>marketer</span></h3><p>Turns the same story into campaigns and launches, so marketing and the field finally say one thing.</p></div>
+      <div class="card"><div class="r">After the win</div><h3>Scotty <span>implementer</span></h3><p>Turns a won deal into onboarding plans, QBR narratives, and honest renewal-risk reads.</p></div>
+      <div class="card"><div class="r">Your guide</div><h3>Alfred <span>guide</span></h3><p>The one you talk to directly. "Which play do I use?" "How do I fill the brain?" Always points you to the right place.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>The ten plays.</h2>
+    <p class="sub">A play is a moment, not a menu. Something happens in a deal; you say so; an asset comes back.</p>
+    <div class="plays">
+      <div class="play"><span class="when">Need an answer, now</span><span class="make">Quick fire: one sharp, sourced answer</span></div>
+      <div class="play"><span class="when">A competitor shows up</span><span class="make">Battlecard + 60-second talk track</span></div>
+      <div class="play"><span class="when">A call tomorrow</span><span class="make">Discovery prep: the pain, the hooks, the questions</span></div>
+      <div class="play"><span class="when">The call happened</span><span class="make">The buyer's exact words, and the gaps</span></div>
+      <div class="play"><span class="when">A deal stalled</span><span class="make">An honest diagnosis, and a way back in</span></div>
+      <div class="play"><span class="when">An exec asks</span><span class="make">Board-ready story spine + slide outline</span></div>
+      <div class="play"><span class="when">A launch is coming</span><span class="make">Enablement program + the campaign around it</span></div>
+      <div class="play"><span class="when">Deal closes, CS takes over</span><span class="make">Handoff brief: the promise crosses the wall intact</span></div>
+      <div class="play"><span class="when">Patterns in the field</span><span class="make">Field insights, routed to product and PMM with owners</span></div>
+      <div class="play"><span class="when">The customer is live</span><span class="make">QBR narratives, renewal reads, adoption plans. The story holds after the sale</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>The twelve skills.</h2>
+    <p class="sub">The craft the team draws on. You never call these directly; the right ones load behind every play.</p>
+    <div class="chips">
+      <span class="chip" style="border-color:rgba(56,189,248,.45);background:rgba(56,189,248,.07)"><b>dont-sound-like-ai</b> · nine checks against machine-sounding copy</span>
+      <span class="chip"><b>story-spine</b> · the deal's backbone: pain, gap, future state</span>
+      <span class="chip"><b>brain-enforcer</b> · the quality gate nothing ships past</span>
+      <span class="chip"><b>competitive-reasoning</b> · win angles, not feature lists</span>
+      <span class="chip"><b>objection-mapper</b> · they say, it means, you say</span>
+      <span class="chip"><b>asset-formats</b> · hard schemas with hard limits</span>
+      <span class="chip"><b>transcript-analyzer</b> · the buyer's own words, surfaced</span>
+      <span class="chip"><b>roleplay-simulator</b> · your hardest buyer, on demand</span>
+      <span class="chip"><b>audience-lens</b> · same truth, retold per stakeholder</span>
+      <span class="chip"><b>methodology-mapper</b> · fits your sales method, not ours</span>
+      <span class="chip"><b>campaign-builder</b> · the story, taken wide</span>
+      <span class="chip"><b>renewal-risk</b> · honest post-sale risk reads</span>
+    </div>
+    <div style="max-width:660px;margin:28px auto 0;background:rgba(56,189,248,.07);border:1px solid rgba(56,189,248,.4);border-radius:14px;padding:18px 24px;text-align:center;font-size:14.5px;color:var(--sub)"><b style="color:var(--ink)">The twelfth skill is agent-built.</b> dont-sound-like-ai was written, and is maintained, by Cleo, an autonomous agent on Anat's own team. It comes from her own product, Don't Sound Like Me. The kit practices what it sells.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>And it comes governed.</h2>
+    <p class="sub">Built to pass your IT and legal review, not to dodge it. Drafting is free; sending is not.</p>
+    <div class="gov">
+      <div class="g"><b>Tier 1 · free</b>Read, draft, save to output. Silent.</div>
+      <div class="g"><b>Tier 2 · asks first</b>Edit the brain, touch anything external. Every time.</div>
+      <div class="g"><b>Tier 3 · hard stop</b>Customers, pricing, commitments. Explicit instruction only.</div>
+    </div>
+  </div>
+</section>
+
+<div class="cta">
+  <a class="btn primary big" href="index.html#buy">Own all of it · $79</a>
+  <div class="after">One time. Yours forever. $197 after the founding wave.</div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div>StoryOS · by Anat · Connecting the Dots</div>
+    <div>Human, always.</div>
+  </div>
+</footer>
+
+</body>
+</html>
