@@ -198,6 +198,69 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
 
 <section id="buy" class="buywrap">
   <div class="wrap">
+    <figure style="margin:0 auto 26px;max-width:560px;position:relative" aria-label="The handover: the deal as sold, a wrapped gift, and the deal as delivered, an open box. A dashed thread crosses the seam between them.">
+      <svg viewBox="0 0 880 330" style="width:100%;display:block" role="img">
+        <defs>
+          <radialGradient id="seamglow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.14"/>
+            <stop offset="100%" stop-color="#38BDF8" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <ellipse cx="440" cy="180" rx="150" ry="120" fill="url(#seamglow)"/>
+        <!-- figure A: presents the wrapped deal -->
+        <g fill="none" stroke="#CBD5E1" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" opacity="0.9">
+          <circle cx="120" cy="86" r="17"/>
+          <circle cx="114" cy="83" r="1.6" fill="#CBD5E1"/>
+          <circle cx="126" cy="83" r="1.6" fill="#CBD5E1"/>
+          <path d="M113,92 Q120,98 127,91"/>
+          <path d="M120,103 Q117,140 120,172"/>
+          <path d="M120,120 Q150,124 180,132"/>
+          <path d="M120,126 Q98,140 102,158"/>
+          <path d="M120,172 Q112,196 106,214 M106,214 h-9"/>
+          <path d="M120,172 Q129,196 134,214 M134,214 h9"/>
+        </g>
+        <!-- box A: the deal as sold -->
+        <g transform="translate(196,118) rotate(-2)">
+          <rect x="0" y="0" width="92" height="72" rx="4" fill="rgba(251,191,36,.10)" stroke="#FBBF24" stroke-width="2.4"/>
+          <path d="M46,0 Q44,36 46,72 M0,37 Q46,34 92,37" stroke="#FBBF24" stroke-width="4" fill="none" opacity="0.75"/>
+          <path d="M46,-2 q-18,-20 -2,-20 q11,0 3,18 M46,-2 q20,-20 3,-20 q-11,0 -4,18" fill="none" stroke="#FBBF24" stroke-width="3"/>
+        </g>
+        <!-- the seam -->
+        <g fill="none" stroke="#38BDF8" stroke-width="2.2" stroke-linecap="round" opacity="0.85">
+          <path d="M432,74 q-7,32 3,62 q9,30 -4,60 q-9,30 4,62"/>
+          <path d="M452,78 q8,34 -2,64 q-8,28 4,58 q10,32 -2,60"/>
+        </g>
+        <!-- figure B: receives the surprise -->
+        <g fill="none" stroke="#CBD5E1" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" opacity="0.9">
+          <circle cx="762" cy="92" r="17"/>
+          <circle cx="756" cy="90" r="1.6" fill="#CBD5E1"/>
+          <circle cx="767" cy="90" r="1.6" fill="#CBD5E1"/>
+          <ellipse cx="762" cy="99" rx="3.6" ry="4.8"/>
+          <path d="M762,109 Q766,144 762,176"/>
+          <path d="M762,124 Q728,108 700,104"/>
+          <path d="M762,130 Q736,142 714,148"/>
+          <path d="M762,176 Q756,200 752,218 M752,218 h-9"/>
+          <path d="M762,176 Q773,198 779,216 M779,216 h9"/>
+        </g>
+        <!-- box B: the deal as delivered (open, spring) -->
+        <g transform="translate(596,132) rotate(1.5)">
+          <rect x="0" y="6" width="92" height="60" rx="4" fill="rgba(148,163,184,.06)" stroke="#94A3B8" stroke-width="2.4"/>
+          <path d="M0,6 L-24,-12 L22,-16 L46,6 Z" fill="#0D1524" stroke="#94A3B8" stroke-width="2.2"/>
+          <path d="M92,6 L116,-9 L72,-18 L46,6 Z" fill="#0D1524" stroke="#94A3B8" stroke-width="2.2"/>
+          <path d="M44,4 q13,-10 0,-16 q-13,-6 0,-12 q13,-6 0,-13" fill="none" stroke="#94A3B8" stroke-width="2.4" stroke-linecap="round"/>
+        </g>
+        <path d="M712,64 Q710,44 730,45 Q750,47 745,66 Q741,80 728,84 L727,95" fill="none" stroke="#FBBF24" stroke-width="4.5" stroke-linecap="round"/>
+        <circle cx="727" cy="108" r="3.2" fill="#FBBF24"/>
+        <!-- the thread -->
+        <path d="M292,150 Q360,146 404,176 Q436,200 440,252 q1,10 8,2 Q470,220 500,190 Q544,148 596,152" fill="none" stroke="#FBBF24" stroke-width="2.6" stroke-dasharray="7 7" stroke-linecap="round" opacity="0.9"/>
+        <circle cx="292" cy="150" r="3.4" fill="#FBBF24"/>
+        <circle cx="596" cy="152" r="3.4" fill="#FBBF24"/>
+        <!-- labels -->
+        <text x="240" y="262" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="15" letter-spacing="3" fill="#38BDF8">AS SOLD</text>
+        <text x="660" y="262" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="15" letter-spacing="3" fill="#38BDF8">AS DELIVERED</text>
+        <text x="441" y="300" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="12.5" letter-spacing="2" fill="#64748B">the seam</text>
+      </svg>
+    </figure>
     <div class="buy">
       <div class="tag">Founding wave</div>
       <div class="price">$79</div>
