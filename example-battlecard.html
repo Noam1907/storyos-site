@@ -50,6 +50,8 @@ h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(30px,4vw,44px);l
 .sheet ul,.sheet ol{padding-left:22px;margin-bottom:11px}
 .sheet li{margin-bottom:7px}
 .verify{font-family:'JetBrains Mono',monospace;font-size:12.5px;background:var(--amberbg);color:var(--amber);padding:2px 6px;border-radius:6px}
+.src{font-family:'JetBrains Mono',monospace;font-size:12px;background:rgba(56,189,248,.10);color:#38BDF8;padding:2px 6px;border-radius:6px;word-break:break-word}
+.closes{display:block;margin-top:6px;font-size:14px;color:var(--ink)}
 .talk{background:var(--psoft);border:1px solid var(--pline);border-radius:12px;padding:16px 20px;margin:8px 0 4px}
 .talk p{color:var(--pink)}
 .audit{border:1.5px solid var(--amber);background:#FFFDF5;border-radius:12px;padding:18px 22px;margin-top:32px}
@@ -87,7 +89,7 @@ posthog.init('phc_E7RT8uONsICJRF5lKqYhsyys29rP0BKObdRHyYSCdQx',{api_host:'https:
   <div class="wrap">
     <span class="kick">Example output · unedited</span>
     <h1>Read what it actually writes.</h1>
-    <p class="lede">Anyone can claim "AI writes your battlecards." The question is whether you'd forward the result with your name on it. This one was produced on the demo company that ships in the kit, zero edits. <b>Read to the end: the Verification Audit is the part no other tool will show you.</b></p>
+    <p class="lede">Anyone can claim "AI writes your battlecards." The question is whether you'd forward the result with your name on it. This one was produced on the demo company that ships in the kit, zero edits. <b>Read to the end: the Verification Audit is the part no other tool will show you.</b> It is sorted by who has to act, and on this card nothing is waiting on the rep.</p>
   </div>
 </header>
 
@@ -105,17 +107,17 @@ posthog.init('phc_E7RT8uONsICJRF5lKqYhsyys29rP0BKObdRHyYSCdQx',{api_host:'https:
     <ul>
       <li><b>Brand.</b> Ironclad carries real weight with GCs and analysts. If the buyer wants the safe-looking choice, they start ahead.</li>
       <li><b>Configurability.</b> Their workflow engine is genuinely deep. A buyer with a staffed legal-ops function can shape it to almost any process, and we lose those deals on merit.</li>
-      <li><span class="verify">[VERIFY] Broad integration catalog and a mature partner and services ecosystem. [/VERIFY]</span></li>
+      <li><b>Integrations and ecosystem.</b> Their integrations directory lists connectors across CRM, storage and e-signature, plus a named partner programme. <span class="src">[SOURCE: ironcladapp.com/integrations · read 2026-08-09]</span></li>
     </ul>
     <p>If this account had a legal-ops team of five, Ironclad would be a defensible pick. It has a team of two.</p>
 
     <h3>Where we win (3 angles)</h3>
     <p><b>1. Setup burden vs. a team of two &#8594; 9-day implementation.</b><br>
-    Their depth is bought with configuration, and configuration needs an owner. Approved counter, verbatim: "Ironclad is powerful, and you'll spend a quarter configuring it and an admin maintaining it. If you have that team, great. If you're a team of two, you'll live in setup, not in contracts." Our median implementation is 9 days across the last 14 deployments, against a CLM industry standard of 3 to 6 months. <span class="verify">[VERIFY] Ironclad rollouts at this company size typically run a quarter or more and need a named admin. [/VERIFY]</span></p>
+    Their depth is bought with configuration, and configuration needs an owner. Approved counter, verbatim: "Ironclad is powerful, and you'll spend a quarter configuring it and an admin maintaining it. If you have that team, great. If you're a team of two, you'll live in setup, not in contracts." Our median implementation is 9 days across the last 14 deployments, against a CLM industry standard of 3 to 6 months. Their own implementation page describes a guided onboarding programme with a named customer-success contact. <span class="src">[SOURCE: ironcladapp.com/implementation · read 2026-08-09]</span> <span class="verify">[VERIFY:unconfirmed] How long a rollout actually takes at 200-2,000 employees. Their site gives no timeline. [/VERIFY]</span><span class="closes"><b>&#8594; so do not assert it.</b> Say instead: "ask them what month one looks like, and how many people on your side run it."</span></p>
     <p><b>2. Portal adoption vs. where redlines actually happen &#8594; embedded CLM.</b><br>
     Ironclad is a destination; contract work happens in Slack, email, and the CRM. For a lean team, a portal nobody opens is the old shared-inbox problem with a login screen. Our number: 78% of redlines completed without opening Harborline (last 20 customers, average). Safe wording: "Most redlines never require logging in."</p>
     <p><b>3. The GC's AI fear &#8594; redlines that cite THEIR playbook.</b><br>
-    The GC is the skeptic here, and generic AI on legal docs should scare them. Harborline flags off-playbook clauses with their specific fallback; 63% first-pass acceptance by counsel across 8 customers. Safe wording: "It redlines like your best associate, not a search engine." <span class="verify">[VERIFY] Ironclad's AI review works from generic clause standards rather than the customer's own negotiated fallbacks. [/VERIFY]</span></p>
+    The GC is the skeptic here, and generic AI on legal docs should scare them. Harborline flags off-playbook clauses with their specific fallback; 63% first-pass acceptance by counsel across 8 customers. Safe wording: "It redlines like your best associate, not a search engine." <span class="verify">[VERIFY:unconfirmed] Whether their AI reviews against generic clause standards or the customer's own fallbacks. Their product page does not say. [/VERIFY]</span><span class="closes"><b>&#8594; do not claim it.</b> Give the GC the landmine question: "when your AI flags a clause, is it comparing against our playbook or a general standard?"</span></p>
 
     <h3>Objection handles</h3>
     <ul>
@@ -142,14 +144,22 @@ posthog.init('phc_E7RT8uONsICJRF5lKqYhsyys29rP0BKObdRHyYSCdQx',{api_host:'https:
 
     <div class="audit">
       <h3>Verification Audit</h3>
-      <p class="small">This block closes every StoryOS asset. Nothing ships with an open claim the brain can't back.</p>
-      <p><b>Check these before this leaves your hands:</b></p>
+      <p class="small">This block closes every StoryOS asset, sorted by who has to act. Shortest list first, on purpose.</p>
+      <p><b>1. Yours to answer</b></p>
+      <p style="margin:0 0 14px"><b>Nothing here is waiting on you.</b> Every claim about our side came from the company brain.</p>
+      <p><b>2. Ours, and unmeasured</b></p>
+      <p style="margin:0 0 14px">None. The three numbers used each carry a source and a date in the brain.</p>
+      <p><b>3. Sourced, spot-check</b> <span class="small">(the system's work, not yours)</span></p>
       <ol>
-        <li><span class="verify">[VERIFY]</span> Broad integration catalog and a mature partner and services ecosystem. (Where they're strong)</li>
-        <li><span class="verify">[VERIFY]</span> Ironclad rollouts at this company size typically run a quarter or more and need a named admin. (Angle 1)</li>
-        <li><span class="verify">[VERIFY]</span> Ironclad's AI review works from generic clause standards rather than the customer's own negotiated fallbacks. (Angle 3)</li>
+        <li><span class="src">[SOURCE]</span> Integrations directory and partner programme &#183; read 2026-08-09 (Where they're strong)</li>
+        <li><span class="src">[SOURCE]</span> Guided onboarding with a named CS contact &#183; read 2026-08-09 (Angle 1)</li>
+        <li><span class="verify">[VERIFY:unconfirmed]</span> Actual rollout duration at this size. Checked their site, implementation page and docs; no timeline published. <b>The question is supplied instead of the number.</b> (Angle 1)</li>
+        <li><span class="verify">[VERIFY:unconfirmed]</span> What their AI compares a clause against. Not stated on their product or AI pages. <b>Landmine question supplied instead.</b> (Angle 3)</li>
       </ol>
+      <p><b>4. Wording needs approval</b></p>
+      <p style="margin:0 0 14px">None. All wording is the brain's approved phrasing.</p>
       <p class="small">Everything else traces to the company brain: differentiator table, proof inventory, the Finch mini-case, approved objection responses, and the approved Ironclad counter.</p>
+      <p class="small"><b>Note the shape.</b> Two competitor facts were researched and cited. Two could not be confirmed, so they became questions to ask rather than claims to make. Nothing landed in list 1 &#8212; the rep can send this without doing anything first.</p>
     </div>
   </div>
   <div class="sheetfoot"><span>Harborline is the fictional demo company that ships in the kit.</span><span>StoryOS · Human, always.</span></div>
