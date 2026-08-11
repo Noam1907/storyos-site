@@ -289,7 +289,7 @@ posthog.init('phc_E7RT8uONsICJRF5lKqYhsyys29rP0BKObdRHyYSCdQx',{api_host:'https:
         <li>The complete kit: agents, plays, skills, brain</li>
         <li>Ready prompts + real example outputs</li>
         <li>Install yourself in about 20 minutes</li>
-        <li>Needs: your own Claude plan (Pro or up), and the <b>Claude desktop app</b> &#8212; the kit opens as a folder there, not in the browser. The kit itself never renews.</li>
+        <li>Needs your own Claude plan (Pro or up) and the <b>Claude desktop app</b>. The kit opens as a folder there, not in the browser. One payment, and nothing renews on our side.</li>
         <li>Ask Alfred anything; a human answers email</li>
       </ul>
       <a class="btn primary big" href="buy.html">Own the kit</a>
@@ -314,11 +314,11 @@ posthog.init('phc_E7RT8uONsICJRF5lKqYhsyys29rP0BKObdRHyYSCdQx',{api_host:'https:
 
 <script src="https://gumroad.com/js/gumroad.js" defer></script>
 <script>
-// checkout intent — the one question this page exists to answer
+// checkout intent: the one question this page exists to answer
 document.addEventListener('click', function(e){
   var a = e.target.closest && e.target.closest('a[href*="gumroad.com"]');
   if (!a || !window.posthog) return;
-  // label which button converts — all three point at the same URL, so href alone tells us nothing
+  // label which button converts: all three point at the same URL, so href alone tells us nothing
   var btns = Array.prototype.slice.call(document.querySelectorAll('a[href*="gumroad.com"]'));
   posthog.capture('checkout_click', {
     product: 'storyos',
