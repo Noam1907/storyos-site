@@ -247,7 +247,7 @@ footer .wrap{max-width:1140px}
           <option>Zambia</option>
           <option>Zimbabwe</option>
         </select>
-        <div class="hint" id="hint">This is what decides the currency and the invoice.</div>
+        <div class="hint" id="hint"></div>
       </div>
 
       <button type="submit" id="go">Continue to checkout</button>
@@ -270,16 +270,13 @@ footer .wrap{max-width:1140px}
       hint = document.getElementById("hint"),
       err = document.getElementById("err");
 
-  /* Say only what applies to the country actually picked. Explaining both cases at once
-     makes a buyer read a rule that is not theirs. */
+  /* Israel is the only case where the buyer needs a heads-up, because the kit is priced in
+     dollars on the site and their checkout is in shekels. Nobody else needs to be told
+     anything about Israeli tax. */
   country.addEventListener("change", function () {
-    if (!country.value) {
-      hint.textContent = "This is what decides the currency and the invoice.";
-    } else if (country.value === "Israel") {
-      hint.textContent = "Billed in shekels. You get a tax invoice with the VAT broken out to reclaim.";
-    } else {
-      hint.textContent = "Billed in dollars. No Israeli VAT.";
-    }
+    hint.textContent = (country.value === "Israel")
+      ? "Billed in shekels, with a tax invoice."
+      : "";
   });
 
   /* Nothing is preselected on purpose. The country decides which tax applies, so it is the
