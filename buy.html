@@ -247,8 +247,7 @@ footer .wrap{max-width:1140px}
           <option>Zambia</option>
           <option>Zimbabwe</option>
         </select>
-        <div class="hint">Israel is billed in shekels with a tax invoice you can reclaim.
-          Everywhere else is billed in dollars, with no Israeli VAT.</div>
+        <div class="hint" id="hint">This is what decides the currency and the invoice.</div>
       </div>
 
       <button type="submit" id="go">Continue to checkout</button>
@@ -268,7 +267,20 @@ footer .wrap{max-width:1140px}
 
   var f = document.getElementById("f"),
       country = document.getElementById("country"),
+      hint = document.getElementById("hint"),
       err = document.getElementById("err");
+
+  /* Say only what applies to the country actually picked. Explaining both cases at once
+     makes a buyer read a rule that is not theirs. */
+  country.addEventListener("change", function () {
+    if (!country.value) {
+      hint.textContent = "This is what decides the currency and the invoice.";
+    } else if (country.value === "Israel") {
+      hint.textContent = "Billed in shekels. You get a tax invoice with the VAT broken out to reclaim.";
+    } else {
+      hint.textContent = "Billed in dollars. No Israeli VAT.";
+    }
+  });
 
   /* Nothing is preselected on purpose. The country decides which tax applies, so it is the
      buyer's statement to make, not ours to guess. Both checkouts collect the email themselves,
