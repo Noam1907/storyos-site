@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StoryOS · your kit</title>
+<meta name="description" content="Your download, your setup, and what happens next.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="canonical" href="https://storyos.connecthedots.co/thanks.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#070B14; --panel:#0D1524; --panel2:#101B30; --line:rgba(148,163,184,.14);
+  --ink:#F1F5F9; --sub:#94A3B8; --dim:#64748B;
+  --blue:#3B82F6; --cyan:#38BDF8;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;
+     -webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:760px;margin:0 auto;padding:0 24px;width:100%}
+
+nav{border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;height:64px}
+.word{font-family:'Fraunces',serif;font-weight:600;font-size:20px;letter-spacing:.01em}
+.word span{color:var(--cyan)}
+
+main{flex:1;padding:56px 0 72px;position:relative;overflow:hidden}
+main::before{content:"";position:absolute;top:-260px;left:50%;transform:translateX(-50%);
+  width:900px;height:600px;background:radial-gradient(closest-side,rgba(59,130,246,.2),transparent 70%);
+  pointer-events:none}
+main .wrap{position:relative}
+
+.kick{display:inline-block;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--cyan);font-weight:600;margin-bottom:18px;border:1px solid rgba(56,189,248,.3);
+  background:rgba(56,189,248,.08);padding:6px 12px;border-radius:999px}
+h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(30px,4.4vw,42px);
+   line-height:1.1;letter-spacing:-.015em}
+.lede{color:var(--sub);font-size:17px;margin-top:14px;max-width:52ch}
+
+.btn{display:inline-block;text-decoration:none;font-weight:600;border-radius:12px;
+  transition:transform .15s ease, box-shadow .15s ease;font-size:16.5px;padding:15px 30px}
+.btn:hover{transform:translateY(-1px)}
+.btn.primary{background:linear-gradient(180deg,#3B82F6,#2563EB);color:#fff;
+  box-shadow:0 8px 24px rgba(59,130,246,.35)}
+.dl{margin-top:30px}
+.dl .meta{margin-top:12px;color:var(--dim);font-size:13.5px}
+
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;
+  padding:26px 24px;margin-top:34px}
+.card h2{font-family:'Fraunces',serif;font-weight:600;font-size:20px;letter-spacing:-.01em}
+.card ol{margin:14px 0 0 20px;color:var(--sub);font-size:15.5px}
+.card ol li{margin-bottom:9px}
+.card ol li b{color:var(--ink);font-weight:600}
+.card p{color:var(--sub);font-size:15.5px;margin-top:10px}
+.card p a{color:var(--cyan);text-decoration:underline;text-underline-offset:3px}
+
+.row{display:grid;gap:16px;margin-top:16px}
+@media(min-width:680px){.row{grid-template-columns:1fr 1fr}}
+.row .card{margin-top:0}
+
+footer{border-top:1px solid var(--line);padding:22px 0;color:var(--dim);font-size:13.5px}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap"><div class="word">Story<span>OS</span></div></div></nav>
+
+<main>
+  <div class="wrap">
+    <span class="kick">Paid</span>
+    <h1>It's yours. Here it is.</h1>
+    <p class="lede">Your tax invoice is already on its way to the email you paid with.
+       Nothing else is owed and nothing else is coming that you need to wait for.</p>
+
+    <div class="dl">
+      <!-- DOWNLOAD_URL: the single line that changes when the file gets a permanent home. -->
+      <a class="btn primary" id="download" href="https://storyos-files.pages.dev/StoryOS-Kit.zip" download>Download StoryOS &#8594;</a>
+      <div class="meta">One zip, about 113 KB. Keep this page bookmarked &#8212; the same link always
+        serves the current version, so future updates need no re-sending.</div>
+    </div>
+
+    <div class="card">
+      <h2>Twenty minutes, start to finish</h2>
+      <ol>
+        <li><b>Unzip it</b> anywhere you keep work. It is a folder, not an installer.</li>
+        <li><b>Open the folder in the Claude desktop app</b> &#8212; File, then open the folder you just
+          unzipped. That is the whole setup.</li>
+        <li><b>Say hello.</b> It greets you on the first run, asks what you sell and to whom, and builds
+          from there. You are not configuring anything by hand.</li>
+      </ol>
+    </div>
+
+    <div class="row">
+      <div class="card">
+        <h2>Your invoice</h2>
+        <p>Issued automatically by Morning in your business name, with the VAT broken out.
+          If you entered a ח.פ / ע.מ at checkout it is on the document and reclaimable as normal.
+          Not in your inbox in a few minutes? Check spam, then write to us.</p>
+      </div>
+      <div class="card">
+        <h2>A human</h2>
+        <p>Stuck, or it did something strange? Reply to the invoice email, or write to
+          <a href="mailto:anat@connecthedots.co">anat@connecthedots.co</a>.
+          Real answers from the person who built it.</p>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer><div class="wrap">Connecting the Dots &middot; Creating motion</div></footer>
+
+</body>
+</html>

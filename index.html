@@ -144,7 +144,7 @@ posthog.init('phc_E7RT8uONsICJRF5lKqYhsyys29rP0BKObdRHyYSCdQx',{api_host:'https:
       <a class="nl hide" href="inside.html">Inside the kit</a>
       <a class="nl hide" href="example-battlecard.html">A real output</a>
       <a class="nl hide" href="about.html">About</a>
-      <a class="btn primary small" href="https://dotconnector2.gumroad.com/l/storyos/FOUNDING79?wanted=true">Own the kit · $79</a>
+      <a class="btn primary small" href="buy.html">Own the kit</a>
     </div>
   </div>
 </nav>
@@ -156,10 +156,10 @@ posthog.init('phc_E7RT8uONsICJRF5lKqYhsyys29rP0BKObdRHyYSCdQx',{api_host:'https:
       <h1>Your enablement team. Running by tomorrow morning.</h1>
       <p class="lede">Eight expert agents in your own Claude. They speak in your company's voice, work on your machine, and show their evidence on every asset. Installs in about 20 minutes.</p>
       <div class="ctas">
-        <a class="btn primary big" href="https://dotconnector2.gumroad.com/l/storyos/FOUNDING79?wanted=true">Own the kit · $79</a>
+        <a class="btn primary big" href="buy.html">Own the kit</a>
         <a class="btn ghost big" href="example-battlecard.html">See a real output</a>
       </div>
-      <div class="meta">Zero code · yours forever · $197 after the founding wave</div>
+      <div class="meta">Zero code · yours forever · <span data-ils="550 ILS + VAT">$197</span> after the founding wave</div>
       <div class="meta" style="margin-top:6px">Opens as a folder in the Claude desktop app, Pro or above. Nothing to install, nothing to configure.</div>
       <p style="max-width:52ch;margin:18px 0 0;font-size:15px;line-height:1.6;color:var(--sub)">I led sales enablement, customer success enablement and product enablement teams for over twenty years. StoryOS is the system I wanted in every one of those seats, and I built it for my own work before I sold it to anyone.</p>
     </div>
@@ -283,8 +283,8 @@ posthog.init('phc_E7RT8uONsICJRF5lKqYhsyys29rP0BKObdRHyYSCdQx',{api_host:'https:
   <div class="wrap">
         <div class="buy">
       <div class="tag">Founding wave</div>
-      <div class="price">$79</div>
-      <div class="was">one time · yours forever · <s>$197</s> after the founding wave</div>
+      <div class="price"><span data-ils="250 ILS + VAT">$79</span></div>
+      <div class="was">one time · yours forever · <s><span data-ils="550 ILS + VAT">$197</span></s> after the founding wave</div>
       <ul>
         <li>The complete kit: agents, plays, skills, brain</li>
         <li>Ready prompts + real example outputs</li>
@@ -292,8 +292,8 @@ posthog.init('phc_E7RT8uONsICJRF5lKqYhsyys29rP0BKObdRHyYSCdQx',{api_host:'https:
         <li>Needs: your own Claude plan (Pro or up), and the <b>Claude desktop app</b> &#8212; the kit opens as a folder there, not in the browser. The kit itself never renews.</li>
         <li>Ask Alfred anything; a human answers email</li>
       </ul>
-      <a class="btn primary big" href="https://dotconnector2.gumroad.com/l/storyos/FOUNDING79?wanted=true">Own the kit · $79 founding</a>
-      <div class="after">Instant checkout and delivery. Founding price; $197 after the first wave.</div>
+      <a class="btn primary big" href="buy.html">Own the kit</a>
+      <div class="after">Instant checkout and delivery. Founding price; <span data-ils="550 ILS + VAT">$197</span> after the first wave.</div>
     </div>
   </div>
 </section>
@@ -327,6 +327,21 @@ document.addEventListener('click', function(e){
     label: (a.textContent || '').trim().slice(0, 60)
   });
 }, true);
+</script>
+
+<script>
+/* One price per visitor, never two on a screen.
+   Israeli visitors see the shekel price that their checkout will actually charge;
+   everyone else sees the dollar price. No network call and no IP lookup: the device's
+   own timezone and language are enough, and they are wrong far less often than a VPN'd IP.
+   This is DISPLAY ONLY. What decides the tax is the country the buyer declares on buy.html. */
+(function () {
+  var tz = ""; try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ""; } catch (e) {}
+  var lang = (navigator.language || "").toLowerCase();
+  if (tz !== "Asia/Jerusalem" && lang.indexOf("he") !== 0) return;
+  var nodes = document.querySelectorAll("[data-ils]");
+  for (var i = 0; i < nodes.length; i++) nodes[i].textContent = nodes[i].getAttribute("data-ils");
+})();
 </script>
 </body>
 </html>
