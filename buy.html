@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>StoryOS &middot; checkout</title>
-<meta name="description" content="Your email and where you are. Then the right checkout opens.">
+<meta name="description" content="Tell us where you are buying from and the right checkout opens.">
 <meta name="robots" content="noindex,nofollow">
 <link rel="canonical" href="https://storyos.connecthedots.co/buy.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -70,18 +70,10 @@ footer .wrap{max-width:1140px}
 <main>
   <div class="wrap">
     <span class="kick">Checkout</span>
-    <h1>Two details, then you're in.</h1>
-    <p class="lede">Your email is where the kit and the invoice go. Your country decides which
-      checkout opens, so the invoice comes out right.</p>
+    <h1>Where are you buying from?</h1>
+    <p class="lede">One question, so the invoice comes out right. The checkout takes it from there.</p>
 
     <form id="f" novalidate>
-      <div class="field">
-        <label for="email">Email</label>
-        <input id="email" name="email" type="email" inputmode="email" autocomplete="email"
-               placeholder="you@company.com" required>
-        <div class="hint">Use the address you want the invoice made out to.</div>
-      </div>
-
       <div class="field">
         <label for="country">Country</label>
         <select id="country" name="country" required>
@@ -275,51 +267,25 @@ footer .wrap{max-width:1140px}
   var USD = "https://dotconnector2.gumroad.com/l/storyos/FOUNDING79?wanted=true";
 
   var f = document.getElementById("f"),
-      email = document.getElementById("email"),
       country = document.getElementById("country"),
       err = document.getElementById("err");
 
-  /* If the device looks Israeli, preselect Israel. The buyer can always change it:
-     what they choose is what governs, never what we guessed. */
-  try {
-    var tz = Intl.DateTimeFormat().resolvedOptions().timeZone || "";
-    if (tz === "Asia/Jerusalem" || (navigator.language || "").toLowerCase().indexOf("he") === 0) {
-      country.value = "Israel";
-    }
-  } catch (e) {}
-
-  /* Remember the address, so coming back from a checkout is not a retype. */
-  try {
-    var saved = localStorage.getItem("storyos_email");
-    if (saved) { email.value = saved; }
-  } catch (e) {}
-
-  function show(msg) { err.textContent = msg; err.style.display = "block"; }
+  /* Nothing is preselected on purpose. The country decides which tax applies, so it is the
+     buyer's statement to make, not ours to guess. Both checkouts collect the email themselves,
+     which is why this page does not ask for it twice. */
 
   f.addEventListener("submit", function (ev) {
     ev.preventDefault();
     err.style.display = "none";
 
-    var addr = (email.value || "").trim();
-    if (addr.indexOf("@") < 1 || addr.lastIndexOf(".") < addr.indexOf("@") + 2 ||
-        addr.lastIndexOf(".") === addr.length - 1 || /\s/.test(addr)) {
-      show("That email does not look right. Check it and try again.");
-      email.focus();
-      return;
-    }
     if (!country.value) {
-      show("Pick your country, so the invoice comes out right.");
+      err.textContent = "Pick your country, so the invoice comes out right.";
+      err.style.display = "block";
       country.focus();
       return;
     }
 
-    try { localStorage.setItem("storyos_email", addr); } catch (e) {}
-
-    if (country.value === "Israel") {
-      window.location.href = IL;
-    } else {
-      window.location.href = USD + "&email=" + encodeURIComponent(addr);
-    }
+    window.location.href = (country.value === "Israel") ? IL : USD;
   });
 })();
 </script>
