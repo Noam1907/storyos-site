@@ -26,7 +26,7 @@
   --board2:#0C1322;       /* panel wash */
   --chalk:#EFEDE4;        /* warm chalk, the ink */
   --chalkdim:#9AA6B8;     /* rubbed-out chalk */
-  --sky:#38BDF8;          /* the single accent */
+  --sky:#38BDEF;          /* the single accent */
   --red:#F2617A;          /* red chalk, marking errors only */
   --seam:rgba(239,237,228,.22);
 }
@@ -139,6 +139,21 @@ h1 .you{color:var(--sky)}
 .stack .more{font-size:12.5px;color:var(--chalkdim);margin:14px 0 0;line-height:1.55}
 .stack .more a{color:var(--sky);text-decoration:none;font-weight:600}
 
+
+/* ---------- the audit band: the differentiator, at screen four, not screen eight ---------- */
+.aud{border-bottom:1px solid var(--seam);padding:62px 0}
+.aud .wrap{display:grid;grid-template-columns:1fr;gap:34px}
+@media(min-width:900px){.aud .wrap{grid-template-columns:44fr 56fr;gap:56px;align-items:start}}
+.aud h2{max-width:16ch}
+.audbox{background:var(--board2);border:1px solid var(--seam);border-inline-start:3px solid var(--red);padding:24px 22px}
+.audbox .t{font-family:'JetBrains Mono',monospace;font-size:10.5px;font-weight:700;
+  letter-spacing:.17em;color:var(--red);margin:0 0 16px}
+.audbox .l{display:flex;gap:11px;font-size:15px;line-height:1.5;margin:0 0 11px}
+.audbox .l .x{color:var(--red);font-weight:800;flex:none}
+.audbox .l b{font-weight:600}
+.audbox .k{margin:18px 0 0;padding-top:15px;border-top:2px solid var(--red);
+  font-size:16px;font-weight:700;line-height:1.45;letter-spacing:-.012em}
+
 /* ---------- BAND: numerals dominate ---------- */
 .nums{border-bottom:2px solid var(--chalk)}
 .nums .wrap{display:grid;grid-template-columns:1fr;gap:0}
@@ -225,15 +240,15 @@ posthog.init('phc_E7RT8uONsICJRF5lKqYhsyys29rP0BKObdRHyYSCdQx',{api_host:'https:
   <div class="wrap">
 
     <div class="left-a">
-      <p class="eyebrow">FOR SALES AND CUSTOMER SUCCESS TEAMS</p>
+      <p class="eyebrow">FOR THE PERSON WHO ARMS THE SALES TEAM</p>
       <h1><span class="b">Your team needs the</span><span class="b">battlecard Thursday.</span><span class="b"><span class="you">Not an AI project.</span></span></h1>
-      <p class="sub">You already know AI could do this work. What nobody has time for is the part before it: choosing the agents, writing the prompts, wiring the workflow, then testing the whole thing on live deals until it stops embarrassing you. <b style="color:var(--chalk);font-weight:600">StoryOS is that part, finished.</b> Eight specialists, twelve everyday moves, and one company brain that makes all of them sound like you. Install it in an afternoon, send the first asset the same day.</p>
+      <p class="sub">You already know AI could do this work. What nobody has time for is the part before it: picking the agents, writing the prompts, wiring the workflow, then testing it on live deals until it stops embarrassing you. <b style="color:var(--chalk);font-weight:600">StoryOS is that part, finished.</b> A folder of files you open in Claude, holding eight specialists and one brain that makes them sound like your company.</p>
 
       <div class="cta">
         <a class="btn" href="buy.html">Own the kit &middot; $79</a>
         <a class="btn ghost" href="example-battlecard.html">Read one, unedited</a>
       </div>
-      <p class="underbtn">It installs into the Claude app on your own machine. $79 once. No subscription, no seat, no renewal.</p>
+      <p class="underbtn">$79 once. No subscription, no seat, no renewal. It needs your own paid Claude plan, $20 a month, which isn't ours. <b style="color:var(--chalk);font-weight:600">No refunds</b>, which is why everything you need to judge it is on this page.</p>
     </div>
 
     <div class="left-b">
@@ -248,35 +263,35 @@ posthog.init('phc_E7RT8uONsICJRF5lKqYhsyys29rP0BKObdRHyYSCdQx',{api_host:'https:
 
     <div class="right">
       <div class="stack">
-        <p class="lbl">WHAT COMES OUT, AND HOW LONG IT TOOK</p>
+        <p class="lbl">WHAT COMES OUT</p>
 
         <div class="slip">
-          <div class="st"><span class="nm">Competitive battlecard</span><span class="tm">4 MIN</span></div>
+          <div class="st"><span class="nm">Competitive battlecard</span></div>
           <p class="ln">Where they are strong, said honestly, then the three angles you win on, each with the approved words to say out loud.</p>
         </div>
 
         <div class="slip">
-          <div class="st"><span class="nm">Objection handling</span><span class="tm">3 MIN</span></div>
-          <p class="ln">&#8220;You are more expensive.&#8221; The reframe, the proof behind it, and the question that moves the conversation on.</p>
+          <div class="st"><span class="nm">Objection handling</span></div>
+          <p class="ln">&#8220;You&#8217;re more expensive.&#8221; The reframe, the proof behind it, and the question that moves the conversation on.</p>
         </div>
 
         <div class="slip">
-          <div class="st"><span class="nm">ROI and the business case</span><span class="tm">6 MIN</span></div>
+          <div class="st"><span class="nm">ROI and the business case</span></div>
           <p class="ln">The hours, the arithmetic, and the one number it refuses to guess because the CFO is the person who holds it.</p>
         </div>
 
         <div class="slip">
-          <div class="st"><span class="nm">Discovery call prep</span><span class="tm">3 MIN</span></div>
+          <div class="st"><span class="nm">Discovery call prep</span></div>
           <p class="ln">Who is in the room, what each of them is measured on, and the questions that surface how they actually buy.</p>
         </div>
 
         <div class="slip">
-          <div class="st"><span class="nm">Sales to CS handoff brief</span><span class="tm">5 MIN</span></div>
+          <div class="st"><span class="nm">Sales to CS handoff brief</span></div>
           <p class="ln">Every promise made in the room, who made it, and what CS has to deliver in the first ninety days.</p>
         </div>
 
         <div class="slip">
-          <div class="st"><span class="nm">QBR narrative</span><span class="tm">6 MIN</span></div>
+          <div class="st"><span class="nm">QBR narrative</span></div>
           <p class="ln">Value promised against value delivered, line by line, with the gap named before the customer names it.</p>
         </div>
 
@@ -300,7 +315,25 @@ posthog.init('phc_E7RT8uONsICJRF5lKqYhsyys29rP0BKObdRHyYSCdQx',{api_host:'https:
     </div>
     <div class="n">
       <p class="big red">0</p>
-      <p class="cap">Numbers it will invent to fill a gap. If it cannot source a claim, it tells you who holds the answer and what to ask them.</p>
+      <p class="cap">Claims it will assert without a source. When it cannot prove something it says so, names who holds the answer, and writes the question that gets it.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ the audit: what a chat window will not do ============ -->
+<section class="aud">
+  <div class="wrap">
+    <div>
+      <p class="kicker">THE PART A CHAT WINDOW WILL NOT DO</p>
+      <h2>It checks your numbers too.</h2>
+      <p class="lede" style="margin-bottom:0">Paste your positioning into any chat window and it will hand your own claims back to you as fact, because you said them. This one doesn&#8217;t. Every asset closes with a list of what it could not prove, sorted by who has to act, and your side gets the same treatment as theirs. It&#8217;s the difference between an asset your rep forwards and one that gets them caught out in front of a customer.</p>
+    </div>
+    <div class="audbox">
+      <p class="t">FROM A REAL RUN &middot; THE LIST ABOUT YOU</p>
+      <p class="l"><span class="x">&#215;</span><span>Your <b>&#8220;40% faster onboarding&#8221;</b> has no date and no source in the brain.</span></p>
+      <p class="l"><span class="x">&#215;</span><span>Your <b>&#8220;most customers see value in week one&#8221;</b> was never measured.</span></p>
+      <p class="l"><span class="x">&#215;</span><span>Your win rate against them is from Q1. It&#8217;s five months old.</span></p>
+      <p class="k">This isn&#8217;t the competitor&#8217;s audit. It&#8217;s yours, and your reps are already using these numbers.</p>
     </div>
   </div>
 </section>
@@ -313,11 +346,11 @@ posthog.init('phc_E7RT8uONsICJRF5lKqYhsyys29rP0BKObdRHyYSCdQx',{api_host:'https:
     <div class="ruled" style="margin-top:34px">
       <div class="r">
         <div class="rn">You start from zero, every time</div>
-        <div class="rd">A chat window does not know your positioning, your proof or your objections, so every session opens with you re-explaining your own company. <b>The brain holds it once, and every specialist reads it before writing a word.</b></div>
+        <div class="rd">A chat window doesn&#8217;t know your positioning, your proof or your objections, so every session opens with you re-explaining your own company. <b>The brain holds it once, and every specialist reads it before writing a word.</b></div>
       </div>
       <div class="r">
-        <div class="rn">Building it yourself is a quarter you do not have</div>
-        <div class="rd">Choosing agents, writing prompts, wiring a workflow, testing it on real deals. There is a certification that charges you to learn how to design <b>your first</b> enablement agent. <b>This ships eight, already designed and already routed.</b></div>
+        <div class="rn">Building it yourself is a quarter you don&#8217;t have</div>
+        <div class="rd">Choosing agents, writing prompts, wiring a workflow, testing it on real deals. The serious alternative is a certification that costs about nine times this and teaches you how to build it yourself. <b>This is it, built.</b></div>
       </div>
       <div class="r">
         <div class="rn">What comes out is generic, so it never goes out</div>
@@ -325,7 +358,7 @@ posthog.init('phc_E7RT8uONsICJRF5lKqYhsyys29rP0BKObdRHyYSCdQx',{api_host:'https:
       </div>
       <div class="r">
         <div class="rn">You cannot tell what is safe to send</div>
-        <div class="rd">The dangerous part of AI output is the confident sentence nobody checked. <b>Every asset arrives with its sources dated, and the claims it could not prove listed with who to ask.</b> You are never guessing which line will get your rep caught out.</div>
+        <div class="rd">The dangerous part of AI output is the confident sentence nobody checked. <b>Every asset arrives with an audit: what it could not prove, who holds the answer, and the exact question that gets it.</b> You are never guessing which line will get your rep caught out.</div>
       </div>
     </div>
   </div>
@@ -379,10 +412,10 @@ posthog.init('phc_E7RT8uONsICJRF5lKqYhsyys29rP0BKObdRHyYSCdQx',{api_host:'https:
         <div class="ans">A zip file. Inside it is a folder of markdown files: a company brain, twelve plays, eight agent definitions, thirteen skills, and the guides. You open that folder in the Claude desktop app and it becomes a working system. <b>There is no app to log into and no account on our side.</b> The files sit on your machine and stay there.</div></details>
 
       <details><summary><span class="sign"></span>Can I use it in Claude on the web, or in Cowork, or in Gemini?</summary>
-        <div class="ans"><b>The web version of Claude will not work</b>, because it cannot read a folder on your computer. StoryOS is built and tested for the <b>Claude desktop app</b>, using its Code tab, on a paid plan. Other tools that can read a local folder may well run it, and we have not tested them, so we will not claim they do. <b>Gemini is not supported.</b></div></details>
+        <div class="ans"><b>The web version of Claude won&#8217;t work</b>, because it can&#8217;t read a folder on your computer. StoryOS is built and tested for the <b>Claude desktop app</b>, using its Code tab, on a paid plan. Other tools that can read a local folder may well run it, and we haven&#8217;t tested them, so we won&#8217;t claim they do. <b>Gemini is not supported.</b></div></details>
 
       <details><summary><span class="sign"></span>Why not just do this in a chat window for free?</summary>
-        <div class="ans">You can get one good battlecard from a chat window in ninety seconds. What you cannot get is the second list. A chat window will happily repeat <b>your</b> "40% faster onboarding" back to you as fact, because you said it. StoryOS treats your claims the way it treats theirs, and tells you which of yours carry no date and no source. That is the difference, and it is the whole product.</div></details>
+        <div class="ans">You can get one good battlecard from a chat window in ninety seconds. What you can&#8217;t get is the second list. A chat window will happily repeat <b>your</b> "40% faster onboarding" back to you as fact, because you said it. StoryOS treats your claims the way it treats theirs, and tells you which of yours carry no date and no source. That&#8217;s the difference, and it&#8217;s the whole product.</div></details>
 
       <details><summary><span class="sign"></span>Can I add my own agents and capabilities?</summary>
         <div class="ans"><b>Yes, and that is a real feature rather than a promise.</b> Alfred, the guide inside the kit, builds new plays, new skills and whole new specialists on request. You describe the situation you keep hitting, he proposes the play, shows you the exact change, and <b>writes nothing until you say yes.</b> He never touches your brain or your finished work while extending the system.</div></details>
@@ -394,7 +427,7 @@ posthog.init('phc_E7RT8uONsICJRF5lKqYhsyys29rP0BKObdRHyYSCdQx',{api_host:'https:
         <div class="ans">About 20 minutes to install. Loading your brain is the part that is yours, and how long it takes depends on what you already have written down. <b>You can start with a link to your site, two things that sound like you and one deal you remember well</b>, and sharpen it every time you run a play. The five day guide inside walks the thorough version.</div></details>
 
       <details><summary><span class="sign"></span>What is your refund policy?</summary>
-        <div class="ans"><b>There are no refunds.</b> It is a file, and once it is downloaded it cannot be returned. That is why the requirements and the setup cost are on this page rather than behind the checkout, and why a full unedited output is published for you to judge before you pay. <a href="example-battlecard.html">Read that first.</a></div></details>
+        <div class="ans"><b>There are no refunds.</b> It&#8217;s a file, and once it&#8217;s downloaded it can&#8217;t be returned. That&#8217;s why the requirements and the setup cost are on this page rather than behind the checkout, and why a full unedited output is published for you to judge before you pay. <a href="example-battlecard.html">Read that first.</a></div></details>
 
       <details><summary><span class="sign"></span>Where does my data go?</summary>
         <div class="ans">Your brain, your outputs and your notes are files on your machine. <b>We never see them and there is no server of ours involved.</b> What you type travels to Anthropic the same way everything else in your Claude session does, under your own Claude plan and its terms. If your organisation does not permit outbound lookups, one setting turns research off and the system works from your files alone.</div></details>
@@ -403,10 +436,10 @@ posthog.init('phc_E7RT8uONsICJRF5lKqYhsyys29rP0BKObdRHyYSCdQx',{api_host:'https:
         <div class="ans">The licence is one seat per person, and there is a team tier built for exactly this: <b>one canonical company brain that every seat reads from</b>, so eight people write from the same truth instead of eight versions of it. <a href="teams.html">Team pricing &#8594;</a></div></details>
 
       <details><summary><span class="sign"></span>Does it break when Anthropic changes the interface?</summary>
-        <div class="ans">The kit is markdown files, so there is nothing to break in it. What can change is the click path inside Claude for opening a folder. When that moves, <b>the install guide is updated and the update reaches the email you bought with</b>, at no cost, because you own the kit rather than rent it.</div></details>
+        <div class="ans">The kit is markdown files, so there&#8217;s nothing to break in it. What can change is the click path inside Claude for opening a folder. When that moves, <b>the install guide is updated and the update reaches the email you bought with</b>, at no cost, because you own the kit rather than rent it.</div></details>
 
       <details><summary><span class="sign"></span>Who built this, and who supports it?</summary>
-        <div class="ans">Anat Weissman, one person, and support is a real reply from her at <b>storyos@connecthedots.co</b>. There is no support desk and no ticket queue. That is a genuine limit and you should price it in.</div></details>
+        <div class="ans">Anat Weissman, one person, and support is a real reply from her at <b>storyos@connecthedots.co</b>. There&#8217;s no support desk and no ticket queue. That&#8217;s a real limit and you should price it in.</div></details>
     </div>
   </div>
 </section>
@@ -419,7 +452,7 @@ posthog.init('phc_E7RT8uONsICJRF5lKqYhsyys29rP0BKObdRHyYSCdQx',{api_host:'https:
     </div>
     <div>
       <p class="kicker">FOUNDING PRICE</p>
-      <h2 style="margin-bottom:16px">Own it once. It does not renew.</h2>
+      <h2 style="margin-bottom:16px">Own it once. It doesn&#8217;t renew.</h2>
       <p class="terms">$197 after the founding wave. One seat, yours forever, updates included. A paid Claude plan is required and is not included. No refunds, which is why the full requirements and a complete unedited output are published above.</p>
       <div class="cta">
         <a class="btn" href="buy.html">Own the kit &middot; $79</a>
