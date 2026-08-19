@@ -313,20 +313,26 @@ posthog.init('phc_E7RT8uONsICJRF5lKqYhsyys29rP0BKObdRHyYSCdQx',{api_host:'https:
   </div>
 </footer>
 
-<script src="https://gumroad.com/js/gumroad.js" defer></script>
 <script>
-// checkout intent: the one question this page exists to answer
+/* Intent to buy, measured where it happens. This selector used to be a[href*="gumroad.com"],
+   which matched nothing from the day the three buttons were repointed at buy.html on 11.8, so the
+   event was structurally impossible to fire and five weeks of silence read as "nobody clicks."
+   The checkout itself now fires checkout_click on buy.html, so the funnel is
+   pageview -> buy_page_click -> checkout_click, and the drop between the last two is the
+   country picker. */
 document.addEventListener('click', function(e){
-  var a = e.target.closest && e.target.closest('a[href*="gumroad.com"]');
+  var a = e.target.closest && e.target.closest('a[href*="buy.html"]');
   if (!a || !window.posthog) return;
-  // label which button converts: all three point at the same URL, so href alone tells us nothing
-  var btns = Array.prototype.slice.call(document.querySelectorAll('a[href*="gumroad.com"]'));
-  posthog.capture('checkout_click', {
-    product: 'storyos',
-    href: a.href,
-    position: btns.indexOf(a) + 1,
-    label: (a.textContent || '').trim().slice(0, 60)
-  });
+  // label which of the three buttons converts: they share one destination, so href alone says nothing
+  var btns = Array.prototype.slice.call(document.querySelectorAll('a[href*="buy.html"]'));
+  // sendBeacon, because this click navigates away and a normal capture does not leave in time
+  try {
+    posthog.capture('buy_page_click', {
+      product: 'storyos',
+      position: btns.indexOf(a) + 1,
+      label: (a.textContent || '').trim().slice(0, 60)
+    }, { transport: 'sendBeacon' });
+  } catch (err) {}
 }, true);
 </script>
 </body>

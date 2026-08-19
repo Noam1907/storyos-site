@@ -62,6 +62,11 @@ button:hover{transform:translateY(-1px)}
 footer{border-top:1px solid var(--line);padding:22px 0;color:var(--dim);font-size:13.5px}
 footer .wrap{max-width:1140px}
 </style>
+<!-- PostHog web analytics -->
+<script>
+!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey canRenderSurveyAsync identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug getPageViewId captureTraceFeedback captureTraceMetric".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+posthog.init('phc_E7RT8uONsICJRF5lKqYhsyys29rP0BKObdRHyYSCdQx',{api_host:'https://us.i.posthog.com',defaults:'2025-05-24',person_profiles:'identified_only'})
+</script>
 </head>
 <body>
 
@@ -263,7 +268,7 @@ footer .wrap{max-width:1140px}
 <script>
 (function () {
   var IL  = "https://mrng.to/BfPQpr1qio";
-  var USD = "https://dotconnector2.gumroad.com/l/storyos/FOUNDING79?wanted=true";
+  var USD = "https://dotconnector2.gumroad.com/l/storyos/FOUNDING79";
 
   var f = document.getElementById("f"),
       country = document.getElementById("country"),
@@ -294,7 +299,33 @@ footer .wrap{max-width:1140px}
       return;
     }
 
-    window.location.href = (country.value === "Israel") ? IL : USD;
+    /* The one number this page exists to produce: which door a buyer actually walked through.
+       Bound to the submit, not to an href, because both destinations are off-site and the
+       Israel/rest-of-world split is the interesting half.
+
+       Two things here are deliberate and neither is decoration.
+
+       try/catch: this line sits between the buyer clicking Continue and the checkout opening,
+       and preventDefault above has already removed the browser's own fallback. If posthog is
+       present but broken, an uncaught throw here means the button does nothing, silently, and
+       the sale is lost with no error anywhere. Measurement never gets to stand in front of a
+       purchase. If the event cannot be recorded, the buyer still goes to checkout.
+
+       transport sendBeacon: a normal capture does not leave the tab in the same tick, so the
+       navigation on the next line beats it and the event is dropped. sendBeacon posts it
+       immediately and survives the unload. */
+    var israel = country.value === "Israel";
+    try {
+      if (window.posthog) {
+        posthog.capture('checkout_click', {
+          product: 'storyos',
+          rail: israel ? 'ils_morning' : 'usd_gumroad',
+          country: country.value
+        }, { transport: 'sendBeacon' });
+      }
+    } catch (e) { /* the sale outranks the metric, always */ }
+
+    window.location.href = israel ? IL : USD;
   });
 })();
 </script>
