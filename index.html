@@ -144,6 +144,15 @@ h1 .you{color:var(--sky)}
 .fold .terms2 b{color:var(--chalk);font-weight:600}
 
 
+
+/* ---------- the mechanic, drawn. Bespoke SVG, no icon set, no stock. ---------- */
+.how{border-bottom:1px solid var(--seam);padding:56px 0 60px}
+.how .top{max-width:52ch;margin:0 0 34px}
+.how figure{margin:0}
+.how svg{width:100%;height:auto;display:block;overflow:visible}
+.how figcaption{font-size:13.5px;color:var(--chalkdim);margin:20px 0 0;max-width:64ch;line-height:1.55}
+.how figcaption b{color:var(--chalk);font-weight:600}
+
 /* ---------- the cost of doing nothing: three beats, no paragraphs ---------- */
 .cost{border-bottom:1px solid var(--seam);padding:60px 0}
 .cost .beats{display:grid;grid-template-columns:1fr;gap:0;margin-top:30px}
@@ -308,6 +317,84 @@ posthog.init('phc_E7RT8uONsICJRF5lKqYhsyys29rP0BKObdRHyYSCdQx',{api_host:'https:
         <p class="d">It has been on the plan since January, under the things that only happen when the quarter is quiet. The quarter is never quiet.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ============ the seam, drawn ============ -->
+<section class="how">
+  <div class="wrap">
+    <div class="top">
+      <p class="kicker">WHERE IT ACTUALLY BREAKS</p>
+      <h2 style="margin-bottom:14px">The deal as sold. The deal as delivered.</h2>
+      <p class="lede" style="margin-bottom:0">Every deal is won with a story. Then it&#8217;s handed to somebody who wasn&#8217;t in the room.</p>
+    </div>
+
+    <figure style="max-width:660px;margin:34px auto 0">
+      <svg viewBox="0 0 880 330" role="img" aria-label="One person hands over a wrapped box labelled AS SOLD. Another opens it at the far side, labelled AS DELIVERED, and a spring pops out. A dashed thread runs between them across a red seam.">
+        <defs>
+          <radialGradient id="seamglow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#38BDEF" stop-opacity="0.14"/>
+            <stop offset="100%" stop-color="#38BDEF" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <ellipse cx="440" cy="180" rx="150" ry="120" fill="url(#seamglow)"/>
+        <!-- figure A: presents the wrapped deal -->
+        <g fill="none" stroke="#EFEDE4" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" opacity="0.9">
+          <circle cx="120" cy="86" r="17"/>
+          <circle cx="114" cy="83" r="1.6" fill="#EFEDE4"/>
+          <circle cx="126" cy="83" r="1.6" fill="#EFEDE4"/>
+          <path d="M113,92 Q120,98 127,91"/>
+          <path d="M120,103 Q117,140 120,172"/>
+          <path d="M120,120 Q150,124 180,132"/>
+          <path d="M120,126 Q98,140 102,158"/>
+          <path d="M120,172 Q112,196 106,214 M106,214 h-9"/>
+          <path d="M120,172 Q129,196 134,214 M134,214 h9"/>
+        </g>
+        <!-- box A: the deal as sold -->
+        <g transform="translate(196,118) rotate(-2)">
+          <rect x="0" y="0" width="92" height="72" rx="4" fill="rgba(56,189,239,.12)" stroke="#38BDEF" stroke-width="2.4"/>
+          <path d="M46,0 Q44,36 46,72 M0,37 Q46,34 92,37" stroke="#38BDEF" stroke-width="4" fill="none" opacity="0.75"/>
+          <path d="M46,-2 q-18,-20 -2,-20 q11,0 3,18 M46,-2 q20,-20 3,-20 q-11,0 -4,18" fill="none" stroke="#38BDEF" stroke-width="3"/>
+        </g>
+        <!-- the seam -->
+        <g fill="none" stroke="#F2617A" stroke-width="2.4" stroke-linecap="round" opacity="0.95">
+          <path d="M432,74 q-7,32 3,62 q9,30 -4,60 q-9,30 4,62"/>
+          <path d="M452,78 q8,34 -2,64 q-8,28 4,58 q10,32 -2,60"/>
+        </g>
+        <!-- figure B: receives the surprise -->
+        <g fill="none" stroke="#EFEDE4" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" opacity="0.9">
+          <circle cx="762" cy="92" r="17"/>
+          <circle cx="756" cy="90" r="1.6" fill="#EFEDE4"/>
+          <circle cx="767" cy="90" r="1.6" fill="#EFEDE4"/>
+          <ellipse cx="762" cy="99" rx="3.6" ry="4.8"/>
+          <path d="M762,109 Q766,144 762,176"/>
+          <path d="M762,124 Q728,108 700,104"/>
+          <path d="M762,130 Q736,142 714,148"/>
+          <path d="M762,176 Q756,200 752,218 M752,218 h-9"/>
+          <path d="M762,176 Q773,198 779,216 M779,216 h9"/>
+        </g>
+        <!-- box B: the deal as delivered (open, spring) -->
+        <g transform="translate(596,132) rotate(1.5)">
+          <rect x="0" y="6" width="92" height="60" rx="4" fill="rgba(154,166,184,.08)" stroke="#9AA6B8" stroke-width="2.4"/>
+          <path d="M0,6 L-24,-12 L22,-16 L46,6 Z" fill="#1A2536" stroke="#9AA6B8" stroke-width="2.2"/>
+          <path d="M92,6 L116,-9 L72,-18 L46,6 Z" fill="#1A2536" stroke="#9AA6B8" stroke-width="2.2"/>
+          <path d="M44,4 q13,-10 0,-16 q-13,-6 0,-12 q13,-6 0,-13" fill="none" stroke="#9AA6B8" stroke-width="2.4" stroke-linecap="round"/>
+        </g>
+        <path d="M712,64 Q710,44 730,45 Q750,47 745,66 Q741,80 728,84 L727,95" fill="none" stroke="#38BDEF" stroke-width="4.5" stroke-linecap="round"/>
+        <circle cx="727" cy="108" r="3.2" fill="#38BDEF"/>
+        <!-- the thread -->
+        <path d="M292,150 Q360,146 404,176 Q436,200 440,252 q1,10 8,2 Q470,220 500,190 Q544,148 596,152" fill="none" stroke="#38BDEF" stroke-width="2.6" stroke-dasharray="7 7" stroke-linecap="round" opacity="0.9"/>
+        <circle cx="292" cy="150" r="3.4" fill="#38BDEF"/>
+        <circle cx="596" cy="152" r="3.4" fill="#38BDEF"/>
+        <!-- labels -->
+        <text x="240" y="262" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="15" letter-spacing="3" fill="#38BDEF">AS SOLD</text>
+        <text x="660" y="262" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="15" letter-spacing="3" fill="#38BDEF">AS DELIVERED</text>
+        <text x="441" y="300" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="12.5" letter-spacing="2" fill="#9AA6B8">the seam</text>
+      </svg>
+      <figcaption style="text-align:center"><b>Sales said:</b> they&#8217;re buying a behaviour change across the team.
+      <b>CS heard:</b> roll out the tool, hit activation numbers.
+      <br>One quarter later the renewal is at risk and the champion feels oversold. <b>The handoff is a first-class play here, not an afterthought.</b></figcaption>
+    </figure>
   </div>
 </section>
 
@@ -484,8 +571,8 @@ posthog.init('phc_E7RT8uONsICJRF5lKqYhsyys29rP0BKObdRHyYSCdQx',{api_host:'https:
       <details><summary><span class="sign"></span>Does it break when Anthropic changes the interface?</summary>
         <div class="ans">The kit is markdown files, so there&#8217;s nothing to break in it. What can change is the click path inside Claude for opening a folder. When that moves, <b>the install guide is updated and the update reaches the email you bought with</b>, at no cost, because you own the kit rather than rent it.</div></details>
 
-      <details><summary><span class="sign"></span>Who built this, and who supports it?</summary>
-        <div class="ans">Anat Weissman, one person, and support is a real reply from her at <b>storyos@connecthedots.co</b>. There&#8217;s no support desk and no ticket queue. That&#8217;s a real limit and you should price it in.</div></details>
+      <details><summary><span class="sign"></span>Who built this?</summary>
+        <div class="ans">It was built by a sales enablement professional who has led enablement inside large companies and small ones. That&#8217;s why the twelve plays are the moments that actually come up in a quarter rather than the ones that look tidy in a framework, and why the handoff to CS is a first-class play instead of an afterthought. Need something? Email <b>storyos@connecthedots.co</b>.</div></details>
     </div>
   </div>
 </section>
