@@ -22,13 +22,13 @@
    Four colours. No amber (dead brand-wide). No emoji, no icon fonts.
    ============================================================ */
 :root{
-  --board:#070B14;        /* blackboard */
-  --board2:#0C1322;       /* panel wash */
+  --board:#111A28;        /* blackboard */
+  --board2:#1A2536;       /* panel wash */
   --chalk:#EFEDE4;        /* warm chalk, the ink */
   --chalkdim:#9AA6B8;     /* rubbed-out chalk */
   --sky:#38BDEF;          /* the single accent */
   --red:#F2617A;          /* red chalk, marking errors only */
-  --seam:rgba(239,237,228,.22);
+  --seam:rgba(239,237,228,.20);
 }
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
@@ -37,13 +37,13 @@ body{
   font-family:Inter,system-ui,-apple-system,sans-serif;
   font-size:16px;line-height:1.55;
   -webkit-font-smoothing:antialiased;
-  background-image:radial-gradient(circle at 18% 8%,rgba(56,189,248,.05),transparent 46%);
+  background-image:radial-gradient(circle at 18% 6%,rgba(56,189,239,.07),transparent 48%);
 }
 a{color:inherit}
 .wrap{max-width:1240px;margin:0 auto;padding:0 22px}
 
 /* ---------- nav ---------- */
-nav{border-bottom:1px solid var(--seam);position:sticky;top:0;background:rgba(7,11,20,.93);backdrop-filter:blur(9px);z-index:40}
+nav{border-bottom:1px solid var(--seam);position:sticky;top:0;background:rgba(17,26,40,.94);backdrop-filter:blur(9px);z-index:40}
 nav .wrap{display:flex;align-items:center;gap:26px;height:60px}
 /* The two commercial doors stay reachable on a phone. Priya's finding: a team buyer
    who cannot find Teams before reading is a team buyer who buys one seat or none. */
@@ -122,6 +122,42 @@ h1 .you{color:var(--sky)}
 .stab{margin:20px 0 0;padding-top:16px;border-top:2px solid var(--red);
   font-size:15.5px;font-weight:700;line-height:1.45;letter-spacing:-.012em}
 
+
+
+/* ---------- FOLD v7: one column, centred, the price on the first screen ----------
+   Benchmarked against verve-pm.com/ai-shipr-he: a pill saying exactly what it is, a two part
+   headline, one short line, two buttons, the price. Everything else earns its way below. */
+.fold{border-bottom:2px solid var(--chalk);padding:56px 0 62px;text-align:center}
+.pill{display:inline-block;background:var(--sky);color:#0D1522;font-weight:700;
+  font-size:14px;letter-spacing:-.01em;padding:9px 18px;border-radius:999px;margin:0 0 34px;line-height:1.4}
+.fold h1{font-size:clamp(36px,5.6vw,64px);line-height:1.03;font-weight:900;
+  letter-spacing:-.04em;margin:0 auto 22px;max-width:16ch}
+.fold h1 .you{color:var(--sky);display:block}
+.fold .sub{font-size:clamp(17px,1.9vw,20px);line-height:1.55;color:var(--chalkdim);
+  max-width:46ch;margin:0 auto 32px}
+.fold .cta{justify-content:center;margin-bottom:32px}
+.fold .btn{padding:15px 28px;font-size:16px}
+.pricebig{font-size:clamp(48px,7vw,72px);line-height:1;font-weight:900;letter-spacing:-.05em;
+  margin:0 0 10px;font-variant-numeric:tabular-nums}
+.pricebig s{color:var(--chalkdim);font-size:.44em;font-weight:700;margin-inline-end:14px;text-decoration-thickness:2px}
+.fold .terms2{font-size:14px;color:var(--chalkdim);margin:0 auto;max-width:48ch;line-height:1.55}
+.fold .terms2 b{color:var(--chalk);font-weight:600}
+
+
+/* ---------- the cost of doing nothing: three beats, no paragraphs ---------- */
+.cost{border-bottom:1px solid var(--seam);padding:60px 0}
+.cost .beats{display:grid;grid-template-columns:1fr;gap:0;margin-top:30px}
+@media(min-width:860px){.cost .beats{grid-template-columns:repeat(3,1fr);gap:0}}
+.beat{padding:26px 0}
+@media(min-width:860px){
+  .beat{padding:4px 30px 4px 0}
+  .beat+.beat{border-inline-start:1px solid var(--seam);padding-inline-start:30px}
+}
+@media(max-width:859px){.beat+.beat{border-top:1px solid var(--seam)}}
+.beat .w{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;
+  letter-spacing:.17em;color:var(--red);margin:0 0 12px}
+.beat .h{font-size:19px;font-weight:800;letter-spacing:-.02em;margin:0 0 9px;line-height:1.25}
+.beat .d{font-size:14.5px;line-height:1.55;color:var(--chalkdim);margin:0}
 
 /* ---------- the asset stack: what comes out, and how much of it ---------- */
 .stack{position:relative}
@@ -235,35 +271,57 @@ posthog.init('phc_E7RT8uONsICJRF5lKqYhsyys29rP0BKObdRHyYSCdQx',{api_host:'https:
   </div>
 </nav>
 
-<!-- ============ HERO. split screen, hard seam, uneven ============ -->
-<section class="hero">
+<!-- ============ THE FOLD ============ -->
+<section class="fold">
   <div class="wrap">
-
-    <div class="left-a">
-      <p class="eyebrow">FOR THE PERSON WHO ARMS THE SALES TEAM</p>
-      <h1><span class="b">Your team needs the</span><span class="b">battlecard Thursday.</span><span class="b"><span class="you">Not an AI project.</span></span></h1>
-      <p class="sub">You already know AI could do this work. What nobody has time for is the part before it: picking the agents, writing the prompts, wiring the workflow, then testing it on live deals until it stops embarrassing you. <b style="color:var(--chalk);font-weight:600">StoryOS is that part, finished.</b> A folder of files you open in Claude, holding eight specialists and one brain that makes them sound like your company.</p>
-
-      <div class="cta">
-        <a class="btn" href="buy.html">Own the kit</a>
-        <a class="btn ghost" href="example-battlecard.html">Read one, unedited</a>
-      </div>
-      <p class="underbtn"><b style="color:var(--chalk);font-weight:600">$197, one payment, yours forever.</b> <span style="color:var(--sky)">$79 for the founding wave, which is running now.</span> No subscription, no seat, no renewal. It needs your own paid Claude plan, $20 a month, which isn't ours. No refunds, which is why everything you need to judge it sits on this page.</p>
+    <span class="pill">Eight AI specialists for sales enablement. A folder you open in Claude.</span>
+    <h1>Your team needs the battlecard Thursday.<span class="you">Not an AI project.</span></h1>
+    <p class="sub">The agent team, already built. You say what is happening, it writes the asset, in your company&#8217;s own words.</p>
+    <div class="cta">
+      <a class="btn" href="buy.html">Own the kit</a>
+      <a class="btn ghost" href="example-battlecard.html">Read one, unedited</a>
     </div>
+    <p class="pricebig"><s>$197</s>$79</p>
+    <p class="terms2"><b>Founding price, running now.</b> One payment, yours forever, no renewal. Needs your own paid Claude plan, $20 a month, which isn&#8217;t ours.</p>
+  </div>
+</section>
 
-    <div class="left-b">
-      <div class="req">
-        <span class="k">WHAT YOU NEED</span>
-        <p>The Claude desktop app on a paid plan, $20 a month, not included and not ours. About 20 minutes to install. Then the part that is yours: loading your company brain. Until you do, every asset it makes is about the demo company instead of yours. You can start with what you already have, and a five day guide inside walks the deeper version.
-        <br><a href="what-you-need.html">The full list, including the no refunds policy &#8594;</a></p>
+<!-- ============ the cost of doing nothing ============ -->
+<section class="cost">
+  <div class="wrap">
+    <p class="kicker">IF NOTHING CHANGES</p>
+    <h2>The quarter goes like this.</h2>
+    <div class="beats">
+      <div class="beat">
+        <p class="w">WEEK ONE</p>
+        <p class="h">The competitor turns up in three deals.</p>
+        <p class="d">You write the battlecard yourself, at night. It&#8217;s good. It takes four hours you did not have.</p>
       </div>
-
-      <p class="credit">Built by Anat Weissman, who fixes the handoff between what sales sold and what delivery delivers.</p>
+      <div class="beat">
+        <p class="w">WEEK SIX</p>
+        <p class="h">A rep quotes a number nobody can source.</p>
+        <p class="d">It came off a slide from last year. The prospect checks it. You find out in the loss review.</p>
+      </div>
+      <div class="beat">
+        <p class="w">WEEK TWELVE</p>
+        <p class="h">You still have not started the AI project.</p>
+        <p class="d">It has been on the plan since January, under the things that only happen when the quarter is quiet. The quarter is never quiet.</p>
+      </div>
     </div>
+  </div>
+</section>
 
-    <div class="right">
-      <div class="stack">
-        <p class="lbl">WHAT COMES OUT</p>
+<!-- ============ what comes out ============ -->
+<section class="sec" style="padding:60px 0">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <p class="kicker">WHAT COMES OUT</p>
+        <h2>Six of the things you make every week.</h2>
+        <p class="lede" style="margin-bottom:0">You never pick a tool or name an agent. You describe the moment, and the right specialist shows up already knowing your positioning, your proof and your objections.</p>
+      </div>
+      <div>
+        <div class="stack">
 
         <div class="slip">
           <div class="st"><span class="nm">Competitive battlecard</span></div>
@@ -296,9 +354,9 @@ posthog.init('phc_E7RT8uONsICJRF5lKqYhsyys29rP0BKObdRHyYSCdQx',{api_host:'https:
         </div>
 
         <p class="more">Twelve moves in all, and Alfred builds you a new one whenever you keep hitting something the twelve do not cover. <a href="example-battlecard.html">Read a complete one, unedited &#8594;</a></p>
+        </div>
       </div>
     </div>
-
   </div>
 </section>
 
@@ -316,32 +374,6 @@ posthog.init('phc_E7RT8uONsICJRF5lKqYhsyys29rP0BKObdRHyYSCdQx',{api_host:'https:
       <p class="l"><span class="x">&#215;</span><span>Your <b>&#8220;most customers see value in week one&#8221;</b> was never measured.</span></p>
       <p class="l"><span class="x">&#215;</span><span>Your win rate against them is from Q1. It&#8217;s five months old.</span></p>
       <p class="k">This isn&#8217;t the competitor&#8217;s audit. It&#8217;s yours, and your reps are already using these numbers.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ============ the pains, named ============ -->
-<section class="sec" style="padding:60px 0">
-  <div class="wrap">
-    <p class="kicker">WHAT THIS ACTUALLY REPLACES</p>
-    <h2>The four ways this work goes wrong now.</h2>
-    <div class="ruled" style="margin-top:34px">
-      <div class="r">
-        <div class="rn">You start from zero, every time</div>
-        <div class="rd">A chat window doesn&#8217;t know your positioning, your proof or your objections, so every session opens with you re-explaining your own company. <b>The brain holds it once, and every specialist reads it before writing a word.</b></div>
-      </div>
-      <div class="r">
-        <div class="rn">Building it yourself is a quarter you don&#8217;t have</div>
-        <div class="rd">Choosing agents, writing prompts, wiring a workflow, testing it on real deals. The serious alternative is a certification that costs about nine times this and teaches you how to build it yourself. <b>This is it, built.</b></div>
-      </div>
-      <div class="r">
-        <div class="rn">What comes out is generic, so it never goes out</div>
-        <div class="rd">Assets that sound like a vendor blog get rewritten by the rep or quietly ignored. <b>Everything here is written from your own words and your own numbers</b>, which is the only reason a rep forwards it.</div>
-      </div>
-      <div class="r">
-        <div class="rn">You cannot tell what is safe to send</div>
-        <div class="rd">The dangerous part of AI output is the confident sentence nobody checked. <b>Every asset arrives with an audit: what it could not prove, who holds the answer, and the exact question that gets it.</b> You are never guessing which line will get your rep caught out.</div>
-      </div>
     </div>
   </div>
 </section>
