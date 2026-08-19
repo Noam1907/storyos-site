@@ -78,7 +78,7 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--dim);font-siz
     <div class="dl">
       <!-- DOWNLOAD_URL: the single line that changes when the file gets a permanent home. -->
       <a class="btn primary" id="download" href="https://storyos-files.pages.dev/StoryOS-Kit.zip" download>Download StoryOS &#8594;</a>
-      <div class="meta">One zip, about 113 KB. Keep this page bookmarked &#8212; the same link always
+      <div class="meta">One zip, about 126 KB. Keep this page bookmarked , the same link always
         serves the current version, so future updates need no re-sending.</div>
     </div>
 
@@ -86,8 +86,8 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--dim);font-siz
       <h2>Twenty minutes, start to finish</h2>
       <ol>
         <li><b>Unzip it</b> anywhere you keep work. It is a folder, not an installer.</li>
-        <li><b>Open the folder in the Claude desktop app</b> &#8212; File, then open the folder you just
-          unzipped. That is the whole setup.</li>
+        <li><b>Open it in the Claude desktop app.</b> Go to the <b>Code</b> tab at the top, choose <b>Local</b>, click <b>Select folder</b>, and pick the StoryOS folder itself, the one holding CLAUDE.md. That is the whole setup.</li>
+        <li><b>On Windows, install Git first.</b> Free, five clicks, from git-scm.com. Claude will not open a folder on Windows without it, and you never have to open Git yourself. Most Macs already have it.</li>
         <li><b>Say hello.</b> It greets you on the first run, asks what you sell and to whom, and builds
           from there. You are not configuring anything by hand.</li>
       </ol>
@@ -114,7 +114,7 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--dim);font-siz
 <footer><div class="wrap">Connecting the Dots &middot; Creating motion</div></footer>
 
 
-<!-- PostHog: same project as the hub. Here it does one job — tell us who reaches this page
+<!-- PostHog: same project as the hub. Here it does one job, tell us who reaches this page
      and whether they arrived from an actual payment. -->
 <script>
 !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
@@ -127,7 +127,7 @@ posthog.init('phc_E7RT8uONsICJRF5lKqYhsyys29rP0BKObdRHyYSCdQx',{api_host:'https:
 
   /* Morning appends the transaction details to the redirect URL, so a buyer who actually paid
      arrives here carrying them. Someone who typed or was sent the bare URL arrives with none.
-     This does not BLOCK anyone — the page is still open — it just makes the difference visible. */
+     This does not BLOCK anyone, the page is still open, it just makes the difference visible. */
   var paid = keys.length > 0;
 
   posthog.capture('thankyou_view', {
