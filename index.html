@@ -128,6 +128,9 @@ h1 .you{color:var(--sky)}
    Benchmarked against verve-pm.com/ai-shipr-he: a pill saying exactly what it is, a two part
    headline, one short line, two buttons, the price. Everything else earns its way below. */
 .fold{border-bottom:2px solid var(--chalk);padding:56px 0 62px;text-align:center}
+.roles{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;
+  letter-spacing:.16em;color:var(--chalkdim);margin:0 0 20px;line-height:1.7}
+.roles b{color:var(--sky);font-weight:700}
 .pill{display:inline-block;background:var(--sky);color:#0D1522;font-weight:700;
   font-size:14px;letter-spacing:-.01em;padding:9px 18px;border-radius:999px;margin:0 0 34px;line-height:1.4}
 .fold h1{font-size:clamp(36px,5.6vw,64px);line-height:1.03;font-weight:900;
@@ -283,7 +286,8 @@ posthog.init('phc_E7RT8uONsICJRF5lKqYhsyys29rP0BKObdRHyYSCdQx',{api_host:'https:
 <!-- ============ THE FOLD ============ -->
 <section class="fold">
   <div class="wrap">
-    <span class="pill">Eight AI specialists for sales enablement. A folder you open in Claude.</span>
+    <p class="roles"><b>SALES ENABLEMENT</b> &middot; <b>REVENUE ENABLEMENT</b> &middot; <b>PRODUCT MARKETING</b> &middot; <b>CUSTOMER SUCCESS</b></p>
+    <span class="pill">Eight AI specialists, already built. A folder you open in Claude.</span>
     <h1>Your team needs the battlecard Thursday.<span class="you">Not an AI project.</span></h1>
     <p class="sub">The agent team, already built. You say what is happening, it writes the asset, in your company&#8217;s own words.</p>
     <div class="cta">
@@ -541,6 +545,9 @@ posthog.init('phc_E7RT8uONsICJRF5lKqYhsyys29rP0BKObdRHyYSCdQx',{api_host:'https:
     <p class="lede">The ones a careful buyer asks, answered where you can read them before paying rather than after.</p>
 
     <div class="qa">
+      <details><summary><span class="sign"></span>Who is this for, exactly?</summary>
+        <div class="ans">The person who produces what the revenue team says out loud. That is usually <b>Sales Enablement or Revenue Enablement</b>, often <b>Product Marketing</b> (play 07 is a product launch, and the marketer is one of the eight), and <b>Customer Success</b> leaders, who get their own edition with the post-sale plays and the renewal read. It is written for one person doing that job well, in a company of roughly 50 to 500 people. <b>It is not a tool you roll out to reps</b>, it is the thing you use to arm them.</div></details>
+
       <details open><summary><span class="sign"></span>What am I actually receiving?</summary>
         <div class="ans">A zip file. Inside it is a folder of markdown files: a company brain, twelve plays, eight agent definitions, thirteen skills, and the guides. You open that folder in the Claude desktop app and it becomes a working system. <b>There is no app to log into and no account on our side.</b> The files sit on your machine and stay there.</div></details>
 
