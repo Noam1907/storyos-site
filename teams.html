@@ -175,16 +175,33 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 30px}
 footer a{color:var(--chalkdim)}
 </style>
 <style>
-.tsplit{display:grid;grid-template-columns:1fr;gap:0;border-top:2px solid var(--chalk)}
-@media(min-width:900px){.tsplit{grid-template-columns:47fr 53fr}
-  .tsplit .a{border-inline-end:2px solid var(--chalk);padding:40px 46px 40px 0}
-  .tsplit .b{padding:40px 0 40px 46px}}
-.tsplit .a,.tsplit .b{padding:36px 0}
-.tsplit h3{font-size:13px;font-family:'JetBrains Mono',monospace;letter-spacing:.18em;font-weight:700;margin:0 0 20px}
-.tsplit .a h3{color:var(--red)}
-.tsplit .b h3{color:var(--sky)}
-.tsplit p{font-size:15.5px;line-height:1.62;color:var(--chalkdim);margin:0 0 14px;max-width:46ch}
-.tsplit p b{color:var(--chalk);font-weight:600}
+.cmp{margin:34px 0 0;border-top:2px solid var(--chalk)}
+.cmp .hd{display:none}
+@media(min-width:820px){
+  .cmp .hd{display:grid;grid-template-columns:1fr 1fr;gap:0}
+  .cmp .hd div{padding:14px 0 13px}
+  .cmp .hd div:last-child{padding-inline-start:34px;border-inline-start:1px solid var(--seam)}
+  .cmp .hd div:first-child{padding-inline-end:34px}
+}
+.cmp .hd span{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;letter-spacing:.18em}
+.cmp .hd .a span{color:var(--red)}
+.cmp .hd .b span{color:var(--sky)}
+.cmp .row{display:grid;grid-template-columns:1fr;gap:0;border-top:1px solid var(--seam)}
+@media(min-width:820px){.cmp .row{grid-template-columns:1fr 1fr}}
+.cmp .c{padding:18px 0;font-size:15.5px;line-height:1.5;display:flex;gap:11px;align-items:baseline}
+@media(min-width:820px){
+  .cmp .c:first-child{padding-inline-end:34px}
+  .cmp .c:last-child{padding-inline-start:34px;border-inline-start:1px solid var(--seam)}
+}
+@media(max-width:819px){.cmp .c:last-child{padding-top:0;padding-bottom:20px}}
+.cmp .c.a{color:var(--chalkdim)}
+.cmp .c.b{color:var(--chalk)}
+.cmp .c .m{flex:none;font-weight:800;font-size:14px;line-height:1.55}
+.cmp .c.a .m{color:var(--red)}
+.cmp .c.b .m{color:var(--sky)}
+@media(max-width:819px){
+  .cmp .c .m::after{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;letter-spacing:.14em}
+}
 .seatfig{font-size:clamp(66px,12vw,118px);line-height:.82;font-weight:900;letter-spacing:-.058em;
   margin:38px 0 10px;font-variant-numeric:tabular-nums;color:var(--sky)}
 .seatfig small{font-size:.22em;letter-spacing:.13em;font-weight:700;color:var(--chalkdim);
@@ -213,22 +230,33 @@ posthog.init('phc_E7RT8uONsICJRF5lKqYhsyys29rP0BKObdRHyYSCdQx',{api_host:'https:
   <div class="wrap">
     <p class="kicker">WHEN MORE THAN ONE PERSON WRITES</p>
     <h2>Everyone writing from the same truth.</h2>
-    <p class="lede">The reason a team buys this isn&#8217;t the discount. It&#8217;s that the company brain stops being a private version per person and becomes one file everybody reads from. Three people or thirty, and not only sales: product, marketing and CS can read the same brain, which is usually where the story starts drifting in the first place.</p>
+    <p class="lede">A team doesn&#8217;t buy this for the discount. It buys it so the company brain stops being a private version per person. Three people or thirty, and not only sales: product, marketing and CS read the same one.</p>
 
-    <div class="tsplit">
-      <div class="a">
-        <h3>SEPARATE SOLO SEATS</h3>
-        <p>One brain per person, filled separately, drifting apart from the first week.</p>
-        <p>Someone updates the competitor's pricing. <b>Everyone else never hears about it</b> and keeps quoting last quarter.</p>
-        <p>Every new hire fills a brain from scratch, and it&#8217;s a little different from everyone else's.</p>
-        <p>The messaging is aligned in the folder nobody shares.</p>
+    <div class="cmp">
+      <div class="hd">
+        <div class="a"><span>SEPARATE SOLO SEATS</span></div>
+        <div class="b"><span>ONE TEAM SEAT</span></div>
       </div>
-      <div class="b">
-        <h3>ONE TEAM SEAT</h3>
-        <p><b>One canonical company brain</b>, in a shared folder or your own repo. Every seat pulls it at the start of a session and never edits it as truth.</p>
-        <p>What a rep learns in the field <b>queues for the brain owner to approve</b>, so the truth improves without anyone quietly rewriting it.</p>
-        <p>A new hire is current on day one, because they read the same brain as everyone else.</p>
-        <p>One person owns the story. Everyone writes from it.</p>
+
+      <div class="row">
+        <div class="c a"><span class="m">&#215;</span><span>A brain per person, drifting apart from week one.</span></div>
+        <div class="c b"><span class="m">&#8250;</span><span>One company brain. Every seat reads it, nobody edits it as truth.</span></div>
+      </div>
+      <div class="row">
+        <div class="c a"><span class="m">&#215;</span><span>Someone updates the competitor&#8217;s pricing. Nobody else hears.</span></div>
+        <div class="c b"><span class="m">&#8250;</span><span>Updated once. Everyone has it the next time they open it.</span></div>
+      </div>
+      <div class="row">
+        <div class="c a"><span class="m">&#215;</span><span>Every new hire fills a brain from scratch, slightly differently.</span></div>
+        <div class="c b"><span class="m">&#8250;</span><span>A new hire is current on day one.</span></div>
+      </div>
+      <div class="row">
+        <div class="c a"><span class="m">&#215;</span><span>What a rep learns in the field stays on their machine.</span></div>
+        <div class="c b"><span class="m">&#8250;</span><span>It queues for the brain owner to approve, so the truth improves.</span></div>
+      </div>
+      <div class="row">
+        <div class="c a"><span class="m">&#215;</span><span>Aligned, in a folder nobody shares.</span></div>
+        <div class="c b"><span class="m">&#8250;</span><span>One person owns the story. Everyone writes from it.</span></div>
       </div>
     </div>
 
