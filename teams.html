@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StoryOS &middot; Teams</title>
+<meta name="description" content="One canonical company brain that every seat reads from, so eight people write from the same truth instead of eight versions of it. $59 per seat at five or more.">
+<link rel="canonical" href="https://storyos.connecthedots.co/teams.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   StoryOS v6. Chalk on blackboard, Swiss brutalist protest poster.
+   Skeleton: split-screen divided by a hard seam, every pairing uneven.
+   Type law: numerals dominate, prose demoted to footnote scale.
+   Four colours. No amber (dead brand-wide). No emoji, no icon fonts.
+   ============================================================ */
+:root{
+  --board:#070B14;        /* blackboard */
+  --board2:#0C1322;       /* panel wash */
+  --chalk:#EFEDE4;        /* warm chalk, the ink */
+  --chalkdim:#9AA6B8;     /* rubbed-out chalk */
+  --sky:#38BDF8;          /* the single accent */
+  --red:#F2617A;          /* red chalk, marking errors only */
+  --seam:rgba(239,237,228,.22);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--board);color:var(--chalk);
+  font-family:Inter,system-ui,-apple-system,sans-serif;
+  font-size:16px;line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+  background-image:radial-gradient(circle at 18% 8%,rgba(56,189,248,.05),transparent 46%);
+}
+a{color:inherit}
+.wrap{max-width:1240px;margin:0 auto;padding:0 22px}
+
+/* ---------- nav ---------- */
+nav{border-bottom:1px solid var(--seam);position:sticky;top:0;background:rgba(7,11,20,.93);backdrop-filter:blur(9px);z-index:40}
+nav .wrap{display:flex;align-items:center;gap:26px;height:60px}
+/* The two commercial doors stay reachable on a phone. Priya's finding: a team buyer
+   who cannot find Teams before reading is a team buyer who buys one seat or none. */
+@media(max-width:640px){
+  nav .wrap{gap:13px;height:56px}
+  .word{font-size:16px}
+  .nl{font-size:12.5px;white-space:nowrap}
+  .btn.sm{padding:7px 11px;font-size:12.5px;white-space:nowrap}
+  /* the price leaves the nav on a phone: it appears twice on the fold already,
+     and a wrapping button is worse than a shorter one */
+  .btn.sm .pr{display:none}
+}
+.word{font-weight:900;letter-spacing:-.04em;font-size:19px;margin-inline-end:auto}
+.word span{color:var(--sky)}
+.nl{font-size:13.5px;font-weight:600;color:var(--chalkdim);text-decoration:none;letter-spacing:.01em}
+.nl:hover{color:var(--chalk)}
+@media(max-width:820px){.nl.hide{display:none}}
+.btn{display:inline-block;text-decoration:none;font-weight:700;border-radius:2px;
+  padding:13px 22px;font-size:15px;letter-spacing:-.01em;border:1.5px solid var(--chalk);
+  background:var(--chalk);color:var(--board);transition:.14s}
+.btn:hover{background:var(--sky);border-color:var(--sky);color:var(--board)}
+.btn.ghost{background:transparent;color:var(--chalk)}
+.btn.ghost:hover{background:var(--chalk);color:var(--board)}
+.btn.sm{padding:8px 15px;font-size:13.5px}
+
+/* ---------- HERO: split screen, hard seam, uneven 56/44 ---------- */
+.hero{border-bottom:2px solid var(--chalk)}
+.hero .wrap{display:grid;grid-template-columns:1fr;gap:0}
+@media(min-width:960px){
+  .hero .wrap{grid-template-columns:56fr 44fr}
+  .hero .left{border-inline-end:2px solid var(--chalk);padding-inline-end:44px}
+  .hero .right{padding-inline-start:44px}
+}
+.left{padding:56px 0 44px}
+.right{padding:0 0 52px}
+@media(min-width:960px){.right{padding:56px 0 44px}}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:700;
+  letter-spacing:.22em;color:var(--sky);margin:0 0 26px}
+h1{font-size:clamp(38px,6.6vw,68px);line-height:.98;font-weight:900;letter-spacing:-.042em;margin:0 0 24px}
+h1 .b{display:block}
+h1 .you{color:var(--sky)}
+.sub{font-size:16.5px;line-height:1.62;color:var(--chalkdim);max-width:50ch;margin:0 0 30px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:16px}
+.underbtn{font-size:13.5px;color:var(--chalkdim);margin:0 0 26px;max-width:48ch}
+
+/* requirements strip on the fold */
+.req{border-top:1px solid var(--seam);border-bottom:1px solid var(--seam);
+  padding:16px 0;margin:0 0 22px}
+.req .k{font-family:'JetBrains Mono',monospace;font-size:10.5px;font-weight:700;
+  letter-spacing:.19em;color:var(--chalk);display:block;margin-bottom:7px}
+.req p{margin:0;font-size:13.5px;line-height:1.6;color:var(--chalkdim);max-width:56ch}
+.req a{color:var(--sky);text-decoration:none;font-weight:600;white-space:nowrap}
+.req a:hover{text-decoration:underline}
+.credit{font-size:13px;color:var(--chalkdim);margin:0;max-width:52ch}
+
+/* ---------- the chalkboard panel (replaces "the card") ---------- */
+.panel{background:var(--board2);border:1px solid var(--seam);border-inline-start:3px solid var(--red);padding:26px 24px 24px}
+.panel .plabel{font-family:'JetBrains Mono',monospace;font-size:10.5px;font-weight:700;
+  letter-spacing:.17em;color:var(--chalkdim);margin:0 0 18px}
+.panel h3{font-size:15px;font-weight:800;letter-spacing:-.01em;margin:0 0 18px;
+  padding-bottom:12px;border-bottom:1px solid var(--seam)}
+.alist{margin:0 0 20px}
+.arow{font-family:'JetBrains Mono',monospace;font-size:10.5px;font-weight:700;letter-spacing:.15em;
+  color:var(--red);margin:0 0 9px}
+.aitem{display:flex;gap:11px;font-size:14px;line-height:1.5;margin:0 0 9px;color:var(--chalk)}
+.aitem .x{color:var(--red);font-weight:800;flex:none;line-height:1.5}
+.aclear{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--chalkdim);
+  margin:0 0 6px;display:flex;justify-content:space-between;gap:14px;
+  border-top:1px solid var(--seam);padding-top:9px}
+.aclear b{color:var(--chalkdim);font-weight:500}
+.stab{margin:20px 0 0;padding-top:16px;border-top:2px solid var(--red);
+  font-size:15.5px;font-weight:700;line-height:1.45;letter-spacing:-.012em}
+
+/* ---------- BAND: numerals dominate ---------- */
+.nums{border-bottom:2px solid var(--chalk)}
+.nums .wrap{display:grid;grid-template-columns:1fr;gap:0}
+@media(min-width:820px){.nums .wrap{grid-template-columns:34fr 30fr 36fr}}
+.n{padding:38px 0 34px}
+@media(min-width:820px){
+  .n{padding:44px 34px 40px}
+  .n:first-child{padding-inline-start:0}
+  .n+.n{border-inline-start:1px solid var(--seam)}
+  .n:last-child{padding-inline-end:0}
+}
+@media(max-width:819px){.n+.n{border-top:1px solid var(--seam)}}
+.n .big{font-size:clamp(62px,13vw,116px);line-height:.82;font-weight:900;letter-spacing:-.058em;
+  margin:0 0 14px;font-variant-numeric:tabular-nums}
+.n .big.sky{color:var(--sky)}
+.n .big.red{color:var(--red)}
+.n .cap{font-size:13px;line-height:1.5;color:var(--chalkdim);margin:0;max-width:30ch}
+
+/* ---------- BAND: what it is. ruled chalkboard, asymmetric ---------- */
+.sec{border-bottom:1px solid var(--seam);padding:64px 0}
+.kicker{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;
+  letter-spacing:.2em;color:var(--sky);margin:0 0 18px}
+h2{font-size:clamp(27px,4.1vw,42px);line-height:1.05;font-weight:900;letter-spacing:-.035em;margin:0 0 18px;max-width:20ch}
+.lede{font-size:16px;color:var(--chalkdim);max-width:56ch;margin:0 0 40px;line-height:1.6}
+.split{display:grid;grid-template-columns:1fr;gap:0}
+@media(min-width:900px){.split{grid-template-columns:38fr 62fr;gap:52px}}
+.ruled{border-top:1px solid var(--seam)}
+.ruled .r{display:grid;grid-template-columns:1fr;gap:4px;padding:19px 0;border-bottom:1px solid var(--seam)}
+@media(min-width:700px){.ruled .r{grid-template-columns:30fr 70fr;gap:26px;align-items:baseline}}
+.ruled .rn{font-weight:800;font-size:16px;letter-spacing:-.02em}
+.ruled .rd{font-size:14.5px;color:var(--chalkdim);line-height:1.55}
+.ruled .rd b{color:var(--chalk);font-weight:600}
+.refuse{color:var(--red);font-weight:600}
+
+/* ---------- Q&A: ruled, no cards ---------- */
+.qa{border-top:1px solid var(--seam)}
+.qa details{border-bottom:1px solid var(--seam);padding:0}
+.qa summary{cursor:pointer;list-style:none;padding:18px 0;font-size:16px;font-weight:700;
+  letter-spacing:-.015em;display:flex;gap:16px;align-items:baseline}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary .sign{color:var(--sky);font-family:'JetBrains Mono',monospace;font-weight:700;
+  font-size:15px;flex:none;width:16px}
+.qa details[open] summary .sign::after{content:'-'}
+.qa details:not([open]) summary .sign::after{content:'+'}
+.qa .ans{padding:0 0 20px 32px;font-size:15px;line-height:1.62;color:var(--chalkdim);max-width:70ch}
+.qa .ans b{color:var(--chalk);font-weight:600}
+.qa .ans a{color:var(--sky);text-decoration:none;font-weight:600}
+.qa .ans a:hover{text-decoration:underline}
+
+/* ---------- buy ---------- */
+.buy{border-top:2px solid var(--chalk);padding:66px 0 72px}
+.buy .wrap{display:grid;grid-template-columns:1fr;gap:34px}
+@media(min-width:900px){.buy .wrap{grid-template-columns:44fr 56fr;gap:60px;align-items:end}}
+.price{font-size:clamp(76px,15vw,142px);line-height:.8;font-weight:900;letter-spacing:-.06em;margin:0;
+  font-variant-numeric:tabular-nums}
+.price s{color:var(--chalkdim);font-size:.31em;font-weight:700;letter-spacing:-.03em;
+  display:block;margin-bottom:12px;text-decoration-thickness:2px}
+.buy .terms{font-size:14px;color:var(--chalkdim);margin:0 0 22px;max-width:52ch;line-height:1.6}
+footer{border-top:1px solid var(--seam);padding:30px 0 44px;font-size:13px;color:var(--chalkdim)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:8px 30px}
+footer a{color:var(--chalkdim)}
+</style>
+<style>
+.tsplit{display:grid;grid-template-columns:1fr;gap:0;border-top:2px solid var(--chalk)}
+@media(min-width:900px){.tsplit{grid-template-columns:47fr 53fr}
+  .tsplit .a{border-inline-end:2px solid var(--chalk);padding:40px 46px 40px 0}
+  .tsplit .b{padding:40px 0 40px 46px}}
+.tsplit .a,.tsplit .b{padding:36px 0}
+.tsplit h3{font-size:13px;font-family:'JetBrains Mono',monospace;letter-spacing:.18em;font-weight:700;margin:0 0 20px}
+.tsplit .a h3{color:var(--red)}
+.tsplit .b h3{color:var(--sky)}
+.tsplit p{font-size:15.5px;line-height:1.62;color:var(--chalkdim);margin:0 0 14px;max-width:46ch}
+.tsplit p b{color:var(--chalk);font-weight:600}
+.seatfig{font-size:clamp(66px,12vw,118px);line-height:.82;font-weight:900;letter-spacing:-.058em;
+  margin:38px 0 10px;font-variant-numeric:tabular-nums;color:var(--sky)}
+.seatfig small{font-size:.22em;letter-spacing:.13em;font-weight:700;color:var(--chalkdim);
+  font-family:'JetBrains Mono',monospace;display:block;margin-bottom:12px}
+.seatnote{font-size:14px;color:var(--chalkdim);margin:0 0 26px;max-width:44ch;line-height:1.6}
+</style>
+<!-- PostHog web analytics -->
+<script>
+!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey canRenderSurveyAsync identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug getPageViewId captureTraceFeedback captureTraceMetric".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+posthog.init('phc_E7RT8uONsICJRF5lKqYhsyys29rP0BKObdRHyYSCdQx',{api_host:'https://us.i.posthog.com',defaults:'2025-05-24',person_profiles:'identified_only'})
+</script>
+</head>
+<body>
+<nav>
+  <div class="wrap">
+    <div class="word">Story<span>OS</span></div>
+    <a class="nl" href="what-you-need.html">What you need</a>
+    <a class="nl hide" href="inside.html">Inside the kit</a>
+    <a class="nl hide" href="example-battlecard.html">A real output</a>
+    <a class="nl" href="teams.html">Teams</a>
+    <a class="btn sm" href="buy.html">Own the kit</a>
+  </div>
+</nav>
+
+<section class="sec" style="padding-top:56px">
+  <div class="wrap">
+    <p class="kicker">FOR TEAMS OF FIVE AND UP</p>
+    <h2>Eight people writing from one truth.</h2>
+    <p class="lede">The reason a team buys this is not the discount. It is that the company brain stops being eight private versions of the positioning and becomes one file everybody reads from.</p>
+
+    <div class="tsplit">
+      <div class="a">
+        <h3>EIGHT SOLO SEATS</h3>
+        <p>Eight brains, filled eight times, drifting apart from the first week.</p>
+        <p>Someone updates the competitor's pricing. <b>Seven people never hear about it</b> and keep quoting last quarter.</p>
+        <p>Every new hire fills a brain from scratch, and it is a little different from everyone else's.</p>
+        <p>The messaging is aligned in the folder nobody shares.</p>
+      </div>
+      <div class="b">
+        <h3>ONE TEAM SEAT</h3>
+        <p><b>One canonical company brain</b>, in a shared folder or your own repo. Every seat pulls it at the start of a session and never edits it as truth.</p>
+        <p>What a rep learns in the field <b>queues for the brain owner to approve</b>, so the truth improves without anyone quietly rewriting it.</p>
+        <p>A new hire is current on day one, because they read the same brain as everyone else.</p>
+        <p>One person owns the story. Everyone writes from it.</p>
+      </div>
+    </div>
+
+    <p class="seatfig"><small>PER SEAT, FIVE OR MORE</small>$59</p>
+    <p class="seatnote">One payment per seat, owned forever, updates included. Each person still needs their own paid Claude plan, which is not ours and is not included.</p>
+
+    <div class="cta">
+      <a class="btn" href="mailto:storyos@connecthedots.co?subject=StoryOS%20team%20seats">Ask for team seats</a>
+      <a class="btn ghost" href="what-you-need.html">What each seat needs</a>
+    </div>
+
+    <div class="warn" style="border-inline-start:3px solid var(--sky);background:var(--board2);padding:22px 24px;margin-top:46px">
+      <h3 style="margin:0 0 10px;font-size:17px;font-weight:800;letter-spacing:-.02em">Want it wired up for you?</h3>
+      <p style="margin:0;font-size:15px;color:var(--chalkdim);line-height:1.6;max-width:66ch">The done with you tier is the shared brain built with your team, in your language, on your real deals, plus any play your motion needs and does not have yet. It is a project rather than a product. Tell us the team and the motion and we will tell you whether it is worth it.
+      <br><a href="mailto:storyos@connecthedots.co?subject=StoryOS%20done%20with%20you" style="color:var(--sky);text-decoration:none;font-weight:600">Start that conversation &#8594;</a></p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>StoryOS &middot; by Anat &middot; Connecting the Dots</div>
+    <div>Human, always.</div>
+    <div><a href="what-you-need.html">What you need</a></div>
+    <div><a href="teams.html">Teams</a></div>
+    <div><a href="https://connecthedots.co/accessibility.html" hreflang="he">Accessibility statement</a></div>
+  </div>
+</footer>
+<script>
+/* Intent to buy, measured where it happens. Selector must match the real hrefs:
+   every CTA points at buy.html, so binding to gumroad.com matches nothing. */
+document.addEventListener('click', function(e){
+  var a = e.target.closest && e.target.closest('a[href*="buy.html"]');
+  if (!a || !window.posthog) return;
+  var btns = Array.prototype.slice.call(document.querySelectorAll('a[href*="buy.html"]'));
+  try {
+    posthog.capture('buy_page_click', {
+      product: 'storyos',
+      position: btns.indexOf(a) + 1,
+      label: (a.textContent || '').trim().slice(0, 60)
+    }, { transport: 'sendBeacon' });
+  } catch (err) {}
+}, true);
+</script>
+</body>
+</html>
