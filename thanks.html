@@ -134,9 +134,27 @@ posthog.init('phc_E7RT8uONsICJRF5lKqYhsyys29rP0BKObdRHyYSCdQx',{api_host:'https:
     product: 'storyos',
     arrived_from_payment: paid,
     query_keys: keys.join(','),
-    transaction: q.get('id') || q.get('transactionId') || q.get('paymentId') || null,
+    transaction: q.get('requestId') || q.get('id') || q.get('transactionId') || q.get('paymentId') || null,
     referrer: document.referrer || null
   });
+
+  /* The revenue event. thankyou_view already carried arrived_from_payment, but a boolean buried
+     inside a pageview is not a metric anybody can build a funnel on, and every question about
+     conversion had to be answered by hand. This is the same fact, promoted to a first-class event,
+     with the amount Morning already hands us on the redirect.
+
+     Fires ONLY when the buyer arrived carrying payment parameters. Someone who types the bare
+     thanks.html URL, or is sent it, produces nothing here. */
+  if (paid) {
+    posthog.capture('purchase_completed', {
+      product: 'storyos',
+      rail: 'ils_morning',
+      amount: Number(q.get('amount')) || null,
+      currency: q.get('currency') || 'ILS',
+      payment_method: q.get('paymentMethod') || null,
+      transaction: q.get('requestId') || null
+    });
+  }
 
   var dl = document.getElementById('download');
   if (dl) dl.addEventListener('click', function () {
