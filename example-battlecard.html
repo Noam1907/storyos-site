@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- DESIGN-PASS by=lior on=2026-11-12 card=O-output/237-storyos-thursday-battlecard-2026-11-12/DESIGN-PASS-2026-11-12.md shots=O-output/237-storyos-thursday-battlecard-2026-11-12/shots -->
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>A real output · StoryOS</title>
-<meta name="description" content="A real StoryOS battlecard, produced on the built-in demo company with zero edits. Including the part no other tool shows you.">
+<title>Reviewed example · StoryOS</title>
+<meta name="description" content="A StoryOS battlecard on the demo company that ships in the kit, shown after review: the sentence that was flagged, why it was flagged, and what the rep can say instead.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -12,7 +13,7 @@
 :root{
   --bg:#070B14; --panel:#0D1524; --line:rgba(148,163,184,.14);
   --ink:#F1F5F9; --sub:#94A3B8; --dim:#64748B;
-  --blue:#3B82F6; --cyan:#38BDF8; --amber:#B45309; --amberbg:#FFF7E0;
+  --blue:#3B82F6; --cyan:#38BDF8; --cyandeep:#0B6F9C; --amber:#B45309; --amberbg:#FFF7E0;
   --paper:#FFFFFF; --pink:#101828; --psub:#475467; --pline:#E4E7EC; --psoft:#F4F7FB;
 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -43,14 +44,17 @@ h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(30px,4vw,44px);l
 .sheetbody{padding:42px 46px 46px}
 .sheet h2{font-family:'Fraunces',serif;font-size:26px;font-weight:600;line-height:1.2}
 .ctx{font-size:13.5px;color:var(--psub);font-style:italic;border-left:3px solid var(--pline);padding-left:14px;margin:16px 0 26px}
+.sheet.note{margin-bottom:28px}
+.sheet.note h3:first-child{margin-top:0}
+.sheet.note .talk + p{margin-top:14px}
 .sheet h3{font-family:'Fraunces',serif;font-size:19px;font-weight:600;margin:28px 0 8px}
 .sheet p,.sheet li{font-size:15px;color:var(--pink)}
 .sheet p{margin-bottom:11px}
 .sheet ul,.sheet ol{padding-left:22px;margin-bottom:11px}
 .sheet li{margin-bottom:7px}
 .verify{font-family:'JetBrains Mono',monospace;font-size:12.5px;background:var(--amberbg);color:var(--amber);padding:2px 6px;border-radius:6px}
-.src{font-family:'JetBrains Mono',monospace;font-size:12px;background:rgba(56,189,248,.10);color:#38BDF8;padding:2px 6px;border-radius:6px;word-break:break-word}
-.closes{display:block;margin-top:6px;font-size:14px;color:var(--ink)}
+.src{font-family:'JetBrains Mono',monospace;font-size:12px;background:rgba(56,189,248,.10);color:var(--cyandeep);padding:2px 6px;border-radius:6px;word-break:break-word}
+.closes{display:block;margin-top:6px;font-size:14px;color:var(--pink)}
 .talk{background:var(--psoft);border:1px solid var(--pline);border-radius:12px;padding:16px 20px;margin:8px 0 4px}
 .talk p{color:var(--pink)}
 .audit{border:1.5px solid var(--amber);background:#FFFDF5;border-radius:12px;padding:18px 22px;margin-top:32px}
@@ -63,6 +67,18 @@ h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(30px,4vw,44px);l
 footer{border-top:1px solid var(--line);padding:26px 0;font-size:13.5px;color:var(--dim)}
 footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
 @media (max-width:900px){.sheetbody{padding:30px 24px}.sheethead,.sheetfoot{padding:14px 24px}.navlinks .hide{display:none}}
+/* Phone: the sheets are paper on a dark table, so they need a margin of table around them,
+   and the hero must not spend a whole screen before the review note starts. */
+@media (max-width:600px){
+  .wrap{padding:0 16px}
+  .hero{padding:40px 0 20px}
+  .hero .lede{font-size:15.5px;line-height:1.55;margin-top:12px}
+  .sheetwrap{padding:20px 12px 32px}
+  .sheetbody{padding:24px 18px 28px}
+  .sheethead,.sheetfoot{padding:12px 18px}
+  .sheet h2{font-size:23px}
+  .sheet.note .sheethead span:last-child{font-size:11px}
+}
 </style>
 <!-- PostHog web analytics -->
 <script>
@@ -79,7 +95,7 @@ posthog.init('phc_E7RT8uONsICJRF5lKqYhsyys29rP0BKObdRHyYSCdQx',{api_host:'https:
       <a class="hide" href="what-you-need.html">What you need</a>
       <a class="hide" href="inside.html">Inside the kit</a>
       <a class="hide" href="teams.html">Teams</a>
-      <a class="hide" href="example-battlecard.html">A real output</a>
+      <a class="hide" href="example-battlecard.html">Reviewed example</a>
       <a class="hide" href="about.html">About</a>
       <a class="btn primary small" href="buy.html">Own the kit</a>
     </div>
@@ -88,15 +104,30 @@ posthog.init('phc_E7RT8uONsICJRF5lKqYhsyys29rP0BKObdRHyYSCdQx',{api_host:'https:
 
 <header class="hero">
   <div class="wrap">
-    <span class="kick">Example output · unedited</span>
-    <h1>Read what it actually writes.</h1>
-    <p class="lede">Anyone can claim "AI writes your battlecards." The question is whether you'd forward the result with your name on it. This one was produced on the demo company that ships in the kit, zero edits. <b>Read to the end: the Verification Audit is the part no other tool will show you.</b> It is sorted by who has to act, and on this card nothing is waiting on the rep.</p>
+    <span class="kick">Reviewed example</span>
+    <h1>A battlecard and its evidence check.</h1>
+    <p class="lede">The question is whether you'd forward the result with your name on it. This battlecard was produced on the demo company that ships in the kit, then reviewed and edited by hand. The review found a timeline the rep could have repeated without a source. The note below shows the sentence, why it was flagged, and what replaced it. <b>Read to the end: the Verification Audit lists what still needs checking, sorted by who has to act.</b></p>
   </div>
 </header>
 
 <div class="sheetwrap">
+<div class="sheet note">
+  <div class="sheethead"><span>Review note</span><span>What changed between the output and this page</span></div>
+  <div class="sheetbody">
+    <h3>Sentence flagged</h3>
+    <p>In the approved counter: <b>"Ironclad is powerful, and you'll spend a quarter configuring it and an admin maintaining it."</b></p>
+    <p>In the closing talk track: <b>"So before you commit a quarter to configuration: what would a two-week go-live be worth to this quarter's pipeline?"</b></p>
+    <h3>Why it was flagged</h3>
+    <p>Ironclad's site, implementation page and docs publish no rollout timeline. The card's own audit marked the duration as unconfirmed, and the card still gave the rep the quarter to say in two places. The counter was company-approved wording. Approval covers how a line is phrased. It does not source the fact inside it.</p>
+    <p>One more line went for the same reason: "against a CLM industry standard of 3 to 6 months" carried no source on the card.</p>
+    <h3>What the rep can say instead</h3>
+    <div class="talk"><p>"With two people on your legal team, who would own configuration in the first month, and how much time would they need?"</p></div>
+    <p>The change was made in angle 1 and in two places in the talk track: the close, and the line "you'll live in setup instead of contracts", which was the second half of the same counter. The objection responses and landmine questions were checked and carried no timeline. The approved counter now sits in the audit under "Yours to answer", waiting on whoever approved it.</p>
+  </div>
+</div>
+
 <div class="sheet">
-  <div class="sheethead"><span>4-output / battlecard-ironclad.md</span><span>Play 02 · Forrest · audited by Sherlock</span></div>
+  <div class="sheethead"><span>4-output / battlecard-ironclad.md</span><span>Play 02 · Forrest · audited by Sherlock · reviewed and edited by hand</span></div>
   <div class="sheetbody">
     <h2>Battlecard: Harborline vs. Ironclad</h2>
     <p class="ctx">Deal context, as the rep gave it: Series C fintech, ~800 employees, legal team of 2. Stage: evaluation. The GC added Ironclad to the shortlist after an analyst call. In the room: Head of Legal Ops (champion), GC, CFO joins the final review.</p>
@@ -114,7 +145,7 @@ posthog.init('phc_E7RT8uONsICJRF5lKqYhsyys29rP0BKObdRHyYSCdQx',{api_host:'https:
 
     <h3>Where we win (3 angles)</h3>
     <p><b>1. Setup burden vs. a team of two &#8594; 9-day implementation.</b><br>
-    Their depth is bought with configuration, and configuration needs an owner. Approved counter, verbatim: "Ironclad is powerful, and you'll spend a quarter configuring it and an admin maintaining it. If you have that team, great. If you're a team of two, you'll live in setup, not in contracts." Our median implementation is 9 days across the last 14 deployments, against a CLM industry standard of 3 to 6 months. Their own implementation page describes a guided onboarding programme with a named customer-success contact. <span class="src">[SOURCE: ironcladapp.com/implementation · read 2026-08-09]</span> <span class="verify">[VERIFY:unconfirmed] How long a rollout actually takes at 200-2,000 employees. Their site gives no timeline. [/VERIFY]</span><span class="closes"><b>&#8594; so do not assert it.</b> Say instead: "ask them what month one looks like, and how many people on your side run it."</span></p>
+    Their depth is bought with configuration, and configuration needs an owner. Our median implementation is 9 days across the last 14 deployments. Their own implementation page describes a guided onboarding programme with a named customer-success contact. <span class="src">[SOURCE: ironcladapp.com/implementation · read 2026-08-09]</span> <span class="verify">[VERIFY:unconfirmed] How long a rollout actually takes at 200-2,000 employees. Their site gives no timeline. [/VERIFY]</span><span class="closes"><b>&#8594; so do not assert one.</b> The brain's approved counter says "a quarter". It is held back until someone sources it (audit, list 1). Ask instead: "With two people on your legal team, who would own configuration in the first month, and how much time would they need?"</span></p>
     <p><b>2. Portal adoption vs. where redlines actually happen &#8594; embedded CLM.</b><br>
     Ironclad is a destination; contract work happens in Slack, email, and the CRM. For a lean team, a portal nobody opens is the old shared-inbox problem with a login screen. Our number: 78% of redlines completed without opening Harborline (last 20 customers, average). Safe wording: "Most redlines never require logging in."</p>
     <p><b>3. The GC's AI fear &#8594; redlines that cite THEIR playbook.</b><br>
@@ -137,30 +168,32 @@ posthog.init('phc_E7RT8uONsICJRF5lKqYhsyys29rP0BKObdRHyYSCdQx',{api_host:'https:
 
     <h3>60-second talk track</h3>
     <div class="talk">
-      <p>"Ironclad is a good product with a strong brand. I won't pretend otherwise. But here's the question that matters for a legal team of two: who runs it? Ironclad's depth comes from configuration, and configuration needs an owner. If you have a legal-ops team, that's a fair trade. If you don't, you'll live in setup instead of contracts.</p>
+      <p>"Ironclad is a good product with a strong brand. I won't pretend otherwise. But here's the question that matters for a legal team of two: who runs it? Ironclad's depth comes from configuration, and configuration needs an owner. If you have a legal-ops team, that's a fair trade. If you don't, the question is which of your two people becomes that owner.</p>
       <p>Harborline takes the opposite bet. Median implementation across our last 14 deployments: 9 days. Give us your top five contract types and your playbook, and we do the rest. And your team won't move into another portal. Across our last 20 customers, 78% of redlines were completed without opening Harborline at all. The work stays in Slack and email, where your counterparties already are.</p>
       <p>Finch, a Series C fintech, went from a 21-day contract cycle to 6 days within seven weeks, and pulled $1.2M of deals into Q4.</p>
-      <p>So before you commit a quarter to configuration: what would a two-week go-live be worth to this quarter's pipeline?"</p>
+      <p>So here's what I'd ask any vendor, us included: with two people on your legal team, who would own configuration in the first month, and how much time would they need?"</p>
     </div>
 
     <div class="audit">
       <h3>Verification Audit</h3>
       <p class="small">This block closes every StoryOS asset, sorted by who has to act. Shortest list first, on purpose.</p>
       <p><b>1. Yours to answer</b></p>
-      <p style="margin:0 0 14px"><b>Nothing here is waiting on you.</b> Every claim about our side came from the company brain.</p>
+      <ol>
+        <li><span class="verify">[VERIFY:yours]</span> The brain's approved Ironclad counter says "you'll spend a quarter configuring it." Ironclad publishes no timeline (site, implementation page and docs checked), so the card does not use the line. <b>Who holds it:</b> whoever approved the counter. <b>The question:</b> "What is the quarter based on: a customer's account, a lost deal, or a published figure?" Until that is answered, the rep uses the buyer question instead. (Angle 1, talk track)</li>
+      </ol>
       <p><b>2. Ours, and unmeasured</b></p>
       <p style="margin:0 0 14px">None. The three numbers used each carry a source and a date in the brain.</p>
       <p><b>3. Sourced, spot-check</b> <span class="small">(the system's work, not yours)</span></p>
       <ol>
         <li><span class="src">[SOURCE]</span> Integrations directory and partner programme &#183; read 2026-08-09 (Where they're strong)</li>
         <li><span class="src">[SOURCE]</span> Guided onboarding with a named CS contact &#183; read 2026-08-09 (Angle 1)</li>
-        <li><span class="verify">[VERIFY:unconfirmed]</span> Actual rollout duration at this size. Checked their site, implementation page and docs; no timeline published. <b>The question is supplied instead of the number.</b> (Angle 1)</li>
+        <li><span class="verify">[VERIFY:unconfirmed]</span> Actual rollout duration at this size. Checked their site, implementation page and docs; no timeline published. <b>The question is supplied instead of the number.</b> (Angle 1, talk track)</li>
         <li><span class="verify">[VERIFY:unconfirmed]</span> What their AI compares a clause against. Not stated on their product or AI pages. <b>Landmine question supplied instead.</b> (Angle 3)</li>
       </ol>
       <p><b>4. Wording needs approval</b></p>
-      <p style="margin:0 0 14px">None. All wording is the brain's approved phrasing.</p>
-      <p class="small">Everything else traces to the company brain: differentiator table, proof inventory, the Finch mini-case, approved objection responses, and the approved Ironclad counter.</p>
-      <p class="small"><b>Note the shape.</b> Two competitor facts were researched and cited. Two could not be confirmed, so they became questions to ask rather than claims to make. Nothing landed in list 1 &#8212; the rep can send this without doing anything first.</p>
+      <p style="margin:0 0 14px">None.</p>
+      <p class="small">Everything else traces to the company brain: differentiator table, proof inventory, the Finch mini-case and approved objection responses.</p>
+      <p class="small"><b>Note the shape.</b> Two competitor facts were researched and cited. Two could not be confirmed, so they became questions to ask rather than claims to make. One of those was also sitting inside company-approved wording, so it went to list 1. The rep can use this card today, and the brain's counter waits on its owner.</p>
     </div>
   </div>
   <div class="sheetfoot"><span>Harborline is the fictional demo company that ships in the kit.</span><span>StoryOS · Human, always.</span></div>
@@ -168,8 +201,8 @@ posthog.init('phc_E7RT8uONsICJRF5lKqYhsyys29rP0BKObdRHyYSCdQx',{api_host:'https:
 </div>
 
 <div class="after">
-  <p>This is minute four with the demo brain. With YOUR brain loaded, it writes like this about your competitors, in your voice, with your proof.</p>
-  <a class="btn primary big" href="buy.html">Own the kit</a>
+  <p>This card was written on the demo brain and then reviewed by hand. With your own positioning and proof loaded, the card is about your competitors, and the evidence check is about your claims.</p>
+  <a class="btn primary big" href="buy.html">Get the kit</a>
 </div>
 
 <footer>

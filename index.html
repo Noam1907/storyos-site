@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- DESIGN-PASS by=lior on=2026-11-12 card=O-output/237-storyos-thursday-battlecard-2026-11-12/DESIGN-PASS-2026-11-12.md shots=O-output/237-storyos-thursday-battlecard-2026-11-12/shots -->
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>StoryOS &middot; The enablement AI team, already built</title>
-<meta name="description" content="A competitor came up. A call is tomorrow. A deal just closed. Say what is happening and get the finished thing: the battlecard, the call prep, the handoff brief, the business case, written from your own positioning and proof.">
+<title>StoryOS &middot; Sales Enablement Kit on Claude</title>
+<meta name="description" content="Sales asks what to say about a competitor on Thursday&#8217;s call. Bring the buyer&#8217;s objection, your deal notes and your proof. StoryOS helps you draft what the rep can say, see which claims need checking, and choose the question to ask next.">
 <meta property="og:title" content="StoryOS · Sales Enablement Kit on Claude">
-<meta property="og:description" content="Eight specialists behind one door, installed into the Claude app you already use. They know your company, they date their sources, and they will not invent a number to fill a gap.">
+<meta property="og:description" content="A kit for the Claude desktop app. Draft what the rep can say, see which claims need checking, and choose the question to ask next. You review the wording before it goes into the call.">
 <meta property="og:image" content="https://storyos.connecthedots.co/og.png">
 <meta property="og:url" content="https://storyos.connecthedots.co/">
 <meta name="twitter:card" content="summary_large_image">
@@ -55,6 +56,19 @@ nav .wrap{display:flex;align-items:center;gap:26px;height:60px}
   /* the price leaves the nav on a phone: it appears twice on the fold already,
      and a wrapping button is worse than a shorter one */
   .btn.sm .pr{display:none}
+}
+/* 375 and below: the nav was 10px wider than the screen (live too), which gave the whole page a sideways scroll */
+@media(max-width:400px){
+  nav .wrap{gap:10px;padding:0 16px}
+  .word{font-size:15px}
+  .nl{font-size:12px}
+  .btn.sm{padding:7px 10px;font-size:12px}
+}
+@media(max-width:360px){
+  nav .wrap{gap:8px;padding:0 12px}
+  .word{font-size:14px}
+  .nl{font-size:11.5px}
+  .btn.sm{padding:6px 8px;font-size:11.5px}
 }
 .word{font-weight:900;letter-spacing:-.04em;font-size:19px;margin-inline-end:auto}
 .word span{color:var(--sky)}
@@ -145,8 +159,21 @@ h1 .you{color:var(--sky)}
 .pricebig{font-size:clamp(48px,7vw,72px);line-height:1;font-weight:900;letter-spacing:-.05em;
   margin:0 0 10px;font-variant-numeric:tabular-nums}
 .pricebig s{color:var(--chalkdim);font-size:.44em;font-weight:700;margin-inline-end:14px;text-decoration-thickness:2px}
-.fold .terms2{font-size:14px;color:var(--chalkdim);margin:0 auto;max-width:48ch;line-height:1.55}
+.fold .terms2{font-size:14px;color:var(--chalkdim);margin:0 auto;max-width:58ch;line-height:1.55;text-wrap:balance}
 .fold .terms2 b{color:var(--chalk);font-weight:600}
+/* Phone: the long hero must still land the primary door on the first screen.
+   Same words, tighter vertical rhythm, buttons full width so the long label gets the whole line. */
+@media(max-width:560px){
+  .fold{padding:30px 0 40px}
+  .fold .roles{margin-bottom:16px}
+  .fold .pill{font-size:13px;padding:7px 14px;margin-bottom:22px;line-height:1.35}
+  .fold h1{font-size:30px;line-height:1.12;letter-spacing:-.02em;max-width:none;margin-bottom:16px}
+  .fold h1 .you{margin-top:.1em}
+  .fold .sub{font-size:16px;line-height:1.5;max-width:none;margin-bottom:22px;text-wrap:pretty}
+  .fold .cta{flex-direction:column;align-items:stretch;gap:10px;margin-bottom:22px}
+  .fold .btn{padding:14px 12px;font-size:15px;text-align:center;text-wrap:balance}
+  .pricebig{margin-bottom:8px}
+}
 
 
 
@@ -157,6 +184,8 @@ h1 .you{color:var(--sky)}
 .how svg{width:100%;height:auto;display:block;overflow:visible}
 .how figcaption{font-size:13.5px;color:var(--chalkdim);margin:20px 0 0;max-width:64ch;line-height:1.55}
 .how figcaption b{color:var(--chalk);font-weight:600}
+.how .ruled{max-width:760px;margin:38px auto 0}
+.how .credit{max-width:760px;margin:16px auto 0}
 
 /* ---------- the cost of doing nothing: three beats, no paragraphs ---------- */
 .cost{border-bottom:1px solid var(--seam);padding:60px 0}
@@ -201,8 +230,12 @@ h1 .you{color:var(--sky)}
 .audbox .l{display:flex;gap:11px;font-size:15px;line-height:1.5;margin:0 0 11px}
 .audbox .l .x{color:var(--red);font-weight:800;flex:none}
 .audbox .l b{font-weight:600}
-.audbox .k{margin:18px 0 0;padding-top:15px;border-top:2px solid var(--red);
+.audbox .k{margin:18px 0 0;padding-top:15px;border-top:2px solid var(--sky);
   font-size:16px;font-weight:700;line-height:1.45;letter-spacing:-.012em}
+/* red marks the problem, sky marks the fix: the run-in label becomes a quiet mono tag above the quote */
+.audbox .k .kl{display:block;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;
+  letter-spacing:.12em;color:var(--sky);margin:0 0 7px}
+@media(max-width:560px){.aud{padding:44px 0}.aud .wrap{gap:26px}.audbox{padding:20px 18px}}
 
 /* ---------- BAND: numerals dominate ---------- */
 .nums{border-bottom:2px solid var(--chalk)}
@@ -228,6 +261,10 @@ h1 .you{color:var(--sky)}
   letter-spacing:.2em;color:var(--sky);margin:0 0 18px}
 h2{font-size:clamp(27px,4.1vw,42px);line-height:1.05;font-weight:900;letter-spacing:-.035em;margin:0 0 18px;max-width:20ch}
 .lede{font-size:16px;color:var(--chalkdim);max-width:56ch;margin:0 0 40px;line-height:1.6}
+.lede.flush{margin-bottom:0}
+.lede.say{color:var(--chalk);margin-bottom:18px}
+.lede a,.credit a{color:var(--sky);text-decoration:none;font-weight:600}
+.lede a:hover,.credit a:hover{text-decoration:underline}
 .split{display:grid;grid-template-columns:1fr;gap:0}
 @media(min-width:900px){.split{grid-template-columns:38fr 62fr;gap:52px}}
 .ruled{border-top:1px solid var(--seam)}
@@ -279,7 +316,7 @@ posthog.init('phc_E7RT8uONsICJRF5lKqYhsyys29rP0BKObdRHyYSCdQx',{api_host:'https:
     <div class="word">Story<span>OS</span></div>
     <a class="nl" href="what-you-need.html">What you need</a>
     <a class="nl hide" href="inside.html">Inside the kit</a>
-    <a class="nl hide" href="example-battlecard.html">A real output</a>
+    <a class="nl hide" href="example-battlecard.html">Reviewed example</a>
     <a class="nl" href="teams.html">Teams</a>
     <a class="btn sm" href="buy.html">Own the kit</a>
   </div>
@@ -289,23 +326,40 @@ posthog.init('phc_E7RT8uONsICJRF5lKqYhsyys29rP0BKObdRHyYSCdQx',{api_host:'https:
 <section class="fold">
   <div class="wrap">
     <p class="roles"><b>SALES ENABLEMENT</b> &middot; <b>REVENUE ENABLEMENT</b> &middot; <b>PRODUCT MARKETING</b> &middot; <b>CUSTOMER SUCCESS</b></p>
-    <span class="pill">Eight AI specialists, already built. A folder you open in Claude.</span>
-    <h1>Your team needs the battlecard Thursday.<span class="you">Not an AI project.</span></h1>
-    <p class="sub">The agent team, already built. You say what is happening, it writes the asset, in your company&#8217;s own words.</p>
+    <span class="pill">A kit for the Claude desktop app. Paid Claude plan required.</span>
+    <h1>Your rep needs a battlecard by Thursday.<span class="you">Give them an answer they can back up.</span></h1>
+    <p class="sub">Bring the buyer&#8217;s objection, your deal notes, and the proof your company already has. StoryOS helps you draft what the rep can say, see which claims need checking, and choose the question to ask next. You review the wording before it goes into the call.</p>
     <div class="cta">
-      <a class="btn" href="buy.html">Own the kit</a>
-      <a class="btn ghost" href="example-battlecard.html">Read one, unedited</a>
+      <a class="btn" href="example-battlecard.html">See a battlecard and its evidence check</a>
+      <a class="btn ghost" href="buy.html">Get the kit</a>
     </div>
     <p class="pricebig"><s>$197</s>$79</p>
-    <p class="terms2">Founding price until 31 October &middot; One payment &middot; Yours forever &middot; No renewal &middot; Runs in Claude, Pro or above &middot; No refunds</p>
+    <p class="terms2"><b>Needs the Claude desktop app on a paid plan, Pro or above</b> &middot; Founding price &middot; One payment &middot; Yours forever &middot; No renewal &middot; No refunds</p>
   </div>
 </section>
 
-<!-- ============ the seam, drawn ============ -->
+<!-- ============ example one: the battlecard and its evidence check ============ -->
+<section class="aud">
+  <div class="wrap">
+    <div>
+      <p class="kicker">EXAMPLE ONE &middot; THE BATTLECARD</p>
+      <h2>It checks your numbers too.</h2>
+      <p class="lede flush">Every asset closes with a list of what it could not prove, sorted by who has to act. Your side gets the same treatment as the competitor&#8217;s. You see which claims need checking before a rep repeats them to a buyer. <a href="example-battlecard.html">Read the full battlecard and its evidence check &#8594;</a></p>
+    </div>
+    <div class="audbox">
+      <p class="t">FROM THE REVIEWED EXAMPLE &middot; HARBORLINE VS. IRONCLAD</p>
+      <p class="l"><span class="x">&#215;</span><span><b>Sentence flagged:</b> &#8220;Ironclad is powerful, and you&#8217;ll spend a quarter configuring it and an admin maintaining it.&#8221;</span></p>
+      <p class="l"><span class="x">&#215;</span><span><b>Why:</b> the competitor publishes no rollout timeline. The line was company-approved wording, and nobody could source the quarter.</span></p>
+      <p class="k"><span class="kl">What the rep can say instead:</span> &#8220;With two people on your legal team, who would own configuration in the first month, and how much time would they need?&#8221;</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ example two: the Sales to CS handoff ============ -->
 <section class="how">
   <div class="wrap">
     <div class="top">
-      <p class="kicker">WHERE IT ACTUALLY BREAKS</p>
+      <p class="kicker">EXAMPLE TWO &middot; THE SALES TO CS HANDOFF</p>
       <h2 style="margin-bottom:14px">The deal as sold. The deal as delivered.</h2>
       <p class="lede" style="margin-bottom:0">Every deal is won with a story. Then it&#8217;s handed to somebody who wasn&#8217;t in the room.</p>
     </div>
@@ -376,6 +430,22 @@ posthog.init('phc_E7RT8uONsICJRF5lKqYhsyys29rP0BKObdRHyYSCdQx',{api_host:'https:
       <b>CS heard:</b> roll out the tool, hit activation numbers.
       <br>One quarter later the renewal is at risk and the champion feels oversold. <b>The handoff is a first-class play here, not an afterthought.</b></figcaption>
     </figure>
+
+    <div class="ruled">
+      <div class="r">
+        <div class="rn">What Sales promised</div>
+        <div class="rd">Live in under two weeks. A drop in median contract cycle time within 60 days, measured against the customer&#8217;s own baseline. Counsel approves every AI redline. <b>Each promise carries the wording it was made in and a check-by date.</b></div>
+      </div>
+      <div class="r">
+        <div class="rn">Who heard it</div>
+        <div class="rd">The Head of Legal Ops, who owns the cycle-time number. The CFO, who bought the revenue story. The GC, who agreed once she heard that nothing sends without counsel. <b>CS knows who is holding which promise before kickoff.</b></div>
+      </div>
+      <div class="r">
+        <div class="rn">How the customer will judge success</div>
+        <div class="rd">In the champion&#8217;s words: &#8220;If sales stops escalating contracts to my inbox, it&#8217;s working.&#8221; The rep quoted that from memory, <span class="refuse">so the brief flags it for CS to confirm.</span></div>
+      </div>
+    </div>
+    <p class="credit">From the handoff brief that ships in the kit, written on the fictional demo company.</p>
   </div>
 </section>
 
@@ -411,7 +481,7 @@ posthog.init('phc_E7RT8uONsICJRF5lKqYhsyys29rP0BKObdRHyYSCdQx',{api_host:'https:
       <div>
         <p class="kicker">WHAT COMES OUT</p>
         <h2>Six of the things you make every week.</h2>
-        <p class="lede" style="margin-bottom:0">You never pick a tool or name an agent. You describe the moment, and the right specialist shows up already knowing your positioning, your proof and your objections.</p>
+        <p class="lede" style="margin-bottom:0">Describe the moment in plain words. The asset comes back written from your positioning, your proof and your objections.</p>
       </div>
       <div>
         <div class="stack">
@@ -446,27 +516,9 @@ posthog.init('phc_E7RT8uONsICJRF5lKqYhsyys29rP0BKObdRHyYSCdQx',{api_host:'https:
           <p class="ln">Value promised against value delivered, line by line, with the gap named before the customer names it.</p>
         </div>
 
-        <p class="more">Twelve moves in all, and Athena builds you a new one whenever you keep hitting something the twelve do not cover. <a href="example-battlecard.html">Read a complete one, unedited &#8594;</a></p>
+        <p class="more">More plays are in the kit. <a href="inside.html">See everything inside &#8594;</a> &middot; <a href="example-battlecard.html">Read a complete reviewed example &#8594;</a></p>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ the audit: what a chat window will not do ============ -->
-<section class="aud">
-  <div class="wrap">
-    <div>
-      <p class="kicker">THE PART A CHAT WINDOW WILL NOT DO</p>
-      <h2>It checks your numbers too.</h2>
-      <p class="lede" style="margin-bottom:0">Paste your positioning into any chat window and it will hand your own claims back to you as fact, because you said them. This one doesn&#8217;t. Every asset closes with a list of what it could not prove, sorted by who has to act, and your side gets the same treatment as theirs. It&#8217;s the difference between an asset your rep forwards and one that gets them caught out in front of a customer.</p>
-    </div>
-    <div class="audbox">
-      <p class="t">FROM A REAL RUN &middot; THE LIST ABOUT YOU</p>
-      <p class="l"><span class="x">&#215;</span><span>Your <b>&#8220;40% faster onboarding&#8221;</b> has no date and no source in the brain.</span></p>
-      <p class="l"><span class="x">&#215;</span><span>Your <b>&#8220;most customers see value in week one&#8221;</b> was never measured.</span></p>
-      <p class="l"><span class="x">&#215;</span><span>Your win rate against them is from Q1. It&#8217;s five months old.</span></p>
-      <p class="k">This isn&#8217;t the competitor&#8217;s audit. It&#8217;s yours, and your reps are already using these numbers.</p>
     </div>
   </div>
 </section>
@@ -477,8 +529,8 @@ posthog.init('phc_E7RT8uONsICJRF5lKqYhsyys29rP0BKObdRHyYSCdQx',{api_host:'https:
     <div class="split">
       <div>
         <p class="kicker">WHAT IS IN THE FOLDER</p>
-        <h2>One company brain. Eight specialists reading from it.</h2>
-        <p class="lede">You never pick a tool or name an agent. You say what is happening, a competitor came up, a call is tomorrow, a deal just closed, and the right specialist shows up already knowing your positioning, your proof and your objections.</p>
+        <h2>One company brain. Every asset is written from it.</h2>
+        <p class="lede">Add your positioning and proof once. Each asset starts from them and closes with what still needs checking. The agents, the plays and how a request gets routed are in <a href="inside.html">Inside the kit</a>.</p>
       </div>
 
       <div class="ruled">
@@ -507,33 +559,17 @@ posthog.init('phc_E7RT8uONsICJRF5lKqYhsyys29rP0BKObdRHyYSCdQx',{api_host:'https:
   </div>
 </section>
 
-<!-- ============ the objection everyone has and nobody answers ============ -->
+<!-- ============ the fair question ============ -->
 <section class="sec">
   <div class="wrap">
     <div class="split">
       <div>
         <p class="kicker">THE FAIR QUESTION</p>
         <h2>Why not just Claude and a good prompt?</h2>
-        <p class="lede" style="margin-bottom:0">You can. Nothing here is magic, and anyone telling you otherwise is selling something. What you&#8217;d be doing is building the thing below, on your own time, and then finding out on live deals which parts of it were wrong.</p>
       </div>
-
-      <div class="ruled">
-        <div class="r">
-          <div class="rn">69 files, about 37,000 words</div>
-          <div class="rd">That&#8217;s the whole kit, and you can count it after you buy. Eight agent definitions, twelve plays, thirteen skills, the brain template, the governance rules and the guides.</div>
-        </div>
-        <div class="r">
-          <div class="rn">The routing, which is the hard part</div>
-          <div class="rd">A prompt gets you one good answer. The work is deciding <b>which</b> move a situation calls for and pulling the right knowledge into it, every time, without you naming a tool. That decision table took the longest to get right and it&#8217;s the difference between a system and a folder of prompts.</div>
-        </div>
-        <div class="r">
-          <div class="rn">The refusals</div>
-          <div class="rd">Any model will confidently repeat your own unproven number back to you, because you said it. Getting one to <b>stop and tell you it can&#8217;t prove your claim</b> takes rules that survive a long session, and it&#8217;s the part a single prompt never holds.</div>
-        </div>
-        <div class="r">
-          <div class="rn">What it costs you to build</div>
-          <div class="rd">A quarter of evenings, if you already know what good looks like. The certification that teaches you to build it is about nine times this price and you still do the building. <b>This is the same work, finished, for the cost of a decent lunch for two.</b></div>
-        </div>
+      <div>
+        <p class="lede say">Yes. Claude can draft a battlecard and flag claims that need a source. StoryOS gives you a ready-made process for doing that every time a rep asks for help. Add your positioning and proof once. For each deal, start with the buyer&#8217;s objection and get a talk track, the evidence behind it, and the open questions to resolve. You decide what the rep takes into the call.</p>
+        <p class="credit">What the process is made of, piece by piece: <a href="inside.html">Inside the kit</a>.</p>
       </div>
     </div>
   </div>
@@ -548,16 +584,13 @@ posthog.init('phc_E7RT8uONsICJRF5lKqYhsyys29rP0BKObdRHyYSCdQx',{api_host:'https:
 
     <div class="qa">
       <details><summary><span class="sign"></span>Who is this for, exactly?</summary>
-        <div class="ans">The person who produces what the revenue team says out loud. That is usually <b>Sales Enablement or Revenue Enablement</b>, often <b>Product Marketing</b> (play 07 is a product launch, and the marketer is one of the eight), and <b>Customer Success</b> leaders, who get their own edition with the post-sale plays and the renewal read. It is written for one person doing that job well, in a company of roughly 50 to 500 people. <b>It is not a tool you roll out to reps</b>, it is the thing you use to arm them.</div></details>
+        <div class="ans">The person who produces what the revenue team says out loud. That is usually <b>Sales Enablement or Revenue Enablement</b>, often <b>Product Marketing</b> (the kit has a product launch play and a marketer agent), and <b>Customer Success</b> leaders, who get their own edition with the post-sale plays and the renewal read. It is written for one person doing that job well, in a company of roughly 50 to 500 people. <b>It is not a tool you roll out to reps</b>, it is the thing you use to arm them.</div></details>
 
       <details open><summary><span class="sign"></span>What am I actually receiving?</summary>
-        <div class="ans">A zip file. Inside it is a folder of markdown files: a company brain, twelve plays, eight agent definitions, thirteen skills, and the guides. You open that folder in the Claude desktop app and it becomes a working system. <b>There is no app to log into and no account on our side.</b> The files sit on your machine and stay there.</div></details>
+        <div class="ans">A zip file. Inside it is a folder of markdown files: a company brain, the plays, the agent definitions, the skills, and the guides. The full list is on <a href="inside.html">Inside the kit</a>. You open that folder in the Claude desktop app and it becomes a working system. <b>There is no app to log into and no account on our side.</b> The files sit on your machine and stay there.</div></details>
 
       <details><summary><span class="sign"></span>Can I use it in Claude on the web, or in Cowork, or in Gemini?</summary>
         <div class="ans"><b>The web version of Claude won&#8217;t work</b>, because it can&#8217;t read a folder on your computer. StoryOS is built and tested for the <b>Claude desktop app</b>, using its Code tab, on a paid plan. Other tools that can read a local folder may well run it, and we haven&#8217;t tested them, so we won&#8217;t claim they do. <b>Gemini is not supported.</b></div></details>
-
-      <details><summary><span class="sign"></span>Why not just do this in a chat window for free?</summary>
-        <div class="ans">You can get one good battlecard from a chat window in ninety seconds. What you can&#8217;t get is the second list. A chat window will happily repeat <b>your</b> "40% faster onboarding" back to you as fact, because you said it. StoryOS treats your claims the way it treats theirs, and tells you which of yours carry no date and no source. That&#8217;s the difference, and it&#8217;s the whole product.</div></details>
 
       <details><summary><span class="sign"></span>Can I add my own agents and capabilities?</summary>
         <div class="ans"><b>Yes, and that is a real feature rather than a promise.</b> Athena, the guide inside the kit, builds new plays, new skills and whole new specialists on request. You describe the situation you keep hitting, she proposes the play, shows you the exact change, and <b>writes nothing until you say yes.</b> She never touches your brain or your finished work while extending the system.</div></details>
@@ -569,7 +602,7 @@ posthog.init('phc_E7RT8uONsICJRF5lKqYhsyys29rP0BKObdRHyYSCdQx',{api_host:'https:
         <div class="ans">About 20 minutes to install. Loading your brain is the part that is yours, and how long it takes depends on what you already have written down. <b>You can start with a link to your site, two things that sound like you and one deal you remember well</b>, and sharpen it every time you run a play. The five day guide inside walks the thorough version.</div></details>
 
       <details><summary><span class="sign"></span>What is your refund policy?</summary>
-        <div class="ans">None. It&#8217;s a file, and a downloaded file can&#8217;t be returned. So everything you need to decide is published before you pay, including a complete unedited output. <a href="example-battlecard.html">Read that first.</a></div></details>
+        <div class="ans">None. It&#8217;s a file, and a downloaded file can&#8217;t be returned. So everything you need to decide is published before you pay, including a complete reviewed example. <a href="example-battlecard.html">Read that first.</a></div></details>
 
       <details><summary><span class="sign"></span>Where does my data go?</summary>
         <div class="ans">Your brain, your outputs and your notes are files on your machine. <b>We never see them and there is no server of ours involved.</b> What you type goes to Anthropic exactly as the rest of your Claude session does, under your own plan. If your organisation blocks outbound lookups, one setting turns research off and it works from your files alone.</div></details>
@@ -581,7 +614,7 @@ posthog.init('phc_E7RT8uONsICJRF5lKqYhsyys29rP0BKObdRHyYSCdQx',{api_host:'https:
         <div class="ans">The kit is markdown files, so there&#8217;s nothing to break in it. What can change is the click path inside Claude for opening a folder. When that moves, <b>the install guide is updated and the update reaches the email you bought with</b>, at no cost, because you own the kit rather than rent it.</div></details>
 
       <details><summary><span class="sign"></span>Who built this?</summary>
-        <div class="ans">It was built by a sales enablement professional who has led enablement inside large companies and small ones. That&#8217;s why the twelve plays are the moments that actually come up in a quarter rather than the ones that look tidy in a framework, and why the handoff to CS is a first-class play instead of an afterthought. Need something? Email <b>storyos@connecthedots.co</b>.</div></details>
+        <div class="ans">It was built by a sales enablement professional who has led enablement inside large companies and small ones. That&#8217;s why the plays are the moments that actually come up in a quarter rather than the ones that look tidy in a framework, and why the handoff to CS is a first-class play instead of an afterthought. Need something? Email <b>storyos@connecthedots.co</b>.</div></details>
     </div>
   </div>
 </section>
@@ -595,7 +628,7 @@ posthog.init('phc_E7RT8uONsICJRF5lKqYhsyys29rP0BKObdRHyYSCdQx',{api_host:'https:
     <div>
       <p class="kicker">FOUNDING PRICE</p>
       <h2 style="margin-bottom:16px">Own it once. It doesn&#8217;t renew.</h2>
-      <p class="terms">$197. <b style="color:var(--chalk)">$79 until 31 October.</b> One payment, one seat, yours forever, updates included. Claude Pro or above required. No refunds.</p>
+      <p class="terms">$197 list. <b style="color:var(--chalk)">$79 founding price.</b> One payment, one seat, yours forever, updates included. <b style="color:var(--chalk)">Needs the Claude desktop app on a paid plan, Pro or above.</b> No refunds.</p>
       <div class="cta">
         <a class="btn" href="buy.html">Own the kit</a>
         <a class="btn ghost" href="what-you-need.html">What you need first</a>
